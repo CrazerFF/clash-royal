@@ -1,0 +1,22 @@
+{
+  "name": "runner-playable",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "zip": "cd dist && zip -9 -r ../playable.zip .",
+    "build:zip": "npm run build && npm run zip"
+  },
+  "dependencies": {
+    "howler": "^2.2.4",
+    "pixi.js": "^8.14.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "prettier": "^3.8.1",
+    "prettier-eslint": "^16.4.2",
+    "vite": "^5.4.0"
+  }
+}
