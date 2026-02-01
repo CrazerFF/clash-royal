@@ -1,17 +1,17 @@
 import { Container } from 'pixi.js';
 import { AnimatedSprite, Assets } from 'pixi.js';
 
-export class Enemy extends Container {
+export class Giant extends Container {
   constructor(scene) {
     super();
     this.scene = scene;
     this.zIndex = 20;
     
     // Загружаем спрайтшит бега
-    const sheet = Assets.get('megaknight_run_json');
+    const sheet = Assets.get('giant_run_json');
     
     // Создаем анимированный спрайт
-    this.sprite = new AnimatedSprite(sheet.animations['megaknight_run1']);
+    this.sprite = new AnimatedSprite(sheet.animations['giant_run1']);
     this.sprite.anchor.set(0.5, 0.5);
     this.sprite.scale.set(1);
     this.sprite.animationSpeed = 0.24; // Фиксированная скорость
@@ -20,15 +20,11 @@ export class Enemy extends Container {
     
     // Сохраняем все 5 анимаций бега
     this.animations = {
-      run1: sheet.animations['megaknight_run1'],
-      run2: sheet.animations['megaknight_run2'],
-      run3: sheet.animations['megaknight_run3'],
-      run4: sheet.animations['megaknight_run4'],
-      run5: sheet.animations['megaknight_run5'],
-      run6: sheet.animations['megaknight_run6'],
-      run7: sheet.animations['megaknight_run7'],
-      run8: sheet.animations['megaknight_run8'],
-      run9: sheet.animations['megaknight_run9']
+      run1: sheet.animations['giant_run1'],
+      run2: sheet.animations['giant_run2'],
+      run3: sheet.animations['giant_run3'],
+      run4: sheet.animations['giant_run4'],
+      run5: sheet.animations['giant_run5']
     };
     
     // Текущая анимация
@@ -39,10 +35,12 @@ export class Enemy extends Container {
   }
   
   // Воспроизвести одну из 5 анимаций бега
-  playRun(runNumber) {  
+  playRun(runNumber) {
+    console.log("ok");
+    
     // Проверяем номер (должен быть от 1 до 5)
-    if (runNumber < 1 || runNumber > 9) {
-      console.warn(`megaknight.playRun: runNumber must be 1-5, got ${runNumber}`);
+    if (runNumber < 1 || runNumber > 5) {
+      console.warn(`Giant.playRun: runNumber must be 1-5, got ${runNumber}`);
       return;
     }
     
@@ -50,7 +48,7 @@ export class Enemy extends Container {
     const frames = this.animations[animationKey];
     
     if (!frames) {
-      console.warn(`megaknight.playRun: animation ${animationKey} not found`);
+      console.warn(`Giant.playRun: animation ${animationKey} not found`);
       return;
     }
     

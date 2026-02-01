@@ -1,53 +1,54 @@
 import { Container, Graphics, Text } from 'pixi.js';
-import { HeartsDisplay } from './HeartsDisplay.js';
-import { BottomPanel } from './BottomPanel.js';
-import { ScorePanel } from './ScorePanel.js';
-import { CtaButton } from './CtaButton.js';
-import { InstallButton } from './InstallButton.js';
-import { TextPopup } from '../objects/TextPopup.js';
-import { Timer } from '../objects/Timer.js';
+import { Label } from './Label.js';
+import { BlueTree } from './BlueTree.js';
+import { PlayNow } from './PlayNow.js';
 
 export class UiLayer extends Container {
-  constructor(width, height) {
+  constructor(designWidth, designHeight, w, h) {
     super();
-    this.width = width;
-    this.height = height;
-    this.heartsDisplay = new HeartsDisplay();
-    this.addChild(this.heartsDisplay);
+    this.uiScale = new Container();
+    this.addChild(this.uiScale);
 
-    this.bottomPanel = new BottomPanel();
-    this.addChild(this.bottomPanel);
+    this.roundPixels = true;
+    this.objects = [];
 
-    this.scorePanel = new ScorePanel();
-    this.addChild(this.scorePanel);
-
-    this.ctaButton = new CtaButton(this);
-    this.addChild(this.ctaButton);
-
-    this.installButton = new InstallButton();
-    this.addChild(this.installButton);
-    this.installButton.visible = false;
+    this.create();
   }
 
-  resize(w, h, scale) {
-    this.bottomPanel.resize(w, h);
-    this.ctaButton.resize(w, h);
-    this.installButton.resize(w, h);
-    this.scorePanel.resize(w, h, scale);
+  create() {
+     this.label = new Label();
+     this.addChild(this.label);
+
+     this.blueTree = new BlueTree();
+     this.addChild(this.blueTree);
+     PlayNow
+
+     this.playNow = new PlayNow();
+     this.addChild(this.playNow);
   }
 
-  onDprChange(scaleDpr) {
-    this.scorePanel.onDprChange(scaleDpr);
-    this.heartsDisplay.onDprChange(scaleDpr);
-    this.installButton.onDprChange(scaleDpr);
-    this.ctaButton.onDprChange(scaleDpr);
+  update(delta) {
+    this.children.forEach((child) => {
+      if (child?.update) {
+        child.update(delta);
+      }
+    });
   }
+  resize(w, h, scale_UI) {
+    this.x = 0;
+    this.y = 0
 
-  // update(delta) {
-  //   this.children.forEach((child) => {
-  //     if (child?.update) {
-  //       child.update(delta);
-  //     }
-  //   });
-  // }
+     this.uiScale.scale.set(scale_UI);
+        // центрируем дизайн-UI
+    this.uiScale.x = (w - 660 * scale_UI) / 2;
+    this.uiScale.y = (h - 1220 * scale_UI) / 2;
+
+    this.uiScale.children.forEach(c =>
+      c.resize?.(w, h, scale_UI)
+    );
+    
+    this.children.forEach(c => {
+      c.resize?.(w, h, scale_UI);
+    });
+  }
 }

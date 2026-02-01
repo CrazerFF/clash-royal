@@ -1,0 +1,2493 @@
+{
+  "frames": {
+    "megaknight_run6_1.png": {
+      "frame": {
+        "x": 412,
+        "y": 71,
+        "w": 73,
+        "h": 56
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 36,
+        "y": 24,
+        "w": 73,
+        "h": 56
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run6_2.png": {
+      "frame": {
+        "x": 277,
+        "y": 141,
+        "w": 70,
+        "h": 59
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 37,
+        "y": 20,
+        "w": 70,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run6_3.png": {
+      "frame": {
+        "x": 349,
+        "y": 140,
+        "w": 72,
+        "h": 61
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 34,
+        "y": 19,
+        "w": 72,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run6_4.png": {
+      "frame": {
+        "x": 606,
+        "y": 1,
+        "w": 73,
+        "h": 62
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 33,
+        "y": 20,
+        "w": 73,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run6_5.png": {
+      "frame": {
+        "x": 69,
+        "y": 72,
+        "w": 75,
+        "h": 56
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 32,
+        "y": 23,
+        "w": 75,
+        "h": 56
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run6_6.png": {
+      "frame": {
+        "x": 127,
+        "y": 141,
+        "w": 73,
+        "h": 50
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 32,
+        "y": 27,
+        "w": 73,
+        "h": 50
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run6_7.png": {
+      "frame": {
+        "x": 470,
+        "y": 69,
+        "w": 75,
+        "h": 55
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 31,
+        "y": 26,
+        "w": 75,
+        "h": 55
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run6_8.png": {
+      "frame": {
+        "x": 681,
+        "y": 1,
+        "w": 76,
+        "h": 58
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 30,
+        "y": 22,
+        "w": 76,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run6_9.png": {
+      "frame": {
+        "x": 1,
+        "y": 381,
+        "w": 75,
+        "h": 62
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 31,
+        "y": 19,
+        "w": 75,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run6_10.png": {
+      "frame": {
+        "x": 1,
+        "y": 304,
+        "w": 75,
+        "h": 63
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 32,
+        "y": 19,
+        "w": 75,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run6_11.png": {
+      "frame": {
+        "x": 1,
+        "y": 458,
+        "w": 76,
+        "h": 59
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 33,
+        "y": 22,
+        "w": 76,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run6_12.png": {
+      "frame": {
+        "x": 202,
+        "y": 141,
+        "w": 73,
+        "h": 52
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 36,
+        "y": 25,
+        "w": 73,
+        "h": 52
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run6_13.png": {
+      "frame": {
+        "x": 486,
+        "y": 146,
+        "w": 68,
+        "h": 59
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 40,
+        "y": 21,
+        "w": 68,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run7_1.png": {
+      "frame": {
+        "x": 349,
+        "y": 214,
+        "w": 70,
+        "h": 59
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 44,
+        "y": 24,
+        "w": 70,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run7_2.png": {
+      "frame": {
+        "x": 486,
+        "y": 216,
+        "w": 67,
+        "h": 62
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 45,
+        "y": 19,
+        "w": 67,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run7_3.png": {
+      "frame": {
+        "x": 417,
+        "y": 279,
+        "w": 68,
+        "h": 67
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 42,
+        "y": 16,
+        "w": 68,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run7_4.png": {
+      "frame": {
+        "x": 198,
+        "y": 70,
+        "w": 69,
+        "h": 69
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 41,
+        "y": 16,
+        "w": 69,
+        "h": 69
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run7_5.png": {
+      "frame": {
+        "x": 273,
+        "y": 263,
+        "w": 70,
+        "h": 64
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 41,
+        "y": 18,
+        "w": 70,
+        "h": 64
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run7_6.png": {
+      "frame": {
+        "x": 269,
+        "y": 390,
+        "w": 68,
+        "h": 57
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 41,
+        "y": 21,
+        "w": 68,
+        "h": 57
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run7_7.png": {
+      "frame": {
+        "x": 271,
+        "y": 329,
+        "w": 69,
+        "h": 59
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 40,
+        "y": 20,
+        "w": 69,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run7_8.png": {
+      "frame": {
+        "x": 276,
+        "y": 202,
+        "w": 71,
+        "h": 59
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 18,
+        "w": 71,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run7_9.png": {
+      "frame": {
+        "x": 835,
+        "y": 1,
+        "w": 73,
+        "h": 60
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 17,
+        "w": 73,
+        "h": 60
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run7_10.png": {
+      "frame": {
+        "x": 202,
+        "y": 195,
+        "w": 72,
+        "h": 60
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 19,
+        "w": 72,
+        "h": 60
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run7_11.png": {
+      "frame": {
+        "x": 127,
+        "y": 193,
+        "w": 73,
+        "h": 55
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 40,
+        "y": 23,
+        "w": 73,
+        "h": 55
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run7_12.png": {
+      "frame": {
+        "x": 127,
+        "y": 250,
+        "w": 71,
+        "h": 52
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 43,
+        "y": 25,
+        "w": 71,
+        "h": 52
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run7_13.png": {
+      "frame": {
+        "x": 421,
+        "y": 211,
+        "w": 66,
+        "h": 63
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 49,
+        "y": 20,
+        "w": 66,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run8_1.png": {
+      "frame": {
+        "x": 65,
+        "y": 408,
+        "w": 64,
+        "h": 61
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 49,
+        "y": 23,
+        "w": 64,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run8_2.png": {
+      "frame": {
+        "x": 554,
+        "y": 349,
+        "w": 63,
+        "h": 65
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 18,
+        "w": 63,
+        "h": 65
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run8_3.png": {
+      "frame": {
+        "x": 200,
+        "y": 257,
+        "w": 63,
+        "h": 71
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 47,
+        "y": 14,
+        "w": 63,
+        "h": 71
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run8_4.png": {
+      "frame": {
+        "x": 412,
+        "y": 146,
+        "w": 63,
+        "h": 72
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 14,
+        "w": 63,
+        "h": 72
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run8_5.png": {
+      "frame": {
+        "x": 681,
+        "y": 61,
+        "w": 62,
+        "h": 67
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 47,
+        "y": 17,
+        "w": 62,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run8_6.png": {
+      "frame": {
+        "x": 619,
+        "y": 65,
+        "w": 60,
+        "h": 62
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 19,
+        "w": 60,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run8_7.png": {
+      "frame": {
+        "x": 66,
+        "y": 347,
+        "w": 59,
+        "h": 59
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 18,
+        "w": 59,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run8_8.png": {
+      "frame": {
+        "x": 67,
+        "y": 284,
+        "w": 61,
+        "h": 58
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 47,
+        "y": 16,
+        "w": 61,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run8_9.png": {
+      "frame": {
+        "x": 544,
+        "y": 416,
+        "w": 63,
+        "h": 58
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 14,
+        "w": 63,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run8_10.png": {
+      "frame": {
+        "x": 609,
+        "y": 416,
+        "w": 64,
+        "h": 58
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 16,
+        "w": 64,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run8_11.png": {
+      "frame": {
+        "x": 955,
+        "y": 63,
+        "w": 66,
+        "h": 55
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 20,
+        "w": 66,
+        "h": 55
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run8_12.png": {
+      "frame": {
+        "x": 681,
+        "y": 184,
+        "w": 64,
+        "h": 56
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 23,
+        "w": 64,
+        "h": 56
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run8_13.png": {
+      "frame": {
+        "x": 816,
+        "y": 127,
+        "w": 63,
+        "h": 64
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 51,
+        "y": 20,
+        "w": 63,
+        "h": 64
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run9_1.png": {
+      "frame": {
+        "x": 555,
+        "y": 66,
+        "w": 62,
+        "h": 63
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 50,
+        "y": 22,
+        "w": 62,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run9_2.png": {
+      "frame": {
+        "x": 750,
+        "y": 63,
+        "w": 60,
+        "h": 67
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 17,
+        "w": 60,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run9_3.png": {
+      "frame": {
+        "x": 910,
+        "y": 1,
+        "w": 60,
+        "h": 73
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 11,
+        "w": 60,
+        "h": 73
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run9_4.png": {
+      "frame": {
+        "x": 759,
+        "y": 1,
+        "w": 60,
+        "h": 74
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 11,
+        "w": 60,
+        "h": 74
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run9_5.png": {
+      "frame": {
+        "x": 345,
+        "y": 275,
+        "w": 62,
+        "h": 70
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 45,
+        "y": 15,
+        "w": 62,
+        "h": 70
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run9_6.png": {
+      "frame": {
+        "x": 471,
+        "y": 476,
+        "w": 61,
+        "h": 63
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 19,
+        "w": 61,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run9_7.png": {
+      "frame": {
+        "x": 619,
+        "y": 129,
+        "w": 60,
+        "h": 58
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 47,
+        "y": 17,
+        "w": 60,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run9_8.png": {
+      "frame": {
+        "x": 661,
+        "y": 476,
+        "w": 61,
+        "h": 59
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 13,
+        "w": 61,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run9_9.png": {
+      "frame": {
+        "x": 681,
+        "y": 366,
+        "w": 60,
+        "h": 59
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 47,
+        "y": 11,
+        "w": 60,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run9_10.png": {
+      "frame": {
+        "x": 935,
+        "y": 375,
+        "w": 60,
+        "h": 60
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 47,
+        "y": 12,
+        "w": 60,
+        "h": 60
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run9_11.png": {
+      "frame": {
+        "x": 945,
+        "y": 196,
+        "w": 63,
+        "h": 58
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 47,
+        "y": 17,
+        "w": 63,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run9_12.png": {
+      "frame": {
+        "x": 747,
+        "y": 190,
+        "w": 64,
+        "h": 58
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 22,
+        "w": 64,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run9_13.png": {
+      "frame": {
+        "x": 882,
+        "y": 129,
+        "w": 63,
+        "h": 64
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 50,
+        "y": 21,
+        "w": 63,
+        "h": 64
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run1_1.png": {
+      "frame": {
+        "x": 939,
+        "y": 314,
+        "w": 59,
+        "h": 62
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 24,
+        "w": 59,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run1_2.png": {
+      "frame": {
+        "x": 813,
+        "y": 192,
+        "w": 58,
+        "h": 64
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 19,
+        "w": 58,
+        "h": 64
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run1_3.png": {
+      "frame": {
+        "x": 475,
+        "y": 416,
+        "w": 58,
+        "h": 67
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 45,
+        "y": 13,
+        "w": 58,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run1_4.png": {
+      "frame": {
+        "x": 199,
+        "y": 386,
+        "w": 58,
+        "h": 68
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 45,
+        "y": 13,
+        "w": 58,
+        "h": 68
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run1_5.png": {
+      "frame": {
+        "x": 555,
+        "y": 199,
+        "w": 58,
+        "h": 67
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 45,
+        "y": 17,
+        "w": 58,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run1_6.png": {
+      "frame": {
+        "x": 744,
+        "y": 250,
+        "w": 59,
+        "h": 63
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 45,
+        "y": 21,
+        "w": 59,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run1_7.png": {
+      "frame": {
+        "x": 809,
+        "y": 252,
+        "w": 59,
+        "h": 63
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 19,
+        "w": 59,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run1_8.png": {
+      "frame": {
+        "x": 68,
+        "y": 220,
+        "w": 57,
+        "h": 62
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 15,
+        "w": 57,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run1_9.png": {
+      "frame": {
+        "x": 743,
+        "y": 371,
+        "w": 57,
+        "h": 62
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 12,
+        "w": 57,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run1_10.png": {
+      "frame": {
+        "x": 939,
+        "y": 256,
+        "w": 56,
+        "h": 63
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 47,
+        "y": 13,
+        "w": 56,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run1_11.png": {
+      "frame": {
+        "x": 874,
+        "y": 253,
+        "w": 59,
+        "h": 63
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 18,
+        "w": 59,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run1_12.png": {
+      "frame": {
+        "x": 807,
+        "y": 373,
+        "w": 60,
+        "h": 62
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 24,
+        "w": 60,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run1_13.png": {
+      "frame": {
+        "x": 847,
+        "y": 436,
+        "w": 60,
+        "h": 58
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 25,
+        "w": 60,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run2_1.png": {
+      "frame": {
+        "x": 879,
+        "y": 194,
+        "w": 57,
+        "h": 64
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 49,
+        "y": 26,
+        "w": 57,
+        "h": 64
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run2_2.png": {
+      "frame": {
+        "x": 909,
+        "y": 437,
+        "w": 57,
+        "h": 60
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 23,
+        "w": 57,
+        "h": 60
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run2_3.png": {
+      "frame": {
+        "x": 681,
+        "y": 306,
+        "w": 61,
+        "h": 58
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 47,
+        "y": 20,
+        "w": 61,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run2_4.png": {
+      "frame": {
+        "x": 536,
+        "y": 476,
+        "w": 61,
+        "h": 61
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 19,
+        "w": 61,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run2_5.png": {
+      "frame": {
+        "x": 744,
+        "y": 311,
+        "w": 63,
+        "h": 58
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 47,
+        "y": 24,
+        "w": 63,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run2_6.png": {
+      "frame": {
+        "x": 339,
+        "y": 476,
+        "w": 64,
+        "h": 61
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 47,
+        "y": 25,
+        "w": 64,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run2_7.png": {
+      "frame": {
+        "x": 405,
+        "y": 476,
+        "w": 64,
+        "h": 61
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 23,
+        "w": 64,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run2_8.png": {
+      "frame": {
+        "x": 809,
+        "y": 313,
+        "w": 63,
+        "h": 58
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 22,
+        "w": 63,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run2_9.png": {
+      "frame": {
+        "x": 599,
+        "y": 476,
+        "w": 60,
+        "h": 61
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 49,
+        "y": 18,
+        "w": 60,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run2_10.png": {
+      "frame": {
+        "x": 871,
+        "y": 375,
+        "w": 59,
+        "h": 62
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 49,
+        "y": 19,
+        "w": 59,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run2_11.png": {
+      "frame": {
+        "x": 722,
+        "y": 430,
+        "w": 59,
+        "h": 60
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 24,
+        "w": 59,
+        "h": 60
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run2_12.png": {
+      "frame": {
+        "x": 874,
+        "y": 314,
+        "w": 59,
+        "h": 63
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 47,
+        "y": 27,
+        "w": 59,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run2_13.png": {
+      "frame": {
+        "x": 783,
+        "y": 435,
+        "w": 57,
+        "h": 62
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 49,
+        "y": 26,
+        "w": 57,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run3_1.png": {
+      "frame": {
+        "x": 68,
+        "y": 150,
+        "w": 57,
+        "h": 68
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 50,
+        "y": 21,
+        "w": 57,
+        "h": 68
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run3_2.png": {
+      "frame": {
+        "x": 408,
+        "y": 415,
+        "w": 59,
+        "h": 65
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 18,
+        "w": 59,
+        "h": 65
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run3_3.png": {
+      "frame": {
+        "x": 615,
+        "y": 189,
+        "w": 63,
+        "h": 63
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 17,
+        "w": 63,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run3_4.png": {
+      "frame": {
+        "x": 750,
+        "y": 125,
+        "w": 64,
+        "h": 63
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 19,
+        "w": 64,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run3_5.png": {
+      "frame": {
+        "x": 948,
+        "y": 131,
+        "w": 62,
+        "h": 63
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 49,
+        "y": 20,
+        "w": 62,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run3_6.png": {
+      "frame": {
+        "x": 819,
+        "y": 63,
+        "w": 62,
+        "h": 66
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 50,
+        "y": 20,
+        "w": 62,
+        "h": 66
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run3_7.png": {
+      "frame": {
+        "x": 269,
+        "y": 449,
+        "w": 63,
+        "h": 68
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 50,
+        "y": 19,
+        "w": 63,
+        "h": 68
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run3_8.png": {
+      "frame": {
+        "x": 887,
+        "y": 63,
+        "w": 64,
+        "h": 66
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 49,
+        "y": 17,
+        "w": 64,
+        "h": 66
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run3_9.png": {
+      "frame": {
+        "x": 615,
+        "y": 254,
+        "w": 63,
+        "h": 63
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 49,
+        "y": 17,
+        "w": 63,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run3_10.png": {
+      "frame": {
+        "x": 680,
+        "y": 242,
+        "w": 62,
+        "h": 62
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 49,
+        "y": 20,
+        "w": 62,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run3_11.png": {
+      "frame": {
+        "x": 619,
+        "y": 319,
+        "w": 60,
+        "h": 64
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 49,
+        "y": 21,
+        "w": 60,
+        "h": 64
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run3_12.png": {
+      "frame": {
+        "x": 556,
+        "y": 268,
+        "w": 57,
+        "h": 67
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 50,
+        "y": 22,
+        "w": 57,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run3_13.png": {
+      "frame": {
+        "x": 681,
+        "y": 125,
+        "w": 57,
+        "h": 67
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 50,
+        "y": 21,
+        "w": 57,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run4_1.png": {
+      "frame": {
+        "x": 127,
+        "y": 304,
+        "w": 65,
+        "h": 70
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 44,
+        "y": 17,
+        "w": 65,
+        "h": 70
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run4_2.png": {
+      "frame": {
+        "x": 547,
+        "y": 131,
+        "w": 64,
+        "h": 66
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 45,
+        "y": 15,
+        "w": 64,
+        "h": 66
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run4_3.png": {
+      "frame": {
+        "x": 132,
+        "y": 441,
+        "w": 67,
+        "h": 65
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 45,
+        "y": 13,
+        "w": 67,
+        "h": 65
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run4_4.png": {
+      "frame": {
+        "x": 199,
+        "y": 446,
+        "w": 68,
+        "h": 63
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 45,
+        "y": 16,
+        "w": 68,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run4_5.png": {
+      "frame": {
+        "x": 484,
+        "y": 349,
+        "w": 68,
+        "h": 65
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 17,
+        "w": 68,
+        "h": 65
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run4_6.png": {
+      "frame": {
+        "x": 486,
+        "y": 280,
+        "w": 68,
+        "h": 67
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 17,
+        "w": 68,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run4_7.png": {
+      "frame": {
+        "x": 127,
+        "y": 69,
+        "w": 69,
+        "h": 70
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 16,
+        "w": 69,
+        "h": 70
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run4_8.png": {
+      "frame": {
+        "x": 269,
+        "y": 70,
+        "w": 69,
+        "h": 69
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 14,
+        "w": 69,
+        "h": 69
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run4_9.png": {
+      "frame": {
+        "x": 342,
+        "y": 339,
+        "w": 69,
+        "h": 66
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 45,
+        "y": 14,
+        "w": 69,
+        "h": 66
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run4_10.png": {
+      "frame": {
+        "x": 62,
+        "y": 471,
+        "w": 68,
+        "h": 66
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 44,
+        "y": 17,
+        "w": 68,
+        "h": 66
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run4_11.png": {
+      "frame": {
+        "x": 339,
+        "y": 407,
+        "w": 67,
+        "h": 67
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 44,
+        "y": 18,
+        "w": 67,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run4_12.png": {
+      "frame": {
+        "x": 413,
+        "y": 349,
+        "w": 64,
+        "h": 69
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 45,
+        "y": 18,
+        "w": 64,
+        "h": 69
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run4_13.png": {
+      "frame": {
+        "x": 199,
+        "y": 322,
+        "w": 62,
+        "h": 70
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 46,
+        "y": 17,
+        "w": 62,
+        "h": 70
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run5_1.png": {
+      "frame": {
+        "x": 155,
+        "y": 1,
+        "w": 73,
+        "h": 66
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 34,
+        "y": 16,
+        "w": 73,
+        "h": 66
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run5_2.png": {
+      "frame": {
+        "x": 340,
+        "y": 71,
+        "w": 70,
+        "h": 67
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 36,
+        "y": 13,
+        "w": 70,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run5_3.png": {
+      "frame": {
+        "x": 380,
+        "y": 1,
+        "w": 72,
+        "h": 68
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 37,
+        "y": 12,
+        "w": 72,
+        "h": 68
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run5_4.png": {
+      "frame": {
+        "x": 230,
+        "y": 1,
+        "w": 73,
+        "h": 67
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 37,
+        "y": 15,
+        "w": 73,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run5_5.png": {
+      "frame": {
+        "x": 1,
+        "y": 227,
+        "w": 75,
+        "h": 64
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 36,
+        "y": 17,
+        "w": 75,
+        "h": 64
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run5_6.png": {
+      "frame": {
+        "x": 305,
+        "y": 1,
+        "w": 73,
+        "h": 67
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 16,
+        "w": 73,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run5_7.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 75,
+        "h": 69
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 37,
+        "y": 15,
+        "w": 75,
+        "h": 69
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run5_8.png": {
+      "frame": {
+        "x": 78,
+        "y": 1,
+        "w": 75,
+        "h": 66
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 37,
+        "y": 14,
+        "w": 75,
+        "h": 66
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run5_9.png": {
+      "frame": {
+        "x": 1,
+        "y": 150,
+        "w": 75,
+        "h": 65
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 37,
+        "y": 14,
+        "w": 75,
+        "h": 65
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run5_10.png": {
+      "frame": {
+        "x": 529,
+        "y": 1,
+        "w": 75,
+        "h": 63
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 36,
+        "y": 17,
+        "w": 75,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run5_11.png": {
+      "frame": {
+        "x": 1,
+        "y": 72,
+        "w": 76,
+        "h": 66
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 34,
+        "y": 17,
+        "w": 76,
+        "h": 66
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run5_12.png": {
+      "frame": {
+        "x": 454,
+        "y": 1,
+        "w": 73,
+        "h": 66
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 34,
+        "y": 17,
+        "w": 73,
+        "h": 66
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    },
+    "megaknight_run5_13.png": {
+      "frame": {
+        "x": 131,
+        "y": 371,
+        "w": 68,
+        "h": 66
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 35,
+        "y": 16,
+        "w": 68,
+        "h": 66
+      },
+      "sourceSize": {
+        "w": 144,
+        "h": 144
+      }
+    }
+  },
+  "animations": {
+      "megaknight_run1": [
+      "megaknight_run1_1.png",
+      "megaknight_run1_2.png",
+      "megaknight_run1_3.png",
+      "megaknight_run1_4.png",
+      "megaknight_run1_5.png",
+      "megaknight_run1_6.png",
+      "megaknight_run1_7.png",
+      "megaknight_run1_8.png",
+      "megaknight_run1_9.png",
+      "megaknight_run1_10.png",
+      "megaknight_run1_11.png",
+      "megaknight_run1_12.png",
+      "megaknight_run1_13.png"
+    ],
+    "megaknight_run2": [
+      "megaknight_run2_1.png",
+      "megaknight_run2_2.png",
+      "megaknight_run2_3.png",
+      "megaknight_run2_4.png",
+      "megaknight_run2_5.png",
+      "megaknight_run2_6.png",
+      "megaknight_run2_7.png",
+      "megaknight_run2_8.png",
+      "megaknight_run2_9.png",
+      "megaknight_run2_10.png",
+      "megaknight_run2_11.png",
+      "megaknight_run2_12.png",
+      "megaknight_run2_13.png"
+    ],
+    "megaknight_run3": [
+      "megaknight_run3_1.png",
+      "megaknight_run3_2.png",
+      "megaknight_run3_3.png",
+      "megaknight_run3_4.png",
+      "megaknight_run3_5.png",
+      "megaknight_run3_6.png",
+      "megaknight_run3_7.png",
+      "megaknight_run3_8.png",
+      "megaknight_run3_9.png",
+      "megaknight_run3_10.png",
+      "megaknight_run3_11.png",
+      "megaknight_run3_12.png",
+      "megaknight_run3_13.png"
+    ],
+    "megaknight_run4": [
+      "megaknight_run4_1.png",
+      "megaknight_run4_2.png",
+      "megaknight_run4_3.png",
+      "megaknight_run4_4.png",
+      "megaknight_run4_5.png",
+      "megaknight_run4_6.png",
+      "megaknight_run4_7.png",
+      "megaknight_run4_8.png",
+      "megaknight_run4_9.png",
+      "megaknight_run4_10.png",
+      "megaknight_run4_11.png",
+      "megaknight_run4_12.png",
+      "megaknight_run4_13.png"
+    ],
+    "megaknight_run5": [
+      "megaknight_run5_1.png",
+      "megaknight_run5_2.png",
+      "megaknight_run5_3.png",
+      "megaknight_run5_4.png",
+      "megaknight_run5_5.png",
+      "megaknight_run5_6.png",
+      "megaknight_run5_7.png",
+      "megaknight_run5_8.png",
+      "megaknight_run5_9.png",
+      "megaknight_run5_10.png",
+      "megaknight_run5_11.png",
+      "megaknight_run5_12.png",
+      "megaknight_run5_13.png"
+    ],
+    "megaknight_run6": [
+      "megaknight_run6_1.png",
+      "megaknight_run6_2.png",
+      "megaknight_run6_3.png",
+      "megaknight_run6_4.png",
+      "megaknight_run6_5.png",
+      "megaknight_run6_6.png",
+      "megaknight_run6_7.png",
+      "megaknight_run6_8.png",
+      "megaknight_run6_9.png",
+      "megaknight_run6_10.png",
+      "megaknight_run6_11.png",
+      "megaknight_run6_12.png",
+      "megaknight_run6_13.png"
+    ],
+    "megaknight_run7": [
+      "megaknight_run7_1.png",
+      "megaknight_run7_2.png",
+      "megaknight_run7_3.png",
+      "megaknight_run7_4.png",
+      "megaknight_run7_5.png",
+      "megaknight_run7_6.png",
+      "megaknight_run7_7.png",
+      "megaknight_run7_8.png",
+      "megaknight_run7_9.png",
+      "megaknight_run7_10.png",
+      "megaknight_run7_11.png",
+      "megaknight_run7_12.png",
+      "megaknight_run7_13.png"
+    ],
+    "megaknight_run8": [
+      "megaknight_run8_1.png",
+      "megaknight_run8_2.png",
+      "megaknight_run8_3.png",
+      "megaknight_run8_4.png",
+      "megaknight_run8_5.png",
+      "megaknight_run8_6.png",
+      "megaknight_run8_7.png",
+      "megaknight_run8_8.png",
+      "megaknight_run8_9.png",
+      "megaknight_run8_10.png",
+      "megaknight_run8_11.png",
+      "megaknight_run8_12.png",
+      "megaknight_run8_13.png"
+    ],
+    "megaknight_run9": [
+      "megaknight_run9_1.png",
+      "megaknight_run9_2.png",
+      "megaknight_run9_3.png",
+      "megaknight_run9_4.png",
+      "megaknight_run9_5.png",
+      "megaknight_run9_6.png",
+      "megaknight_run9_7.png",
+      "megaknight_run9_8.png",
+      "megaknight_run9_9.png",
+      "megaknight_run9_10.png",
+      "megaknight_run9_11.png",
+      "megaknight_run9_12.png",
+      "megaknight_run9_13.png"
+    ]
+  },
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "1.1",
+    "image": "megaknight_run.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1011,
+      "h": 538
+    },
+    "scale": "0.5",
+    "smartupdate": "$TexturePacker:SmartUpdate:a55d7ee1c901bc10fe2282e9c825cac6:981407324c59b48460258388a9c73c2c:05ae5c771cef6bb480cb81ffb0e3dfe9$"
+  }
+}
