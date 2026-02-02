@@ -14,7 +14,7 @@
 
 //   // =====  ИНИЦИАЛИЗАЦИЯ — ЧЁРНЫЙ ЭКРАН =====
 //   await app.init({
-//     backgroundColor: 0x000000, 
+//     backgroundColor: 0x000000,
 //     antialias: false,
 //     resolution: Math.min(window.devicePixelRatio || 1, 2),
 //     autoDensity: true,

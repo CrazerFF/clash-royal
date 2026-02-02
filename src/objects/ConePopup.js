@@ -32,8 +32,8 @@ export class ConePopup extends Container {
     this.text.roundPixels = true;
     this.addChild(this.text);
 
-    this.x = x+40;
-    this.y = y+20;
+    this.x = x + 40;
+    this.y = y + 20;
 
     // DPR-хак
     this.text.scale.set(0.25);
@@ -68,13 +68,7 @@ export class ConePopup extends Container {
     this.bg.clear();
 
     // заливка
-    this.bg.roundRect(
-      -w / 2,
-      -h / 2,
-      w,
-      h,
-      radius,
-    );
+    this.bg.roundRect(-w / 2, -h / 2, w, h, radius);
     this.bg.fill({ color: 0xffab03 });
 
     // обводка

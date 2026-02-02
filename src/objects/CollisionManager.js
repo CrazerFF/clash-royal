@@ -27,8 +27,8 @@ export class CollisionManager {
       : { x: player.x, y: player.y, width: player.width, height: player.height };
 
     const playerRect = new Rectangle(
-      playerBounds.x + playerBounds.width * (1 - scale) / 2,
-      playerBounds.y + playerBounds.height * (1 - scale) / 2,
+      playerBounds.x + (playerBounds.width * (1 - scale)) / 2,
+      playerBounds.y + (playerBounds.height * (1 - scale)) / 2,
       playerBounds.width * scale,
       playerBounds.height * scale
     );
@@ -56,8 +56,8 @@ export class CollisionManager {
         : { x: obj.x, y: obj.y, width: obj.width, height: obj.height };
 
       const objRect = new Rectangle(
-        objBounds.x + objBounds.width * (1 - scale) / 2,
-        objBounds.y + objBounds.height * (1 - scale) / 2,
+        objBounds.x + (objBounds.width * (1 - scale)) / 2,
+        objBounds.y + (objBounds.height * (1 - scale)) / 2,
         objBounds.width * scale,
         objBounds.height * scale
       );
@@ -65,12 +65,7 @@ export class CollisionManager {
       // Дебаг-отрисовка объекта
       if (CollisionManager.debugLayer) {
         CollisionManager.debugLayer.lineStyle(1, 0x00ff00, 0.5);
-        CollisionManager.debugLayer.drawRect(
-          objRect.x,
-          objRect.y,
-          objRect.width,
-          objRect.height
-        );
+        CollisionManager.debugLayer.drawRect(objRect.x, objRect.y, objRect.width, objRect.height);
       }
 
       if (playerRect.intersects(objRect)) {

@@ -1,11 +1,4 @@
-import {
-  Container,
-  Sprite,
-  Assets,
-  Mesh,
-  RopeGeometry,
-  Point,
-} from 'pixi.js';
+import { Container, Sprite, Assets, Mesh, RopeGeometry, Point } from 'pixi.js';
 
 export class Tape extends Container {
   constructor(x, y) {
@@ -110,7 +103,6 @@ export class Tape extends Container {
     });
 
     this.leftMesh.scale.set(0.13, 1);
-   
 
     // ---------- ПРАВАЯ ЛЕНТА ----------
     this.rightPoints.length = 0;
@@ -142,7 +134,7 @@ export class Tape extends Container {
       texture: Assets.get('tape1'),
     });
 
-  this.rightMesh.scale.set(0.13, 1);
+    this.rightMesh.scale.set(0.13, 1);
 
     this.addChild(this.leftMesh, this.rightMesh);
     this.rightMesh.position.set(55, 0);

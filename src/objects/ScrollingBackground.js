@@ -1,11 +1,4 @@
-import {
-  TilingSprite,
-  Assets,
-  RenderTexture,
-  Sprite,
-  Container,
-  Texture
-} from 'pixi.js';
+import { TilingSprite, Assets, RenderTexture, Sprite, Container, Texture } from 'pixi.js';
 
 export class ScrollingBackground extends TilingSprite {
   constructor(textureAlias, viewWidth, viewHeight, speed = 2) {
@@ -16,7 +9,7 @@ export class ScrollingBackground extends TilingSprite {
       super({
         texture: Texture.EMPTY,
         width: viewWidth,
-        height: viewHeight
+        height: viewHeight,
       });
       return;
     }
@@ -26,7 +19,7 @@ export class ScrollingBackground extends TilingSprite {
 
     const renderTexture = RenderTexture.create({
       width: texW * 2,
-      height: texH
+      height: texH,
     });
 
     const container = new Container();
@@ -41,12 +34,12 @@ export class ScrollingBackground extends TilingSprite {
     container.addChild(normal, mirror);
 
     const app = globalThis.__PIXI_APP__;
-    
+
     // 🔄 ИСПРАВЛЕННАЯ СТРОКА: новый синтаксис рендера
     app.renderer.render({
       container: container,
       target: renderTexture,
-      clear: true
+      clear: true,
     });
 
     container.removeChildren();
@@ -55,7 +48,7 @@ export class ScrollingBackground extends TilingSprite {
     super({
       texture: renderTexture,
       width: viewWidth,
-      height: viewHeight
+      height: viewHeight,
     });
 
     this.speed = speed;

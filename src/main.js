@@ -7,7 +7,7 @@ import { UiLayer } from './Hud/UiLayer.js';
   const DESIGN_W = 660;
   const DESIGN_H = 1220;
 
-  const DESIGN_W_UI = 660;
+  const DESIGN_W_UI = 1220;
   const DESIGN_H_UI = 1220;
 
   const app = new Application();

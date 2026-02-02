@@ -11,15 +11,14 @@ export class BlueTree extends Container {
     this.baseScale = 0.63;
     this.blueTree.scale.set(this.baseScale);
 
-
     this.offSetX = 1;
     this.offSetY = 20;
   }
 
   resize(w, h, scale_UI) {
-      this.blueTree.scale.set(this.baseScale * scale_UI);
-      this.blueTree.anchor.set(1, 1); // правый нижний угол спрайта
-      this.blueTree.x = w - this.offSetX * scale_UI;
-      this.blueTree.y = h + this.offSetY * scale_UI;
+    this.blueTree.scale.set(this.baseScale * scale_UI);
+    this.blueTree.anchor.set(1, 1); // правый нижний угол спрайта
+    this.blueTree.x = w - this.offSetX * scale_UI;
+    this.blueTree.y = h + this.offSetY * scale_UI;
   }
 }

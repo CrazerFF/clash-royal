@@ -47,7 +47,7 @@ export class TextPopup extends Container {
     this.alpha = this.life / totalLife;
 
     if (this.life <= 0) {
-    //  this.destroy({ children: true });
+      //  this.destroy({ children: true });
     }
   }
   resize(appWidth) {

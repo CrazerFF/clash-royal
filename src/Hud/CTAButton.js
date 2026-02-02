@@ -64,10 +64,9 @@ export class CtaButton extends Container {
 
   resize(appWidth, appHeight) {
     const scaleByWidth = appWidth / this.basePanelWidth;
-    
 
     if (appWidth > appHeight) {
-      this.currentBaseScale = this.baseScale * scaleByWidth * 0.20;
+      this.currentBaseScale = this.baseScale * scaleByWidth * 0.2;
     } else {
       this.currentBaseScale = this.baseScaleVert * scaleByWidth * 0.27;
     }
@@ -81,7 +80,7 @@ export class CtaButton extends Container {
   }
 
   onDprChange(scaleDpr) {
-  //  this.panel.scale.set(this.baseScale / scaleDpr);
+    //  this.panel.scale.set(this.baseScale / scaleDpr);
   }
 
   update(delta) {
@@ -95,8 +94,7 @@ export class CtaButton extends Container {
   }
 
   openStore() {
-    const storeUrl =
-      'https://play.google.com/store/apps/details?id=com.justplay.app&hl=en&gl=US';
+    const storeUrl = 'https://play.google.com/store/apps/details?id=com.justplay.app&hl=en&gl=US';
 
     if (window.mraid?.open) {
       mraid.open(storeUrl);

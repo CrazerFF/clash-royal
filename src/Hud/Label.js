@@ -11,15 +11,14 @@ export class Label extends Container {
     this.baseScale = 0.78;
     this.label.scale.set(this.baseScale);
 
-
     this.offSetX = 28;
     this.offSetY = 18;
   }
 
-resize(w, h, scale_UI) {
+  resize(w, h, scale_UI) {
     this.label.scale.set(this.baseScale * scale_UI);
     this.label.anchor.set(0, 0); // правый нижний угол спрайта
     this.label.x = this.offSetX * scale_UI;
     this.label.y = this.offSetY * scale_UI;
-}
+  }
 }

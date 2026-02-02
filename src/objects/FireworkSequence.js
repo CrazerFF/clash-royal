@@ -12,7 +12,7 @@ export class FireworkSequence {
       Assets.get('spark1'),
       Assets.get('spark2'),
       Assets.get('spark3'),
-      Assets.get('spark4')
+      Assets.get('spark4'),
     ];
 
     // Нижние фонтаны
@@ -48,8 +48,12 @@ export class FireworkSequence {
     this.left = new Firework(-150, 550);
     this.right = new Firework(450, 550);
 
-    this.left.onComplete = () => { this.left.finished = true; };
-    this.right.onComplete = () => { this.right.finished = true; };
+    this.left.onComplete = () => {
+      this.left.finished = true;
+    };
+    this.right.onComplete = () => {
+      this.right.finished = true;
+    };
 
     this.container.addChild(this.left, this.right);
   }
@@ -106,7 +110,7 @@ export class FireworkSequence {
       if (this.curtainTimer <= this.curtainDurationFrames) {
         for (let i = 0; i < this.curtainSpawnRate; i++) {
           const texture = this.textures[Math.floor(Math.random() * this.textures.length)];
-          const x = (Math.random() * this.width*15) - 1500;
+          const x = Math.random() * this.width * 15 - 1500;
           const p = new Particle(texture, x, -20, 'down');
           this.container.addChild(p);
           this.curtainParticles.push(p);

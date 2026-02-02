@@ -24,7 +24,7 @@ export class Game extends Container {
       () => {
         sound.playMusic();
       },
-      { once: true },
+      { once: true }
     );
   }
 

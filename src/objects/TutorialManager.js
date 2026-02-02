@@ -24,12 +24,7 @@ export class TutorialManager extends Container {
     this.hand.on('pointerup', () => this.onTap());
 
     // Исправление для PixiJS v8 (убрать предупреждения)
-    this.clickArea.rect(
-      -400,
-      -400,
-      this.game.DESIGN_W + 1400,
-      this.game.DESIGN_H + 400,
-    );
+    this.clickArea.rect(-400, -400, this.game.DESIGN_W + 1400, this.game.DESIGN_H + 400);
     this.clickArea.fill(0xffffff);
     this.clickArea.alpha = 0.01; // почти прозрачный, но кликабельный
 
@@ -75,12 +70,7 @@ export class TutorialManager extends Container {
     this.hand.x = this.game.DESIGN_W / 2;
     this.hand.y = this.game.DESIGN_H / 2 + 160;
 
-    this.textPopup = new TextPopup(
-      'Tap to start earning!',
-      this.hand.x,
-      this.hand.y - 220,
-      45,
-    );
+    this.textPopup = new TextPopup('Tap to start earning!', this.hand.x, this.hand.y - 220, 45);
     this.game.addChild(this.textPopup);
     this.textPopup.zIndex = 3500;
   }
@@ -100,12 +90,7 @@ export class TutorialManager extends Container {
     this.hand.x = this.game.DESIGN_W / 2;
     this.hand.y = this.game.DESIGN_H / 2 - 40;
 
-    this.textPopup = new TextPopup(
-      'Jump to avoid enemies!',
-      this.hand.x,
-      this.hand.y - 120,
-      50,
-    );
+    this.textPopup = new TextPopup('Jump to avoid enemies!', this.hand.x, this.hand.y - 120, 50);
     this.game.addChild(this.textPopup);
     this.textPopup.zIndex = 3500;
   }

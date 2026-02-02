@@ -110,7 +110,7 @@ export class InstallButton extends Container {
       -h / 2 + borderWidth,
       w - borderWidth * 2,
       highlightHeight,
-      radius * 0.8,
+      radius * 0.8
     );
     this.bg.fill({ color: 0xffffff, alpha: 0.15 });
 
@@ -128,7 +128,7 @@ export class InstallButton extends Container {
       -h / 2 + borderWidth,
       w - borderWidth * 2,
       h - borderWidth * 2,
-      radius * 0.8,
+      radius * 0.8
     );
     this.bg.stroke({
       width: 1,
@@ -139,8 +139,7 @@ export class InstallButton extends Container {
 
   // Метод для открытия магазина
   openStore() {
-    const storeUrl =
-      'https://play.google.com/store/apps/details?id=com.justplay.app&hl=en&gl=US';
+    const storeUrl = 'https://play.google.com/store/apps/details?id=com.justplay.app&hl=en&gl=US';
 
     // Проверяем окружение (MRAID/DAPI для рекламных сетей)
     if (window.mraid && mraid.open) {

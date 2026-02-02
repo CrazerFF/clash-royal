@@ -163,8 +163,7 @@ export class Spawner {
       obj.x -= speed * delta;
       if (obj.type === 'coneFlash') {
         const blinkSpeed = 1.5;
-        const alpha =
-          0.5 + Math.sin(Date.now() * 0.001 * blinkSpeed * Math.PI * 2) * 0.5;
+        const alpha = 0.5 + Math.sin(Date.now() * 0.001 * blinkSpeed * Math.PI * 2) * 0.5;
         obj.alpha = Math.max(0.3, alpha);
       }
     }
@@ -181,12 +180,7 @@ export class Spawner {
     this.scene.gamePaused = true;
 
     const overlay = new Graphics();
-    overlay.rect(
-      -10000,
-      -10000,
-      this.designWidth + 20000,
-      this.designHeight + 10000,
-    );
+    overlay.rect(-10000, -10000, this.designWidth + 20000, this.designHeight + 10000);
     overlay.fill({ color: 0x000000, alpha: 0.6 });
     overlay.type = 'overlay';
     overlay.zIndex = 999;
@@ -208,9 +202,7 @@ export class Spawner {
         this.scene.objects = this.scene.objects.filter((o) => o !== failObj);
       }
 
-      const overlayObj = this.scene.objects.find(
-        (obj) => obj.type === 'overlay',
-      );
+      const overlayObj = this.scene.objects.find((obj) => obj.type === 'overlay');
       if (overlayObj) {
         this.scene.removeChild(overlayObj);
         this.scene.objects = this.scene.objects.filter((o) => o !== overlayObj);
@@ -228,8 +220,7 @@ export class Spawner {
       });
 
       if (this.scene.gameScore) this.scene.gameScore.visible = true;
-      if (this.scene.uiLayer?.installButton)
-        this.scene.uiLayer.installButton.visible = true;
+      if (this.scene.uiLayer?.installButton) this.scene.uiLayer.installButton.visible = true;
     }, 1500);
   }
 
@@ -405,7 +396,7 @@ export class Spawner {
           'Congratulations!',
           this.designWidth / 2 - 510,
           this.designHeight / 2 - 200,
-          40,
+          40
         );
         this.scene.addChild(this.textPopup);
         this.textPopup.zIndex = 2700;
@@ -414,7 +405,7 @@ export class Spawner {
           'Choose your reward!',
           this.designWidth / 2 - 510,
           this.designHeight / 2 - 136,
-          30,
+          30
         );
         this.scene.addChild(this.textPopup1);
         this.textPopup1.zIndex = 2700;
@@ -423,7 +414,7 @@ export class Spawner {
           'Next payment in one minute',
           this.designWidth / 2 - 510,
           this.designHeight / 2 + 146,
-          20,
+          20
         );
         this.scene.addChild(this.textPopup2);
         this.textPopup2.zIndex = 2700;
@@ -433,7 +424,7 @@ export class Spawner {
           text2,
           this.designWidth / 2 - 452,
           this.designHeight / 2 + 40,
-          50,
+          50
         );
 
         this.scene.addChild(this.textPopup3);
@@ -442,7 +433,7 @@ export class Spawner {
         this.timer = new Timer(
           this.designWidth / 2 - 510, // центр по X
           this.designHeight - 250, // снизу с отступом
-          60, // 60 секунд
+          60 // 60 секунд
         );
         this.timer.zIndex = 3000;
         this.scene.addChild(this.timer);
@@ -462,14 +453,14 @@ export class Spawner {
           text3,
           this.designWidth / 2 - 450,
           this.designHeight / 2 + 40,
-          50,
+          50
         );
 
         this.textPopup = new TextPopup(
           'Congratulations!',
           this.designWidth / 2 - 510,
           this.designHeight / 2 - 200,
-          40,
+          40
         );
         this.scene.addChild(this.textPopup);
         this.textPopup.zIndex = 2700;

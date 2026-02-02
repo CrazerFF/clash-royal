@@ -1,4 +1,3 @@
-
 import { Sprite } from 'pixi.js';
 
 export class Particle extends Sprite {
@@ -6,7 +5,7 @@ export class Particle extends Sprite {
     super(texture);
 
     this.anchor.set(0.5);
-    this.x = x;  // важна эта строка
+    this.x = x; // важна эта строка
     this.y = y;
 
     const speed = Math.random() * 5 + 4;
@@ -18,8 +17,8 @@ export class Particle extends Sprite {
       this.vy = Math.sin(angle) * speed;
     } else {
       // Режим "стена сверху"
-      this.vx = Math.random() * 1 - 0.5;  // немного разброса по X
-      this.vy = speed;                    // скорость вниз
+      this.vx = Math.random() * 1 - 0.5; // немного разброса по X
+      this.vy = speed; // скорость вниз
     }
 
     this.life = 300;

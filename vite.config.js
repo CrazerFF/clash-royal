@@ -19,16 +19,16 @@ export default defineConfig({
         format: 'iife',
         name: 'PlayableGame',
         compact: true,
-        generatedCode: { constBindings: true }
-      }
-    }
+        generatedCode: { constBindings: true },
+      },
+    },
   },
   server: {
     port: 3000,
     host: true,
-    open: true
+    open: true,
   },
   optimizeDeps: {
-    include: ['pixi.js']
-  }
+    include: ['pixi.js'],
+  },
 });

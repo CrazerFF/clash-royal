@@ -14,7 +14,7 @@ export class Firework extends Container {
       Assets.get('spark1'),
       Assets.get('spark2'),
       Assets.get('spark3'),
-      Assets.get('spark4')
+      Assets.get('spark4'),
     ];
 
     this.spawnRate = 4;

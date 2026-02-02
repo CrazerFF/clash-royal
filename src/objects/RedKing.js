@@ -6,10 +6,10 @@ export class RedKing extends Container {
     super();
     this.scene = scene;
     this.zIndex = 20;
-    
+
     // Загружаем спрайтшит
     const sheet = Assets.get('redking_json');
-    
+
     // Создаем анимированный спрайт (idle по умолчанию)
     this.sprite = new AnimatedSprite(sheet.animations['redking_idle']);
     this.sprite.anchor.set(0.5, 1);
@@ -17,10 +17,10 @@ export class RedKing extends Container {
     this.sprite.loop = true;
     this.addChild(this.sprite);
     this.sprite.play();
-    
+
     this.currentAnimation = 'idle';
   }
-  
+
   // Переключить на анимацию канона
   playCanon() {
     const sheet = Assets.get('redking_json');
@@ -28,7 +28,7 @@ export class RedKing extends Container {
     this.sprite.gotoAndPlay(0);
     this.currentAnimation = 'canon';
   }
-  
+
   // Вернуться к idle
   playIdle() {
     const sheet = Assets.get('redking_json');

@@ -1,4 +1,4 @@
-import { Container, Graphics, Text, TextStyle } from "pixi.js";
+import { Container, Graphics, Text, TextStyle } from 'pixi.js';
 
 export class InstallButton extends Container {
   constructor() {
@@ -14,10 +14,10 @@ export class InstallButton extends Container {
 
     // Создаем стиль для текста
     const textStyle = new TextStyle({
-      fontFamily: "font",
+      fontFamily: 'font',
       fill: 0xffffff,
-      fontWeight: "900",
-      align: "center",
+      fontWeight: '900',
+      align: 'center',
       wordWrap: true,
       breakWords: true,
       stroke: {
@@ -28,27 +28,27 @@ export class InstallButton extends Container {
 
     // Создаем текст новым способом
     this.label = new Text({
-      text: "INSTALL AND EARN",
+      text: 'INSTALL AND EARN',
       style: textStyle,
     });
     this.label.anchor.set(0.5);
     this.addChild(this.label);
 
     // Делаем кнопку интерактивной
-    this.eventMode = "static";
-    this.cursor = "pointer";
+    this.eventMode = 'static';
+    this.cursor = 'pointer';
     this.interactive = true;
     this.buttonMode = true;
 
     // Обработчик клика для открытия ссылки
-    this.on("pointerdown", () => this.openStore());
+    this.on('pointerdown', () => this.openStore());
 
     // Эффекты при наведении
-    this.on("pointerover", () => {
+    this.on('pointerover', () => {
       this.label.tint = 0xdddddd;
     });
 
-    this.on("pointerout", () => {
+    this.on('pointerout', () => {
       this.label.tint = 0xffffff;
     });
 
@@ -110,7 +110,7 @@ export class InstallButton extends Container {
       -h / 2 + borderWidth,
       w - borderWidth * 2,
       highlightHeight,
-      radius * 0.8,
+      radius * 0.8
     );
     this.bg.fill({ color: 0xffffff, alpha: 0.15 });
 
@@ -128,7 +128,7 @@ export class InstallButton extends Container {
       -h / 2 + borderWidth,
       w - borderWidth * 2,
       h - borderWidth * 2,
-      radius * 0.8,
+      radius * 0.8
     );
     this.bg.stroke({
       width: 1,
@@ -136,8 +136,6 @@ export class InstallButton extends Container {
       alpha: 0.3,
     });
   }
-
-
 
   onDprChange(scaleDpr) {
     this.baseWidth = 420 / scaleDpr;

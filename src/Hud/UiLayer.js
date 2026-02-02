@@ -16,15 +16,15 @@ export class UiLayer extends Container {
   }
 
   create() {
-     this.label = new Label();
-     this.addChild(this.label);
+    this.label = new Label();
+    this.addChild(this.label);
 
-     this.blueTree = new BlueTree();
-     this.addChild(this.blueTree);
-     PlayNow
+    this.blueTree = new BlueTree();
+    this.addChild(this.blueTree);
+    PlayNow;
 
-     this.playNow = new PlayNow();
-     this.addChild(this.playNow);
+    this.playNow = new PlayNow();
+    this.addChild(this.playNow);
   }
 
   update(delta) {
@@ -36,18 +36,16 @@ export class UiLayer extends Container {
   }
   resize(w, h, scale_UI) {
     this.x = 0;
-    this.y = 0
+    this.y = 0;
 
-     this.uiScale.scale.set(scale_UI);
-        // центрируем дизайн-UI
+    this.uiScale.scale.set(scale_UI);
+    // центрируем дизайн-UI
     this.uiScale.x = (w - 660 * scale_UI) / 2;
     this.uiScale.y = (h - 1220 * scale_UI) / 2;
 
-    this.uiScale.children.forEach(c =>
-      c.resize?.(w, h, scale_UI)
-    );
-    
-    this.children.forEach(c => {
+    this.uiScale.children.forEach((c) => c.resize?.(w, h, scale_UI));
+
+    this.children.forEach((c) => {
       c.resize?.(w, h, scale_UI);
     });
   }

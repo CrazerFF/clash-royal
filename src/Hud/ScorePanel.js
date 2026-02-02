@@ -33,7 +33,6 @@ export class ScorePanel extends Container {
     // отступ текста относительно панели
     this.textMargin = 57;
 
-
     // для начального отображения
     this.resize(appWidth, appHeight);
   }
@@ -71,7 +70,7 @@ export class ScorePanel extends Container {
   }
 
   scoreFinal() {
-  //  this.finalText.text = `$${this.score}`;
-  //  this.finalText.visible = true;
+    //  this.finalText.text = `$${this.score}`;
+    //  this.finalText.visible = true;
   }
 }

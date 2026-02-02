@@ -1,5 +1,5 @@
 import { Container, Graphics, Sprite, Assets } from 'pixi.js';
- import { sound } from '../objects/SoundManager';
+import { sound } from '../objects/SoundManager';
 // import { Player } from '../objects/Player.js';
 // import { Spawner } from '../objects/Spawner.js';
 // import { CollisionManager } from '../objects/CollisionManager.js';
@@ -36,7 +36,7 @@ export class Game extends Container {
     // this.interactiveChildren = true;
 
     this.create();
-  //  this.setupControls();
+    //  this.setupControls();
     //  this.resize(w, h);
 
     // запуск фоновой музыки
@@ -45,14 +45,14 @@ export class Game extends Container {
       () => {
         sound.playMusic();
       },
-      { once: true },
+      { once: true }
     );
   }
 
   create() {
     this.sortableChildren = true;
-   // Фон
-    this.bg = new Sprite (Assets.get('bg'));
+    // Фон
+    this.bg = new Sprite(Assets.get('bg'));
     this.addChild(this.bg);
     this.objects.push(this.bg);
 
@@ -71,8 +71,6 @@ export class Game extends Container {
     // this.tutorial = new TutorialManager(this);
     // this.addChild(this.tutorial);
     // this.objects.push(this.tutorial);
-
-
 
     // // this.gameScore = new GameScoreDisplay(this.uiLayer.scorePanel);
     // // this.addChild(this.gameScore);
@@ -111,11 +109,10 @@ export class Game extends Container {
   //   this.uiLayer.addChild(this.tutorial);*/
   // }
 
-
   update(delta) {
-//    this.tutorial.update(delta);
-//this.uiLayer.ctaButton.update(delta);
- //   this.uiLayer.installButton.update(delta);
+    //    this.tutorial.update(delta);
+    //this.uiLayer.ctaButton.update(delta);
+    //   this.uiLayer.installButton.update(delta);
     //  this.uiLayer.update(delta);
     // this.gameScore.update(delta);
     // if (this.spawner?.timer) {
@@ -259,5 +256,4 @@ export class Game extends Container {
       }
     });
   }
-
 }

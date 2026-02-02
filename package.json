@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "dev": "vite",
     "build": "vite build",
     "zip": "cd dist && zip -9 -r ../playable.zip .",

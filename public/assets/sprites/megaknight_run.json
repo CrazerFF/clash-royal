@@ -2342,7 +2342,7 @@
     }
   },
   "animations": {
-      "megaknight_run1": [
+    "megaknight_run1": [
       "megaknight_run1_1.png",
       "megaknight_run1_2.png",
       "megaknight_run1_3.png",

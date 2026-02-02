@@ -11,18 +11,19 @@ export class GameScoreDisplay extends Container {
       fontFamily: 'font',
       fontSize: 64 * 4,
       fill: 0xffffff,
-      stroke: { // Исправлено: новый синтаксис для stroke
+      stroke: {
+        // Исправлено: новый синтаксис для stroke
         width: 6 * 4,
-        color: 0x000000
+        color: 0x000000,
       },
       align: 'center',
       fontWeight: '700',
     });
 
     // создаем текст через НОВЫЙ синтаксис
-    this.scoreText = new Text({ 
-      text: `$${this.scorePanel.score}`, 
-      style: style 
+    this.scoreText = new Text({
+      text: `$${this.scorePanel.score}`,
+      style: style,
     });
     this.scoreText.anchor.set(0.5);
     this.scoreText.scale.set(0.25);
@@ -36,7 +37,7 @@ export class GameScoreDisplay extends Container {
 
   // центрируем по канвасу
   resize(appWidth, appHeight) {
-    this.scoreText.x = appWidth / 2 ;
+    this.scoreText.x = appWidth / 2;
     this.scoreText.y = appHeight / 2;
   }
 }

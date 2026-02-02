@@ -1,4 +1,4 @@
-import { Container, Sprite, Assets, Mesh, RopeGeometry, Point } from "pixi.js";
+import { Container, Sprite, Assets, Mesh, RopeGeometry, Point } from 'pixi.js';
 
 export class Tape extends Container {
   constructor(x, y) {
@@ -11,8 +11,8 @@ export class Tape extends Container {
     this.secondWaveDone = false;
 
     // ===== КОЛЫШКИ =====
-    this.stick1 = new Sprite(Assets.get("stick"));
-    this.stick2 = new Sprite(Assets.get("stick"));
+    this.stick1 = new Sprite(Assets.get('stick'));
+    this.stick2 = new Sprite(Assets.get('stick'));
 
     this.stick1.anchor.set(0.5, 1);
     this.stick2.anchor.set(0.5, 1);
@@ -28,8 +28,8 @@ export class Tape extends Container {
     this.stick2.zIndex = 500;
 
     // ===== ЦЕЛАЯ ЛЕНТА =====
-    this.tape1 = new Sprite(Assets.get("tape1"));
-    this.tape2 = new Sprite(Assets.get("tape2"));
+    this.tape1 = new Sprite(Assets.get('tape1'));
+    this.tape2 = new Sprite(Assets.get('tape2'));
 
     this.tape1.anchor.set(0, 0.5);
     this.tape2.anchor.set(1, 0.5);
@@ -80,8 +80,8 @@ export class Tape extends Container {
       this.leftPoints.push(
         new Point(
           this.stick1.x + (midX - this.stick1.x) * t,
-          this.stick1.y - 30 + (midY - (this.stick1.y - 30)) * t,
-        ),
+          this.stick1.y - 30 + (midY - (this.stick1.y - 30)) * t
+        )
       );
 
       this.leftVel.push({ x: 0, y: 0 });
@@ -99,7 +99,7 @@ export class Tape extends Container {
 
     this.leftMesh = new Mesh({
       geometry: this.leftGeometry,
-      texture: Assets.get("tape1"),
+      texture: Assets.get('tape1'),
     });
 
     this.leftMesh.scale.x = 0.19;
@@ -115,8 +115,8 @@ export class Tape extends Container {
       this.rightPoints.push(
         new Point(
           this.stick2.x + (midX - this.stick2.x) * t,
-          this.stick2.y - 30 + (midY - (this.stick2.y - 30)) * t,
-        ),
+          this.stick2.y - 30 + (midY - (this.stick2.y - 30)) * t
+        )
       );
 
       this.rightVel.push({ x: 0, y: 0 });
@@ -135,7 +135,7 @@ export class Tape extends Container {
 
     this.rightMesh = new Mesh({
       geometry: this.rightGeometry,
-      texture: Assets.get("tape1"),
+      texture: Assets.get('tape1'),
     });
 
     this.rightMesh.scale.x = 0.19;
@@ -162,7 +162,7 @@ export class Tape extends Container {
       velocities[i].x *= friction;
       velocities[i].y *= friction;
 
-      points[i].x += velocities[i].x+0.25;
+      points[i].x += velocities[i].x + 0.25;
       points[i].y += velocities[i].y;
     }
 
@@ -210,21 +210,9 @@ export class Tape extends Container {
   update(delta) {
     if (!this.torn) return;
 
-    this.updateRope(
-      this.leftPoints,
-      this.leftVel,
-      this.stick1.x,
-      this.stick1.y - 30,
-      delta,
-    );
+    this.updateRope(this.leftPoints, this.leftVel, this.stick1.x, this.stick1.y - 30, delta);
 
-    this.updateRope(
-      this.rightPoints,
-      this.rightVel,
-      this.stick2.x,
-      this.stick2.y - 30,
-      delta,
-    );
+    this.updateRope(this.rightPoints, this.rightVel, this.stick2.x, this.stick2.y - 30, delta);
 
     this.leftGeometry?.update();
     this.rightGeometry?.update();

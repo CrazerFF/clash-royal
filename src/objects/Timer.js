@@ -1,4 +1,4 @@
-import { Container, Text, TextStyle } from "pixi.js";
+import { Container, Text, TextStyle } from 'pixi.js';
 
 export class Timer extends Container {
   constructor(x, y, totalTime = 60) {
@@ -12,11 +12,11 @@ export class Timer extends Container {
 
     // Тот же стиль, что и у TextPopup
     const textStyle = new TextStyle({
-      fontFamily: "font",
-      fill: "#ffffff",
+      fontFamily: 'font',
+      fill: '#ffffff',
       fontSize: 45 * 4, // Аналогичный масштаб
-      fontWeight: "700",
-      align: "center",
+      fontWeight: '700',
+      align: 'center',
       stroke: {
         color: 0x000000,
         width: 6 * 4,
@@ -39,7 +39,7 @@ export class Timer extends Container {
   formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
-    return `${minutes}:${secs.toString().padStart(2, "0")}`;
+    return `${minutes}:${secs.toString().padStart(2, '0')}`;
   }
 
   update(delta) {
