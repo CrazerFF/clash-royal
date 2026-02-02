@@ -2,6 +2,7 @@ import { Container, Graphics, Text } from 'pixi.js';
 import { Label } from './Label.js';
 import { BlueTree } from './BlueTree.js';
 import { PlayNow } from './PlayNow.js';
+import { RoyalTrainer } from './RoyalTrainer.js';
 
 export class UiLayer extends Container {
   constructor(designWidth, designHeight, w, h) {
@@ -25,6 +26,10 @@ export class UiLayer extends Container {
 
     this.playNow = new PlayNow();
     this.addChild(this.playNow);
+
+    
+    this.royalTrainer = new RoyalTrainer();
+    this.addChild(this.royalTrainer);
   }
 
   update(delta) {
