@@ -39,7 +39,7 @@ export class PlayNow extends Container {
     this.offSetX = 200;
     this.offSetY = 258;
 
-    this.roundPixels = true;
+    //this.roundPixels = true;
 
     // ===== ПУЛЬСАЦИЯ =====
     this.pulseTime = 0;
