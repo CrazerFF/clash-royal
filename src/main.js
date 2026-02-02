@@ -14,7 +14,7 @@ import { UiLayer } from './Hud/UiLayer.js';
 
   // =====  ИНИЦИАЛИЗАЦИЯ — ЧЁРНЫЙ ЭКРАН =====
   await app.init({
-    backgroundColor: 0x000000, 
+    backgroundColor: 0x000000,
     antialias: false,
     resolution: Math.min(window.devicePixelRatio || 1, 2),
     autoDensity: true,
@@ -35,7 +35,7 @@ import { UiLayer } from './Hud/UiLayer.js';
   let fontLoaded = false;
 
   try {
-    const font = new FontFace('font', 'url(assets/fonts/font.ttf)');
+    const font = new FontFace('font', 'url(assets/fonts/font4.woff2)');
     const loadedFont = await font.load();
     document.fonts.add(loadedFont);
     fontLoaded = true;
@@ -84,16 +84,16 @@ import { UiLayer } from './Hud/UiLayer.js';
     const scale = Math.min(w / DESIGN_W, h / DESIGN_H);
     const scale_UI = Math.min(w / DESIGN_W_UI, h / DESIGN_H_UI);
 
-    scene.scale.set(scale*1.07);
-    scene.x = (w - DESIGN_W * scale) / 2-23;
-    scene.y = (h - DESIGN_H * scale) / 2 -68;
+    scene.scale.set(scale * 1.07);
+    scene.x = (w - DESIGN_W * scale) / 2 - 23;
+    scene.y = (h - DESIGN_H * scale) / 2 - 68;
     scene.resize?.(DESIGN_W, DESIGN_H, w, h);
-   // scene.visible = false;
+    // scene.visible = false;
 
     // uiLayer.scale.set(scale*1.0);
     // uiLayer.x = (w - DESIGN_W_UI * scale_UI) / 2;
     // uiLayer.y = (h - DESIGN_H_UI * scale_UI) / 2;
-    uiLayer.resize?.(w, h, scale_UI); 
+    uiLayer.resize?.(w, h, scale_UI);
   }
 
   window.addEventListener('resize', resize);
@@ -105,7 +105,6 @@ import { UiLayer } from './Hud/UiLayer.js';
     scene.update(ticker.deltaTime);
     uiLayer.update?.(ticker.deltaTime);
   });
-
 })().catch((error) => {
   console.error('Фатальная ошибка при запуске:', error);
 });
