@@ -12,15 +12,17 @@ export class PlayNow extends Container {
     // ===== СТИЛЬ ТЕКСТА С DROP SHADOW И СОВРЕМЕННЫМ stroke =====
     const textStyle = new TextStyle({
       fontFamily: 'font',
-      fontSize: 32,
+      fontSize: 25 * 2,
       fontWeight: '700',
       fill: '#ffffff',
-      stroke: '#000000', // цвет обводки
-       strokeThickness: 6, // толщина обводки отдельным свойством
+      stroke: {
+        color: '#000000',
+        width: 6 * 1.5,
+      },
       dropShadow: true,
       dropShadowColor: '#000000',
-      dropShadowDistance: 4,
-    dropShadowAngle: Math.PI / 2,
+      dropShadowDistance: 5 * 1.5,
+      dropShadowAngle: Math.PI / 2,
       align: 'center',
     });
 
@@ -39,23 +41,24 @@ export class PlayNow extends Container {
     this.offSetX = 200;
     this.offSetY = 258;
 
-    //this.roundPixels = true;
+    // this.roundPixels = true;
+    // this.text.roundPixels = true;
 
     // ===== ПУЛЬСАЦИЯ =====
     this.pulseTime = 0;
   }
 
   // ===== МЕТОД ПУЛЬСАЦИИ =====
-pulseAnimation(delta) {
+  pulseAnimation(delta) {
     this.pulseTime += delta * 0.09;
-    const scaleOffset = Math.sin(this.pulseTime) * 0.05; 
+    const scaleOffset = Math.sin(this.pulseTime) * 0.05;
 
     // масштабируем весь контейнер
     this.scale.set(1.1 + scaleOffset);
-}
+  }
 
   update(delta) {
-      this.pulseAnimation(delta);
+    this.pulseAnimation(delta);
   }
 
   // ===== РЕСАЙЗ КНОПКИ =====
@@ -64,9 +67,14 @@ pulseAnimation(delta) {
     this.y = this.offSetY * scale_UI;
 
     this.playNow.scale.set(this.baseScaleX * scale_UI, this.baseScaleY * scale_UI);
-    this.text.scale.set(this.baseScaleText * scale_UI);
+    this.text.scale.set(this.baseScaleText * scale_UI * 0.7);
 
-    this.text.x = this.playNow.x;
+    this.text.x = this.playNow.x + 3 * scale_UI;
     this.text.y = this.playNow.y;
+
+     if (w > h) {
+      this.scale.set()
+
+     }
   }
 }

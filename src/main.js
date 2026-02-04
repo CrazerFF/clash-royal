@@ -7,7 +7,7 @@ import { UiLayer } from './Hud/UiLayer.js';
   const DESIGN_W = 660;
   const DESIGN_H = 1220;
 
-  const DESIGN_W_UI = 1220;
+  const DESIGN_W_UI = 1044;
   const DESIGN_H_UI = 1220;
 
   const app = new Application();
@@ -81,19 +81,15 @@ import { UiLayer } from './Hud/UiLayer.js';
     app.renderer.resolution = dpr;
     app.renderer.resize(window.innerWidth, window.innerHeight);
 
-    const scale = Math.min(w / DESIGN_W, h / DESIGN_H);
+    const scaleGame = Math.min(w / DESIGN_W, h / DESIGN_H);
     const scale_UI = Math.min(w / DESIGN_W_UI, h / DESIGN_H_UI);
 
-    scene.scale.set(scale * 1.07);
-    scene.x = (w - DESIGN_W * scale) / 2 - 23;
-    scene.y = (h - DESIGN_H * scale) / 2 - 68;
+    scene.scale.set(scaleGame * 1.07);
+    scene.x = (w - DESIGN_W * scaleGame) / 2 - 23;
+    scene.y = (h - DESIGN_H * scaleGame) / 2 - 68;
     scene.resize?.(DESIGN_W, DESIGN_H, w, h);
-    // scene.visible = false;
 
-    // uiLayer.scale.set(scale*1.0);
-    // uiLayer.x = (w - DESIGN_W_UI * scale_UI) / 2;
-    // uiLayer.y = (h - DESIGN_H_UI * scale_UI) / 2;
-    uiLayer.resize?.(w, h, scale_UI);
+    uiLayer.resize?.(w, h, scale_UI, scaleGame);
   }
 
   window.addEventListener('resize', resize);

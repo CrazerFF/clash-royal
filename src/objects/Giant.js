@@ -36,8 +36,6 @@ export class Giant extends Container {
 
   // Воспроизвести одну из 5 анимаций бега
   playRun(runNumber) {
-    console.log('ok');
-
     // Проверяем номер (должен быть от 1 до 5)
     if (runNumber < 1 || runNumber > 5) {
       console.warn(`Giant.playRun: runNumber must be 1-5, got ${runNumber}`);

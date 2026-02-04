@@ -6,6 +6,7 @@ import { Throne } from '../objects/RedThrone.js';
 import { RedKing } from '../objects/RedKing.js';
 import { BlueKing } from '../objects/BlueKing.js';
 import { BlueThrone } from '../objects/BlueThrone.js';
+import { Area } from '../Hud/Area.js';
 
 export class Game extends Container {
   constructor(designWidth, designHeight, w, h, uiLayer) {
@@ -82,6 +83,11 @@ export class Game extends Container {
     this.objects.push(this.redKing);
     // this.redKing.playCanon();
     this.redKing.playIdle();
+
+    // создаём контейнер для UI
+    this.area1 = new Area(370, 800); // координаты в UiLayer
+    this.addChild(this.area1);
+    this.objects.push(this.area1);
 
     // Синий король
     this.blueking = new BlueKing(this);

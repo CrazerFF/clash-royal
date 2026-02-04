@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "giant_face": {
+    "giant_icon": {
       "frame": {
         "x": 1776,
         "y": 200,
@@ -312,7 +312,7 @@
         "y": 0.5
       }
     },
-    "white_shadow": {
+    "shine": {
       "frame": {
         "x": 409,
         "y": 683,
@@ -384,7 +384,7 @@
         "y": 0.5
       }
     },
-    "white_outline": {
+    "frame": {
       "frame": {
         "x": 654,
         "y": 776,
@@ -426,6 +426,55 @@
       "sourceSize": {
         "w": 236,
         "h": 300
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "finger_down": {
+      "frame": {
+        "x": 409,
+        "y": 743,
+        "w": 241,
+        "h": 223
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 86,
+        "y": 88,
+        "w": 241,
+        "h": 223
+      },
+      "sourceSize": {
+        "w": 418,
+        "h": 418
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+
+    "big_character_icon": {
+      "frame": {
+        "x": 1227,
+        "y": 508,
+        "w": 300,
+        "h": 372
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 13,
+        "w": 300,
+        "h": 372
+      },
+      "sourceSize": {
+        "w": 314,
+        "h": 400
       },
       "pivot": {
         "x": 0.5,
