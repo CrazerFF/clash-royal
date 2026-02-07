@@ -14,6 +14,7 @@ export class Game extends Container {
     this.DESIGN_W = designWidth;
     this.DESIGN_H = designHeight;
     this.roundPixels = true;
+    this.uiLayer = uiLayer;
     this.objects = [];
     this.collidables = [];
 
@@ -85,9 +86,9 @@ export class Game extends Container {
     this.redKing.playIdle();
 
     // создаём контейнер для UI
-    this.area1 = new Area(370, 800); // координаты в UiLayer
-    this.addChild(this.area1);
-    this.objects.push(this.area1);
+    this.area = new Area(this.uiLayer); // координаты в UiLayer
+    this.addChild(this.area);
+    this.objects.push(this.area);
 
     // Синий король
     this.blueking = new BlueKing(this);

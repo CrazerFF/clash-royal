@@ -40,10 +40,9 @@ export class UiLayer extends Container {
 
 
     // Ждем один кадр, чтобы Pixi.js обновил трансформации
-    setTimeout(() => {
-      const startGlobal = this.blueTree.giantIcon.getGlobalPosition();
-      this.hand.play(this.blueTree.giantIcon, 270, 330);
-    }, 100);
+    // setTimeout(() => {
+    //   this.hand.play(this.blueTree.giantIcon, 270, 330);
+    // }, 100);
   }
 
   update(delta) {

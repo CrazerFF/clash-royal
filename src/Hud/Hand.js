@@ -7,26 +7,28 @@ export class Hand extends Container {
     this.visible = false;
 
     // ===== СПРАЙТЫ =====
+    this.frame = new Sprite(Assets.get('frame'));
     this.fingerDown = new Sprite(Assets.get('finger_down'));
     this.fingerUp = new Sprite(Assets.get('finger_up'));
 
-    this.fingerDown.anchor.set(0.5);
-    this.fingerUp.anchor.set(0.5);
+    this.fingerDown.anchor.set(0.7, 0.7);
+    this.fingerUp.anchor.set(0.7, 0.7);
 
     this.addChild(this.fingerDown, this.fingerUp);
 
     this.fingerUp.visible = false;
 
     // ===== ПАРАМЕТРЫ =====
-    this.baseScale = 0.3;
-    this.appearScale = 0.92;
+    this.baseScale = 0.5;
+    this.scaleLayer = 1;
+    this.appearScale = 0.72;
 
     this.alpha = 0;
     this.scale.set(this.appearScale);
 
     // ===== АНИМАЦИЯ =====
     this._time = 0;
-    this._duration = 1300; // движение
+    this._duration = 700; // движение
     this._fadeTime = 300;
 
     this._from = { x: 0, y: 0 };
@@ -36,21 +38,25 @@ export class Hand extends Container {
     // idle | appear | move | release | hide
   }
 
-  // ===== ЗАПУСК ОДНОГО ПРОХОДА =====
-  play(object, toX, toY) {
-    // START — координаты центра иконки в системе UiLayer
-    const from = object.getBounds();
-    this._from.x = from.x + from.width / 2;
-    this._from.y = from.y + from.height / 2;
-    // TO — тоже в системе UiLayer
-    this._to.x = toX; // сюда передаем координаты в UiLayer
-    this._to.y = toY;
+  play(object, globalTarget) {
+    const fromGlobal = object.getGlobalPosition();
+    
+    const toGlobal = globalTarget; // передаем глобальные координаты точки
+
+    // конвертируем сразу в локальные UiLayer
+    const localFrom = this.parent.toLocal(fromGlobal);
+    const localTo = this.parent.toLocal(toGlobal);
+
+    this._from.x = localFrom.x;
+    this._from.y = localFrom.y;
+    this._to.x = localTo.x;
+    this._to.y = localTo.y;
 
     this.position.set(this._from.x, this._from.y);
 
     this.visible = true;
     this.alpha = 0;
-    this.scale.set(this.appearScale);
+    this.scale.set(this.appearScale *this.scaleLayer);
 
     this.fingerDown.visible = true;
     this.fingerUp.visible = false;
@@ -69,7 +75,7 @@ export class Hand extends Container {
     if (this._state === 'appear') {
       const t = Math.min(this._time / this._fadeTime, 1);
       this.alpha = t;
-      this.scale.set(this.appearScale + (this.baseScale - this.appearScale) * t);
+      this.scale.set((this.appearScale + (this.baseScale - this.appearScale) * t) * this.scaleLayer);
 
       if (t === 1) {
         this._time = 0;
@@ -97,7 +103,7 @@ export class Hand extends Container {
       const t = Math.min(this._time / this._fadeTime, 1);
 
       this.alpha = 1 - t;
-      this.scale.set(this.baseScale + 0.05 * t);
+      this.scale.set((this.baseScale + 0.05 * t) * this.scaleLayer);
 
       if (t === 1) {
         this._state = 'idle';
@@ -106,8 +112,12 @@ export class Hand extends Container {
     }
   }
 
+  resize(w, h, scale_UI, scaleGame) {
+    this.scaleLayer = scaleGame;
+  }
+
   stop() {
-    this._state = 'idle';
+  //  this._state = 'idle';
     this.visible = false;
   }
 }
