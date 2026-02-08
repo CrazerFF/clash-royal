@@ -25,7 +25,7 @@ export class UiLayer extends Container {
     this.label = new Label();
     this.addChild(this.label);
 
-    this.blueTree = new BlueTree();
+    this.blueTree = new BlueTree(this);
     this.addChild(this.blueTree);
     PlayNow;
 
@@ -38,11 +38,6 @@ export class UiLayer extends Container {
     this.hand = new Hand();
     this.addChild(this.hand);
 
-
-    // Ждем один кадр, чтобы Pixi.js обновил трансформации
-    // setTimeout(() => {
-    //   this.hand.play(this.blueTree.giantIcon, 270, 330);
-    // }, 100);
   }
 
   update(delta) {

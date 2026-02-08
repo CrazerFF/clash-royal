@@ -6,7 +6,9 @@ import { Throne } from '../objects/RedThrone.js';
 import { RedKing } from '../objects/RedKing.js';
 import { BlueKing } from '../objects/BlueKing.js';
 import { BlueThrone } from '../objects/BlueThrone.js';
+import { DragManager } from '../objects/DragManager.js'; 
 import { Area } from '../Hud/Area.js';
+import { Hand } from '../Hud/Hand.js';
 
 export class Game extends Container {
   constructor(designWidth, designHeight, w, h, uiLayer) {
@@ -32,6 +34,8 @@ export class Game extends Container {
 
   create() {
     this.sortableChildren = true;
+    this.eventMode = 'static';
+    this.interactive = true;
     // Фон
     this.bg = new Sprite(Assets.get('bg'));
     this.addChild(this.bg);
@@ -41,14 +45,15 @@ export class Game extends Container {
     this.objects.push(this.bg);
 
     // Игрок
-    this.player = new Giant(this);
-    this.player.x = this.DESIGN_W / 2 - 70;
-    this.player.y = this.DESIGN_H / 2 + 150;
-    this.addChild(this.player);
-    this.player.scale.set(-0.7, 0.7);
-    this.player.rotation = 0.4;
-    this.player.playRun(5);
-    this.objects.push(this.player);
+    this.giant = new Giant(this);
+    this.giant.x = this.DESIGN_W / 2 - 70;
+    this.giant.y = this.DESIGN_H / 2 + 150;
+    this.addChild(this.giant);
+    this.giant.scale.set(-0.7, 0.7);
+    this.giant.rotation = 0.4;
+    this.giant.playRun(5);
+    this.giant.visible = false;
+    this.objects.push(this.giant);
 
     // Игрок
     this.enemy = new Enemy(this);
@@ -90,6 +95,10 @@ export class Game extends Container {
     this.addChild(this.area);
     this.objects.push(this.area);
 
+    this.dragManager  = new DragManager(this);
+  //  this.addChild(this.dragManager);
+    this.objects.push(this.dragManager);
+
     // Синий король
     this.blueking = new BlueKing(this);
     this.blueking.x = 300 + 45;
@@ -110,6 +119,7 @@ export class Game extends Container {
       volume: 0.3,
     });
   }
+
 
   update(delta) {
     // апдейт всех объектов

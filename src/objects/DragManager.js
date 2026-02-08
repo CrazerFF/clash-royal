@@ -5,51 +5,50 @@ export class DragManager {
     this.target = null; // объект, который тащим
   }
 
-  // target = гигант или лучник, localPos = координаты внутри game
+  // start принимает объект (giant или archer) и координаты клика внутри game
   start(target, localPos) {
-    if (!target) return;
-
     this.dragging = true;
     this.target = target;
     this.target.visible = true;
     this.target.position.set(localPos.x, localPos.y);
 
+    // подписка на события мыши
     this.game.on('pointermove', this.onMove, this);
     this.game.on('pointerup', this.end, this);
     this.game.on('pointerupoutside', this.end, this);
   }
 
   onMove(event) {
-    if (!this.dragging || !this.target) return;
-
+    if (!this.dragging) return;
     const pos = event.data.getLocalPosition(this.game);
     this.target.position.set(pos.x, pos.y);
   }
 
   end(event) {
-    if (!this.dragging || !this.target) return;
-
+    if (!this.dragging) return;
     this.dragging = false;
 
     const pos = event.data.getLocalPosition(this.game);
 
-    let correct = false;
+    // проверяем, куда отпущен объект
+    let isCorrect = false;
 
-    // проверяем сразу координаты
     if (this.target === this.game.giant) {
-      const dx = pos.x - this.game.area.point1.x;
-      const dy = pos.y - this.game.area.point1.y;
-      correct = Math.abs(dx) < 50 && Math.abs(dy) < 50; // зона ±50px
+      // проверка для гиганта: внутри первой точки
+      const area = this.game.area; // зона area для гиганта
+      isCorrect = area.isInsidePoint1(pos); 
     } else if (this.target === this.game.archer) {
-      const dx = pos.x - this.game.area.point2.x;
-      const dy = pos.y - this.game.area.point2.y;
-      correct = Math.abs(dx) < 50 && Math.abs(dy) < 50;
+      // проверка для лучника: внутри второй точки
+      const area = this.game.area; // зона area для лучника
+      isCorrect = area.isInsidePoint2(pos); 
     }
 
-    if (correct) {
+    if (isCorrect) {
+      // оставляем на месте
       this.target.position.set(pos.x, pos.y);
-      this.game.placeTarget?.(this.target); // фиксируем объект
+      this.game.placeTarget(this.target); // например, метод, который фиксирует
     } else {
+      // скрываем, если отпущен не в нужной зоне
       this.target.visible = false;
     }
 

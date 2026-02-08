@@ -67,11 +67,11 @@ import { UiLayer } from './Hud/UiLayer.js';
   const h = window.innerHeight;
 
   const uiLayer = new UiLayer(w, h);
-  const scene = new Game(DESIGN_W, DESIGN_H, w, h, uiLayer);
-
+  const game = new Game(DESIGN_W, DESIGN_H, w, h, uiLayer);
+  uiLayer.game = game;
   app.renderer.background.color = 0xa4ed45;
 
-  app.stage.addChild(scene);
+  app.stage.addChild(game);
   app.stage.addChild(uiLayer);
 
   function resize() {
@@ -84,10 +84,10 @@ import { UiLayer } from './Hud/UiLayer.js';
     const scaleGame = Math.min(w / DESIGN_W, h / DESIGN_H);
     const scale_UI = Math.min(w / DESIGN_W_UI, h / DESIGN_H_UI);
 
-    scene.scale.set(scaleGame * 1.07);
-    scene.x = (w - DESIGN_W * scaleGame) / 2 - (23*scaleGame);
-    scene.y = (h - DESIGN_H * scaleGame) / 2 - (68*scaleGame);
-    scene.resize?.(DESIGN_W, DESIGN_H, w, h);
+    game.scale.set(scaleGame * 1.07);
+    game.x = (w - DESIGN_W * scaleGame) / 2 - (23*scaleGame);
+    game.y = (h - DESIGN_H * scaleGame) / 2 - (68*scaleGame);
+    game.resize?.(DESIGN_W, DESIGN_H, w, h);
 
     uiLayer.resize?.(w, h, scale_UI, scaleGame);
   }
@@ -98,7 +98,7 @@ import { UiLayer } from './Hud/UiLayer.js';
   resize();
 
   app.ticker.add((ticker) => {
-    scene.update(ticker.deltaTime);
+    game.update(ticker.deltaTime);
     uiLayer.update?.(ticker.deltaTime);
   });
 })().catch((error) => {

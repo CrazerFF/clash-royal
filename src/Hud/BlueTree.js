@@ -2,8 +2,9 @@ import { Container, Sprite, Assets } from 'pixi.js';
 import { CharacterIcon } from './CharacterIcon';
 
 export class BlueTree extends Container {
-  constructor() {
+  constructor(uiLayer) {
     super();
+    this.uiLayer = uiLayer;
 
     this.baseScale = 0.61;
     this.offSetX = 0;
@@ -25,7 +26,8 @@ export class BlueTree extends Container {
       x: -buttonSpacing,
       y: buttonOffsetY,
       scale: 0.49,
-      iconScale: 1
+      iconScale: 1,
+      uiLayer: this.uiLayer
     });
 
 
@@ -35,7 +37,8 @@ export class BlueTree extends Container {
       x: buttonSpacing,
       y: buttonOffsetY,
       scale: 0.49,
-      iconScale: 1.05
+      iconScale: 1.05,
+      uiLayer: this.uiLayer
     });
 
     this.addChild(this.giantIcon, this.archerIcon);

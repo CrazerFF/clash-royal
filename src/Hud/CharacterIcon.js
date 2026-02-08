@@ -1,4 +1,4 @@
-import { Container, Sprite, Assets, Ticker } from 'pixi.js';
+import { Container, Sprite, Assets, Graphics, Rectangle } from 'pixi.js';
 
 export class CharacterIcon extends Container {
   constructor({
@@ -9,8 +9,10 @@ export class CharacterIcon extends Container {
     scale = 1, // общий scale
     iconScale = 1, // scale только иконки
     onClick = null,
+    uiLayer
   }) {
     super();
+    this.uiLayer = uiLayer;
 
     this.x = x;
     this.y = y;
@@ -56,6 +58,10 @@ export class CharacterIcon extends Container {
     this.shineRight.rotation = 7.86;
     this.addChild(this.shineRight);
 
+    // setTimeout(() => {
+    //     this.parent.parent.game.giant.visible = true;
+    // }, 1);
+
     // ===== Анимация =====
     this._shineTime = 0;
     this._shineDuration = 2000; // время движения вверх/вниз
@@ -67,6 +73,14 @@ export class CharacterIcon extends Container {
       .on('pointerupoutside', this.onRelease, this);
 
     if (onClick) this.on('pointertap', onClick);
+
+    this.on('pointerdown', (event) => {
+      const localPos = event.data.getLocalPosition(this.uiLayer.game);
+
+      // передаем объект, который тащим, и координаты
+      this.uiLayer.game.dragManager.start(this, localPos);
+    });
+
   }
 
   onPress() {
@@ -120,8 +134,6 @@ export class CharacterIcon extends Container {
 
   destroy(options) {
     clearTimeout(this._releaseTimeout);
-    this.ticker.stop();
-    this.ticker.destroy();
     super.destroy(options);
   }
 }
