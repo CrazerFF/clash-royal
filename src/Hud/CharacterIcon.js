@@ -75,11 +75,11 @@ export class CharacterIcon extends Container {
     if (onClick) this.on('pointertap', onClick);
 
     this.on('pointerdown', (event) => {
-      const localPos = event.data.getLocalPosition(this.uiLayer.game);
-
-      // передаем объект, который тащим, и координаты
+      const localPos = event.getLocalPosition(this.uiLayer.game);
       this.uiLayer.game.dragManager.start(this, localPos);
     });
+
+
 
   }
 

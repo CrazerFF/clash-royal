@@ -5,6 +5,7 @@ export class BlueTree extends Container {
   constructor(uiLayer) {
     super();
     this.uiLayer = uiLayer;
+    this.zIndex=1;
 
     this.baseScale = 0.61;
     this.offSetX = 0;

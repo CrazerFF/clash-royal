@@ -1,62 +1,158 @@
-export class DragManager {
-  constructor(game) {
-    this.game = game;
-    this.dragging = false;
-    this.target = null; // объект, который тащим
+import { Container, Graphics } from 'pixi.js';
+
+export class Area extends Container {
+  constructor(uiLayer, size = 95, radius = 15) {
+    super();
+
+    this.uiLayer = uiLayer;
+
+    // ===== ТОЧКИ =====
+    this.point1 = { x: 250, y: 750 };
+    this.point2 = { x: 370, y: 800 };
+
+    // Стартовая позиция
+    this.x = this.point1.x;
+    this.y = this.point1.y;
+
+    // ===== СОСТОЯНИЕ =====
+    this.state = 'point1';
+    this.timer = 0;
+    this.waitTime = 1000; // пауза на точке
+    this.moveTime = 1000; // время движения
+    this.isAnimating = false; // флаг анимации
+    this.pointTriggered = false; // чтобы рука не вызывалась каждый кадр
+
+    // ===== ГРАФИКА =====
+    const half = size / 4;
+    this.graphics = new Graphics();
+    this.graphics
+      .roundRect(-half, -half, size, size, radius)
+      .fill({ color: 0xffffff, alpha: 0.5 })
+      .stroke({ width: 4, color: 0xffffff });
+    this.addChild(this.graphics);
+
+    this.startAnimation();
   }
 
-  // target = гигант или лучник, localPos = координаты внутри game
-  start(target, localPos) {
-    if (!target) return;
-
-    this.dragging = true;
-    this.target = target;
-    this.target.visible = true;
-    this.target.position.set(localPos.x, localPos.y);
-
-    this.game.on('pointermove', this.onMove, this);
-    this.game.on('pointerup', this.end, this);
-    this.game.on('pointerupoutside', this.end, this);
+  // Метод для установки в точку 1 (останавливает анимацию)
+  setToPoint1() {
+    this.isAnimating = false;
+    this.state = 'point1';
+    this.timer = 0;
+    this.pointTriggered = false;
+    this.x = this.point1.x;
+    this.y = this.point1.y;
   }
 
-  onMove(event) {
-    if (!this.dragging || !this.target) return;
-
-    const pos = event.data.getLocalPosition(this.game);
-    this.target.position.set(pos.x, pos.y);
+  // Метод для установки в точку 2 (останавливает анимацию)
+  setToPoint2() {
+    this.isAnimating = false;
+    this.state = 'point2';
+    this.timer = 0;
+    this.pointTriggered = false;
+    this.x = this.point2.x;
+    this.y = this.point2.y;
   }
 
-  end(event) {
-    if (!this.dragging || !this.target) return;
-
-    this.dragging = false;
-
-    const pos = event.data.getLocalPosition(this.game);
-
-    let correct = false;
-
-    // проверяем сразу координаты
-    if (this.target === this.game.giant) {
-      const dx = pos.x - this.game.area.point1.x;
-      const dy = pos.y - this.game.area.point1.y;
-      correct = Math.abs(dx) < 50 && Math.abs(dy) < 50; // зона ±50px
-    } else if (this.target === this.game.archer) {
-      const dx = pos.x - this.game.area.point2.x;
-      const dy = pos.y - this.game.area.point2.y;
-      correct = Math.abs(dx) < 50 && Math.abs(dy) < 50;
-    }
-
-    if (correct) {
-      this.target.position.set(pos.x, pos.y);
-      this.game.placeTarget?.(this.target); // фиксируем объект
+  // Метод для запуска анимации перемещения
+  startAnimation() {
+    this.isAnimating = true;
+    this.timer = 0;
+    this.pointTriggered = false;
+    
+    // Устанавливаем начальное состояние в зависимости от текущей позиции
+    const distanceToPoint1 = Math.sqrt(
+      Math.pow(this.x - this.point1.x, 2) + 
+      Math.pow(this.y - this.point1.y, 2)
+    );
+    const distanceToPoint2 = Math.sqrt(
+      Math.pow(this.x - this.point2.x, 2) + 
+      Math.pow(this.y - this.point2.y, 2)
+    );
+    
+    // Если ближе к точке 1, начинаем с точки 1, иначе с точки 2
+    if (distanceToPoint1 < distanceToPoint2) {
+      this.state = 'point1';
+      this.x = this.point1.x;
+      this.y = this.point1.y;
     } else {
-      this.target.visible = false;
+      this.state = 'point2';
+      this.x = this.point2.x;
+      this.y = this.point2.y;
+    }
+  }
+
+  // Получаем глобальные координаты точки для передачи в Hand
+  getGlobalPoint(point) {
+    return this.toGlobal(point);
+  }
+
+  update(delta) {
+    // Если анимация выключена, не обновляем
+    if (!this.isAnimating) {
+      return;
     }
 
-    this.target = null;
+    this.timer += delta * 16.67; // конвертируем в миллисекунды
 
-    this.game.off('pointermove', this.onMove, this);
-    this.game.off('pointerup', this.end, this);
-    this.game.off('pointerupoutside', this.end, this);
+    if (this.state === 'point1') {
+      // вызываем руку один раз
+      if (!this.pointTriggered) {
+        this.pointTriggered = true;
+        const globalPoint1 = this.getGlobalPosition(); // для point1
+        this.uiLayer.hand.play(this.uiLayer.blueTree.giantIcon, globalPoint1);
+      }
+
+      if (this.timer >= this.waitTime) {
+        this.timer = 0;
+        this.state = 'toPoint2';
+        this.pointTriggered = false;
+      }
+    }
+    else if (this.state === 'toPoint2') {
+      const progress = Math.min(this.timer / this.moveTime, 1);
+      const eased = this.easeInOut(progress);
+
+      this.x = this.point1.x + (this.point2.x - this.point1.x) * eased;
+      this.y = this.point1.y + (this.point2.y - this.point1.y) * eased;
+
+      if (progress >= 1) {
+        this.timer = 0;
+        this.state = 'point2';
+        this.x = this.point2.x;
+        this.y = this.point2.y;
+      }
+    }
+    else if (this.state === 'point2') {
+      if (!this.pointTriggered) {
+        this.pointTriggered = true;
+        const globalPoint2 = this.getGlobalPosition(); // для point2
+        this.uiLayer.hand.play(this.uiLayer.blueTree.archerIcon, globalPoint2);
+      }
+
+      if (this.timer >= this.waitTime) {
+        this.timer = 0;
+        this.state = 'toPoint1';
+        this.pointTriggered = false;
+      }
+    }
+    else if (this.state === 'toPoint1') {
+      const progress = Math.min(this.timer / this.moveTime, 1);
+      const eased = this.easeInOut(progress);
+
+      this.x = this.point2.x + (this.point1.x - this.point2.x) * eased;
+      this.y = this.point2.y + (this.point1.y - this.point2.y) * eased;
+
+      if (progress >= 1) {
+        this.timer = 0;
+        this.state = 'point1';
+        this.x = this.point1.x;
+        this.y = this.point1.y;
+      }
+    }
+  }
+
+  easeInOut(t) {
+    return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
   }
 }

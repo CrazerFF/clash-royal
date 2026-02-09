@@ -49,9 +49,8 @@ export class Game extends Container {
     this.giant.x = this.DESIGN_W / 2 - 70;
     this.giant.y = this.DESIGN_H / 2 + 150;
     this.addChild(this.giant);
-    this.giant.scale.set(-0.7, 0.7);
-    this.giant.rotation = 0.4;
-    this.giant.playRun(5);
+    this.giant.alpha = 0.5;
+    this.giant.setAttackFrame(1, 9);
     this.giant.visible = false;
     this.objects.push(this.giant);
 

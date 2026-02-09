@@ -2,60 +2,100 @@ export class DragManager {
   constructor(game) {
     this.game = game;
     this.dragging = false;
-    this.target = null; // объект, который тащим
   }
 
-  // start принимает объект (giant или archer) и координаты клика внутри game
-  start(target, localPos) {
+  start(sourceIcon, localPos) {
+    this.game.uiLayer.hand.stop();
     this.dragging = true;
-    this.target = target;
-    this.target.visible = true;
-    this.target.position.set(localPos.x, localPos.y);
 
-    // подписка на события мыши
+    // определяем кого таскаем
+    if (sourceIcon.icon.texture.label === 'giant_icon') {
+      this.dragObject = this.game.giant;
+      this.game.area.setToPoint1();
+    } 
+    else if (sourceIcon.icon.texture.label === 'archer_icon') {
+      this.dragObject = this.game.archer;
+      this.game.area.setToPoint2();
+    }
+
+    if (!this.dragObject) return;
+
+    this.dragObject.visible = true;
+    this.dragObject.position.set(localPos.x, localPos.y);
+
+    this.game.eventMode = 'static';
+
     this.game.on('pointermove', this.onMove, this);
     this.game.on('pointerup', this.end, this);
     this.game.on('pointerupoutside', this.end, this);
   }
 
   onMove(event) {
-    if (!this.dragging) return;
-    const pos = event.data.getLocalPosition(this.game);
-    this.target.position.set(pos.x, pos.y);
+    if (!this.dragging || !this.dragObject) return;
+
+    const pos = event.getLocalPosition(this.game);
+    this.dragObject.position.set(pos.x, pos.y);
   }
 
   end(event) {
-    if (!this.dragging) return;
+    if (!this.dragging || !this.dragObject) return;
+     this.game.uiLayer.hand.handVisible();
+
     this.dragging = false;
 
-    const pos = event.data.getLocalPosition(this.game);
+    const pos = event.getLocalPosition(this.game);
 
-    // проверяем, куда отпущен объект
-    let isCorrect = false;
+    // Создаем области для проверки попадания
+    const areaSize = 95; // должен совпадать с размером Area
+    const areaHalf = areaSize / 2;
+    
+    // Проверяем попадание в квадрат point1
+    const isInsidePoint1 = 
+      pos.x >= this.game.area.point1.x - areaHalf && 
+      pos.x <= this.game.area.point1.x + areaHalf &&
+      pos.y >= this.game.area.point1.y - areaHalf && 
+      pos.y <= this.game.area.point1.y + areaHalf;
+    
+    // Проверяем попадание в квадрат point2
+    const isInsidePoint2 = 
+      pos.x >= this.game.area.point2.x - areaHalf && 
+      pos.x <= this.game.area.point2.x + areaHalf &&
+      pos.y >= this.game.area.point2.y - areaHalf && 
+      pos.y <= this.game.area.point2.y + areaHalf;
 
-    if (this.target === this.game.giant) {
-      // проверка для гиганта: внутри первой точки
-      const area = this.game.area; // зона area для гиганта
-      isCorrect = area.isInsidePoint1(pos); 
-    } else if (this.target === this.game.archer) {
-      // проверка для лучника: внутри второй точки
-      const area = this.game.area; // зона area для лучника
-      isCorrect = area.isInsidePoint2(pos); 
+    // Правила размещения:
+    // 1. Гигант должен попасть в квадрат point1
+    // 2. Лучник должен попасть в квадрат point2
+    
+    let shouldStayVisible = false;
+
+  if (this.dragObject === this.game.giant) {
+    shouldStayVisible = isInsidePoint1;
+
+    if (shouldStayVisible) {
+      this.game.giant.alpha = 1;
+      this.game.giant.playDeploy();
     }
+  } 
+  else if (this.dragObject === this.game.archer) {
+    shouldStayVisible = isInsidePoint2;
 
-    if (isCorrect) {
-      // оставляем на месте
-      this.target.position.set(pos.x, pos.y);
-      this.game.placeTarget(this.target); // например, метод, который фиксирует
-    } else {
-      // скрываем, если отпущен не в нужной зоне
-      this.target.visible = false;
+    if (shouldStayVisible) {
+      this.game.archer.alpha = 1;
     }
+  }
 
-    this.target = null;
+  if (shouldStayVisible) {
+    this.dragObject.position.set(pos.x, pos.y);
+  } else {
+    this.dragObject.visible = false;
+    this.game.area.startAnimation();
+  }
 
     this.game.off('pointermove', this.onMove, this);
     this.game.off('pointerup', this.end, this);
     this.game.off('pointerupoutside', this.end, this);
+
+    this.dragObject = null;
   }
 }

@@ -73,6 +73,7 @@ import { UiLayer } from './Hud/UiLayer.js';
 
   app.stage.addChild(game);
   app.stage.addChild(uiLayer);
+  app.sortableChildren = true;
 
   function resize() {
     const w = window.innerWidth;

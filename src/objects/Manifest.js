@@ -12,6 +12,14 @@ export const manifest = {
           src: 'assets/sprites/giant_run.json',
         },
         {
+          alias: 'giant_attack_json',
+          src: 'assets/sprites/giant_attack.json',
+        },
+        {
+          alias: 'giant_deploy_json',
+          src: 'assets/sprites/giant_deploy.json',
+        },
+        {
           alias: 'megaknight_run_json',
           src: 'assets/sprites/megaknight_run.json',
         },

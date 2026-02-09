@@ -5,16 +5,19 @@ export class Hand extends Container {
     super();
 
     this.visible = false;
+    this.zIndex=30;
 
     // ===== СПРАЙТЫ =====
     this.frame = new Sprite(Assets.get('frame'));
     this.fingerDown = new Sprite(Assets.get('finger_down'));
     this.fingerUp = new Sprite(Assets.get('finger_up'));
 
+    this.frame.anchor.set(0.2, 0.2);
+    this.frame.scale.set(0.7);
     this.fingerDown.anchor.set(0.7, 0.7);
     this.fingerUp.anchor.set(0.7, 0.7);
 
-    this.addChild(this.fingerDown, this.fingerUp);
+    this.addChild(this.frame, this.fingerDown, this.fingerUp);
 
     this.fingerUp.visible = false;
 
@@ -117,7 +120,11 @@ export class Hand extends Container {
   }
 
   stop() {
-  //  this._state = 'idle';
+   // this._state = 'idle';
     this.visible = false;
+  }
+
+  handVisible() {
+    this.visible = true;
   }
 }
