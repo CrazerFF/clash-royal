@@ -69,7 +69,7 @@ export class Hand extends Container {
   }
 
   update(delta) {
-    if (this._state === 'idle') return;
+  //  if (this._state === 'idle') return;
 
     const dt = delta * 16.67;
     this._time += dt;
@@ -109,8 +109,8 @@ export class Hand extends Container {
       this.scale.set((this.baseScale + 0.05 * t) * this.scaleLayer);
 
       if (t === 1) {
-        this._state = 'idle';
-        this.visible = false;
+      //  this._state = 'idle';
+      //  this.visible = false;
       }
     }
   }
@@ -121,10 +121,10 @@ export class Hand extends Container {
 
   stop() {
    // this._state = 'idle';
-    this.visible = false;
+ //   this.visible = false;
   }
 
   handVisible() {
-    this.visible = true;
+  //  this.visible = true;
   }
 }

@@ -9,6 +9,8 @@ export class Area extends Container {
     // ===== ТОЧКИ =====
     this.point1 = { x: 250, y: 750 };
     this.point2 = { x: 370, y: 800 };
+    this.object1 = this.uiLayer.blueTree.giantIcon;
+    this.object2 =  this.uiLayer.blueTree.archerIcon;
 
     // Стартовая позиция
     this.x = this.point1.x;
@@ -100,7 +102,7 @@ export class Area extends Container {
       if (!this.pointTriggered) {
         this.pointTriggered = true;
         const globalPoint1 = this.getGlobalPosition(); // для point1
-        this.uiLayer.hand.play(this.uiLayer.blueTree.giantIcon, globalPoint1);
+        this.uiLayer.hand.play(this.object2, globalPoint1);
       }
 
       if (this.timer >= this.waitTime) {
@@ -127,7 +129,7 @@ export class Area extends Container {
       if (!this.pointTriggered) {
         this.pointTriggered = true;
         const globalPoint2 = this.getGlobalPosition(); // для point2
-        this.uiLayer.hand.play(this.uiLayer.blueTree.archerIcon, globalPoint2);
+        this.uiLayer.hand.play(this.object2, globalPoint2);
       }
 
       if (this.timer >= this.waitTime) {

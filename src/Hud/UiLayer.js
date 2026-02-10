@@ -4,11 +4,14 @@ import { BlueTree } from './BlueTree.js';
 import { PlayNow } from './PlayNow.js';
 import { RoyalTrainer } from './RoyalTrainer.js';
 import { Hand } from './Hand.js';
+import { Giant } from '../objects/Giant.js';
 
 
 export class UiLayer extends Container {
   constructor(designWidth, designHeight, w, h) {
     super();
+    this.designWidth = designWidth;
+    this.designHeight = designHeight;
     this.uiScale = new Container();
     this.addChild(this.uiScale);
 
@@ -32,8 +35,18 @@ export class UiLayer extends Container {
     this.playNow = new PlayNow();
     this.addChild(this.playNow);
 
+    this.giant2 = new Giant(this);
+    this.giant2.x =  this.designWidth / 2 - 70;
+    this.giant2.y =   this.designHeight / 2 + 150;
+    this.addChild(this.giant2);
+    this.giant2.alpha = 0.5;
+    this.giant2.setAttackFrame(1, 9);
+    this.giant2.visible = false;
+    this.giant2.scale.set(0.7);
+
     this.royalTrainer = new RoyalTrainer();
     this.addChild(this.royalTrainer);
+
 
     this.hand = new Hand();
     this.addChild(this.hand);

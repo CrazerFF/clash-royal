@@ -5,7 +5,7 @@ export class DragManager {
   }
 
   start(sourceIcon, localPos) {
-    this.game.uiLayer.hand.stop();
+   // this.game.uiLayer.hand.stop();
     this.dragging = true;
 
     // определяем кого таскаем
@@ -15,31 +15,46 @@ export class DragManager {
     } 
     else if (sourceIcon.icon.texture.label === 'archer_icon') {
       this.dragObject = this.game.archer;
-      this.game.area.setToPoint2();
+   //   this.game.area.setToPoint2();
     }
 
     if (!this.dragObject) return;
 
-    this.dragObject.visible = true;
+   // this.dragObject.visible = true;
+    this.game.uiLayer.giant2.visible = true;
     this.dragObject.position.set(localPos.x, localPos.y);
-
+    this.game.uiLayer.giant2.position.set(localPos.x, localPos.y);
     this.game.eventMode = 'static';
+    this.game.uiLayer.eventMode = 'static';
 
     this.game.on('pointermove', this.onMove, this);
     this.game.on('pointerup', this.end, this);
     this.game.on('pointerupoutside', this.end, this);
+
+    this.game.uiLayer.on('pointermove', this.onMove, this);
+    this.game.uiLayer.on('pointerup', this.end, this);
+    this.game.uiLayer.on('pointerupoutside', this.end, this);
+  
   }
 
   onMove(event) {
     if (!this.dragging || !this.dragObject) return;
 
+
     const pos = event.getLocalPosition(this.game);
+    const pos2 = event.getLocalPosition(this.game.uiLayer);
     this.dragObject.position.set(pos.x, pos.y);
+    this.game.uiLayer.giant2.position.set(pos2.x, pos2.y);
+    
   }
 
   end(event) {
+    this.game.area.startAnimation();
     if (!this.dragging || !this.dragObject) return;
-     this.game.uiLayer.hand.handVisible();
+     
+    this.dragObject.visible = true;
+    this.game.uiLayer.giant2.visible = false;
+    this.game.uiLayer.hand.visible = true; // Оставляем руку видимой
 
     this.dragging = false;
 
@@ -75,6 +90,13 @@ export class DragManager {
     if (shouldStayVisible) {
       this.game.giant.alpha = 1;
       this.game.giant.playDeploy();
+   //   this.game.area.setToPoint2();
+  this.game.area.point1 = this.game.area.point2;
+  this.game.area.object1 = this.game.area.object2;
+   
+
+   this.game.area.startAnimation();
+//      this.game.uiLayer.hand.visible = true;
     }
   } 
   else if (this.dragObject === this.game.archer) {
