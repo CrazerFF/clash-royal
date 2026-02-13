@@ -60,13 +60,20 @@ export class Game extends Container {
     this.objects.push(this.giant);
 
     this.archer = new Archer(this);
-    this.archer.x = this.DESIGN_W / 2 - 70;
+    this.archer.x = this.DESIGN_W / 2 - 10;
     this.archer.y = this.DESIGN_H / 2 + 150;
     this.addChild(this.archer);
     this.archer.alpha = 0.5;
-    //this.archer.setAttackFrame(1, 9);
     this.archer.visible = false;
     this.objects.push(this.archer);
+
+    this.archer2 = new Archer(this);
+    this.archer2.x = this.DESIGN_W / 2 - 100;
+    this.archer2.y = this.DESIGN_H / 2 + 150;
+    this.addChild(this.archer2);
+    this.archer2.alpha = 0.5;
+    this.archer2.visible = false;
+    this.objects.push(this.archer2);
 
     // Игрок
     this.enemy = new Enemy(this);

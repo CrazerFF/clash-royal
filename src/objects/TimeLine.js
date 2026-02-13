@@ -6,9 +6,11 @@ export class TimeLine {
 
     this.steps = [
       () => this.enemyMove1(),
-      () => this.waitForDeploy(),
-      () => this.enemyMove2(),
+      () => this.waitForUserAction(1200),
       () => this.giantMove1(),
+      () => this.enemyMove2(),
+      () => this.enemyMove3(),
+
     ];
   }
 
@@ -36,18 +38,52 @@ export class TimeLine {
   // =========================
   // ШАГ 2 — ждём деплой гиганта
   // =========================
-  waitForDeploy() {
-    return new Promise(resolve => {
-      this.scene.giant.playDeploy() = () => {
+waitForUserAction(delay) {
+  return new Promise(resolve => {
+    this._userActionResolve = () => {
+      setTimeout(() => {
         resolve();
-      };
+      }, delay); 
+    };
+  });
+}
+
+
+  giantMove1() {
+    return new Promise(resolve => {
+      gsap.to(this.scene.giant, {
+        x: this.scene.giant.x - 20,
+        y: this.scene.giant.y - 10,
+        duration: 2,
+        ease: 'linear',
+       // onComplete: resolve
+      });
+      resolve();
     });
   }
 
   // =========================
   // ШАГ 3 — вторая атака врага
   // =========================
+
   enemyMove2() {
+    return new Promise(resolve => {
+      this.scene.enemy.playRun(5);
+
+      gsap.to(this.scene.enemy, {
+        y: this.scene.enemy.y + 120,
+        duration: 2,
+        ease: 'linear',
+        onComplete: () => {
+                resolve();
+        }
+      });
+
+    });
+  }
+
+
+  enemyMove3() {
     return new Promise(resolve => {
       this.scene.enemy.playRun(4);
 
@@ -69,15 +105,5 @@ export class TimeLine {
   // =========================
   // ШАГ 4 — движение гиганта
   // =========================
-  giantMove1() {
-    return new Promise(resolve => {
-      gsap.to(this.scene.giant, {
-        x: this.scene.giant.x - 30,
-        y: this.scene.giant.y - 20,
-        duration: 2,
-        ease: 'linear',
-        onComplete: resolve
-      });
-    });
-  }
+  
 }

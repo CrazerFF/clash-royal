@@ -46,15 +46,25 @@ export class UiLayer extends Container {
     this.giant2.isResize = true;
     this.giant2.scale.set(0.7);
 
-    this.archer2 = new Archer(this);
-    this.archer2.x =  this.designWidth / 2 - 70;
-    this.archer2.y =   this.designHeight / 2 + 150;
-    this.addChild(this.archer2);
-    this.archer2.alpha = 0.5;
-   // this.archer2.setAttackFrame(1, 9);
-    this.archer2.visible = false;
-    this.archer2.isResize = true;
-    this.archer2.scale.set(0.7);
+    this.archer3 = new Archer(this);
+    this.archer3.x =  this.designWidth / 2 - 70;
+    this.archer3.y =   this.designHeight / 2 + 150;
+    this.addChild(this.archer3);
+    this.archer3.alpha = 0.5;
+    this.archer3.setAttackFrame(6, 1);
+    this.archer3.visible = false;
+    this.archer3.isResize = true;
+    this.archer3.scale.set(0.7);
+
+    this.archer4 = new Archer(this);
+    this.archer4.x =  this.designWidth / 2 - 70;
+    this.archer4.y =   this.designHeight / 2 + 150;
+    this.addChild(this.archer4);
+    this.archer4.alpha = 0.5;
+    this.archer4.setAttackFrame(6, 1);
+    this.archer4.visible = false;
+    this.archer4.isResize = true;
+    this.archer4.scale.set(0.7);
 
     this.royalTrainer = new RoyalTrainer();
     this.addChild(this.royalTrainer);

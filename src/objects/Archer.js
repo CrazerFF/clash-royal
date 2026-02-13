@@ -7,7 +7,7 @@ export class Archer extends Container {
     super();
     this.scene = scene;
     this.zIndex = 50;
-    this.baseScale = 1;
+    this.baseScale = 0.9;
     this.isResize = false;
 
     // Загружаем три спрайтшита
@@ -19,7 +19,7 @@ export class Archer extends Container {
     this.sprite = new AnimatedSprite(runSheet.animations['archer_run1']);
     this.sprite.anchor.set(0.5, 0.5);
     this.sprite.scale.set(1);
-    this.sprite.animationSpeed = 0.24;
+    this.sprite.animationSpeed = 0.21;
     this.sprite.loop = true;
     this.addChild(this.sprite);
     this.sprite.scale.set(-0.7, 0.7);
@@ -186,8 +186,9 @@ updateFlash(delta) {
     
     // Создаем хелзбар
     this.healthBar = new HealthBar(120, 18, 'blue');
-    this.healthBar.x -= 60;
+    this.healthBar.x -= 40;
     this.healthBar.y -= 110;
+    this.healthBar.scale.set(0.7);
     this.addChild(this.healthBar);
 
     const animationKey = 'deploy';
