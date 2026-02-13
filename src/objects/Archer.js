@@ -2,7 +2,7 @@ import { Container } from 'pixi.js';
 import { AnimatedSprite, Assets, Text, TextStyle } from 'pixi.js';
 import { HealthBar } from './HealthBar.js';
 
-export class Giant extends Container {
+export class Archer extends Container {
   constructor(scene) {
     super();
     this.scene = scene;
@@ -11,12 +11,12 @@ export class Giant extends Container {
     this.isResize = false;
 
     // Загружаем три спрайтшита
-    const runSheet = Assets.get('giant_run_json');
-    const attackSheet = Assets.get('giant_attack_json');
-    const deploySheet = Assets.get('giant_deploy_json');
+    const runSheet = Assets.get('archer_run_json');
+    const attackSheet = Assets.get('archer_attack_json');
+    const deploySheet = Assets.get('archer_deploy_json');
 
     // Создаем анимированный спрайт
-    this.sprite = new AnimatedSprite(runSheet.animations['giant_run1']);
+    this.sprite = new AnimatedSprite(runSheet.animations['archer_run1']);
     this.sprite.anchor.set(0.5, 0.5);
     this.sprite.scale.set(1);
     this.sprite.animationSpeed = 0.24;
@@ -27,17 +27,17 @@ export class Giant extends Container {
 
     // Сохраняем все анимации
     this.animations = {
-      run1: runSheet.animations['giant_run1'],
-      run2: runSheet.animations['giant_run2'],
-      run3: runSheet.animations['giant_run3'],
-      run4: runSheet.animations['giant_run4'],
-      run5: runSheet.animations['giant_run5'],
-      attack1: attackSheet.animations['giant_attack1'],
-      attack2: attackSheet.animations['giant_attack2'],
-      attack3: attackSheet.animations['giant_attack3'],
-      attack4: attackSheet.animations['giant_attack4'],
-      attack5: attackSheet.animations['giant_attack5'],
-      deploy: deploySheet.animations['giant_deploy'],
+      run1: runSheet.animations['archer_run1'],
+      run2: runSheet.animations['archer_run2'],
+      run3: runSheet.animations['archer_run3'],
+      run4: runSheet.animations['archer_run4'],
+      run5: runSheet.animations['archer_run5'],
+      attack1: attackSheet.animations['archer_attack1'],
+      attack2: attackSheet.animations['archer_attack2'],
+      attack3: attackSheet.animations['archer_attack3'],
+      attack4: attackSheet.animations['archer_attack4'],
+      attack5: attackSheet.animations['archer_attack5'],
+      deploy: deploySheet.animations['archer_deploy'],
     };
 
     // Переменные для мигания
@@ -46,10 +46,10 @@ export class Giant extends Container {
     this.originalTint = 0xFFFFFF;
     this.healthBar = null;
     
-    this.textGiant();
+    this.textArcher();
   }
 
-  textGiant() {
+  textArcher() {
     const textStyle = new TextStyle({
       fontFamily: 'font',
       fontSize: 25 * 2,
@@ -66,14 +66,14 @@ export class Giant extends Container {
       align: 'center',
     });
 
-    this.textGiant = new Text({
-      text: 'Giant',
+    this.textarcher = new Text({
+      text: 'Archer',
       style: textStyle,
     });
-    this.textGiant.anchor.set(0.5, 1);
-    this.textGiant.scale.set(0.7);
-    this.textGiant.y = this.sprite.y - 90;
-    this.addChild(this.textGiant);
+    this.textarcher.anchor.set(0.5, 1);
+    this.textarcher.scale.set(0.7);
+    this.textarcher.y = this.sprite.y - 90;
+    this.addChild(this.textarcher);
   }
 
   // Включить мигание (3 раза в секунду)
@@ -136,7 +136,7 @@ updateFlash(delta) {
 
   playRun(runNumber) {
     if (runNumber < 1 || runNumber > 5) {
-      console.warn(`Giant.playRun: runNumber must be 1-5, got ${runNumber}`);
+      console.warn(`archer.playRun: runNumber must be 1-5, got ${runNumber}`);
       return;
     }
 
@@ -144,7 +144,7 @@ updateFlash(delta) {
     const frames = this.animations[animationKey];
 
     if (!frames) {
-      console.warn(`Giant.playRun: animation ${animationKey} not found`);
+      console.warn(`archer.playRun: animation ${animationKey} not found`);
       return;
     }
 
@@ -159,7 +159,7 @@ updateFlash(delta) {
 
   playAttack(attackNumber) {
     if (attackNumber < 1 || attackNumber > 5) {
-      console.warn(`Giant.playAttack: attackNumber must be 1-5, got ${attackNumber}`);
+      console.warn(`archer.playAttack: attackNumber must be 1-5, got ${attackNumber}`);
       return;
     }
 
@@ -167,7 +167,7 @@ updateFlash(delta) {
     const frames = this.animations[animationKey];
 
     if (!frames) {
-      console.warn(`Giant.playAttack: animation ${animationKey} not found`);
+      console.warn(`archer.playAttack: animation ${animationKey} not found`);
       return;
     }
 
@@ -181,8 +181,8 @@ updateFlash(delta) {
   }
 
   playDeploy() {
-    this.textGiant.destroy();
-    this.textGiant = null;
+    this.textarcher.destroy();
+    this.textarcher = null;
     
     // Создаем хелзбар
     this.healthBar = new HealthBar(120, 18, 'blue');
@@ -194,7 +194,7 @@ updateFlash(delta) {
     const frames = this.animations[animationKey];
 
     if (!frames) {
-      console.warn(`Giant.playDeploy: animation ${animationKey} not found`);
+      console.warn(`archer.playDeploy: animation ${animationKey} not found`);
       return;
     }
 

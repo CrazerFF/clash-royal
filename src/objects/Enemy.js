@@ -1,5 +1,6 @@
 import { Container } from 'pixi.js';
 import { AnimatedSprite, Assets } from 'pixi.js';
+import { HealthBar } from './HealthBar.js';
 
 export class Enemy extends Container {
   constructor(scene) {
@@ -7,50 +8,80 @@ export class Enemy extends Container {
     this.scene = scene;
     this.zIndex = 20;
 
-    // Загружаем спрайтшит бега
-    const sheet = Assets.get('megaknight_run_json');
+    // Загружаем спрайтшиты
+    const runSheet = Assets.get('megaknight_run_json');
+    const attackSheet = Assets.get('megaknight_attack_json');
 
-    // Создаем анимированный спрайт
-    this.sprite = new AnimatedSprite(sheet.animations['megaknight_run1']);
+    // Создаем анимированный спрайт (по умолчанию с анимацией бега)
+    this.sprite = new AnimatedSprite(runSheet.animations['megaknight_run1']);
     this.sprite.anchor.set(0.5, 0.5);
     this.sprite.scale.set(1);
-    this.sprite.animationSpeed = 0.40; // Фиксированная скорость
+    this.sprite.animationSpeed = 0.40;
     this.sprite.loop = true;
     this.addChild(this.sprite);
 
-    // Сохраняем все 5 анимаций бега
+     this.healthBar = new HealthBar(120, 18, 'red');
+        this.healthBar.x -= 60;
+        this.healthBar.y -= 165;
+        this.addChild(this.healthBar);
+
+    // Сохраняем все анимации бега
     this.animations = {
-      run1: sheet.animations['megaknight_run1'],
-      run2: sheet.animations['megaknight_run2'],
-      run3: sheet.animations['megaknight_run3'],
-      run4: sheet.animations['megaknight_run4'],
-      run5: sheet.animations['megaknight_run5'],
-      run6: sheet.animations['megaknight_run6'],
-      run7: sheet.animations['megaknight_run7'],
-      run8: sheet.animations['megaknight_run8'],
-      run9: sheet.animations['megaknight_run9'],
+      run1: runSheet.animations['megaknight_run1'],
+      run2: runSheet.animations['megaknight_run2'],
+      run3: runSheet.animations['megaknight_run3'],
+      run4: runSheet.animations['megaknight_run4'],
+      run5: runSheet.animations['megaknight_run5'],
+      run6: runSheet.animations['megaknight_run6'],
+      run7: runSheet.animations['megaknight_run7'],
+      run8: runSheet.animations['megaknight_run8'],
+      run9: runSheet.animations['megaknight_run9'],
+      
+      // Добавляем анимации атаки
+      attack1: attackSheet.animations['mknight_attack1'],
+      attack2: attackSheet.animations['mknight_attack2'],
+      attack3: attackSheet.animations['mknight_attack3'],
+      attack4: attackSheet.animations['mknight_attack4'],
+      attack5: attackSheet.animations['mknight_attack5'],
     };
 
     // Текущая анимация
     this.currentAnimation = 'run1';
+    
+    // Флаг для определения типа текущей анимации
+    this.currentAnimationType = 'run';
 
     // Стартуем с первой анимации
     this.sprite.play();
   }
 
-  // Воспроизвести одну из 5 анимаций бега
+  // Воспроизвести одну из 9 анимаций бега
   playRun(runNumber) {
-    // Проверяем номер (должен быть от 1 до 5)
     if (runNumber < 1 || runNumber > 9) {
-      console.warn(`megaknight.playRun: runNumber must be 1-5, got ${runNumber}`);
+      console.warn(`Enemy.playRun: runNumber must be 1-9, got ${runNumber}`);
       return;
     }
 
-    const animationKey = `run${runNumber}`;
+    this.playAnimation('run', runNumber);
+  }
+
+  // Воспроизвести одну из 5 анимаций атаки
+  playAttack(attackNumber) {
+    if (attackNumber < 1 || attackNumber > 5) {
+      console.warn(`Enemy.playAttack: attackNumber must be 1-5, got ${attackNumber}`);
+      return;
+    }
+
+    this.playAnimation('attack', attackNumber);
+  }
+
+  // Общий метод для воспроизведения анимаций
+  playAnimation(type, number) {
+    const animationKey = `${type}${number}`;
     const frames = this.animations[animationKey];
 
     if (!frames) {
-      console.warn(`megaknight.playRun: animation ${animationKey} not found`);
+      console.warn(`Enemy.playAnimation: animation ${animationKey} not found`);
       return;
     }
 
@@ -60,9 +91,27 @@ export class Enemy extends Container {
     // Устанавливаем новые кадры
     this.sprite.textures = frames;
     this.sprite.gotoAndPlay(0);
+    
+    // Настраиваем параметры в зависимости от типа анимации
+    if (type === 'attack') {
+      this.sprite.animationSpeed = 0.25; // Можно настроить скорость для атак
+      this.sprite.loop = true; // Атака обычно проигрывается один раз
+      
+      // Добавляем обработчик завершения анимации атаки
+      this.sprite.onComplete = () => {
+        // Возвращаемся к анимации бега после завершения атаки
+      //  this.playRun(1);
+      };
+    } else {
+      this.sprite.animationSpeed = 0.40;
+      this.sprite.loop = true;
+      this.sprite.onComplete = null; // Убираем обработчик для бега
+    }
 
     this.currentAnimation = animationKey;
+    this.currentAnimationType = type;
   }
+
 
   update(delta) {
     // Пока пусто, можно добавить логику позже

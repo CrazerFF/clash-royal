@@ -1,14 +1,18 @@
 import { Container, Graphics, Sprite, Assets } from 'pixi.js';
 import { sound } from '../objects/SoundManager.js';
 import { Giant } from '../objects/Giant.js';
+import { Archer } from '../objects/Archer.js';
 import { Enemy } from '../objects/Enemy.js';
 import { Throne } from '../objects/RedThrone.js';
 import { RedKing } from '../objects/RedKing.js';
 import { BlueKing } from '../objects/BlueKing.js';
 import { BlueThrone } from '../objects/BlueThrone.js';
-import { DragManager } from '../objects/DragManager.js'; 
+import { DragManager } from '../objects/DragManager.js';
 import { Area } from '../Hud/Area.js';
 import { Hand } from '../Hud/Hand.js';
+import { TimeLine } from '../objects/TimeLine.js';
+import { gsap } from 'gsap';
+
 
 export class Game extends Container {
   constructor(designWidth, designHeight, w, h, uiLayer) {
@@ -19,6 +23,7 @@ export class Game extends Container {
     this.uiLayer = uiLayer;
     this.objects = [];
     this.collidables = [];
+    this.isPaused = false;
 
     this.create();
 
@@ -54,13 +59,22 @@ export class Game extends Container {
     this.giant.visible = false;
     this.objects.push(this.giant);
 
+    this.archer = new Archer(this);
+    this.archer.x = this.DESIGN_W / 2 - 70;
+    this.archer.y = this.DESIGN_H / 2 + 150;
+    this.addChild(this.archer);
+    this.archer.alpha = 0.5;
+    //this.archer.setAttackFrame(1, 9);
+    this.archer.visible = false;
+    this.objects.push(this.archer);
+
     // Игрок
     this.enemy = new Enemy(this);
     this.enemy.x = this.DESIGN_W / 2 - 145;
     this.enemy.y = this.DESIGN_H / 2 - 155;
     this.addChild(this.enemy);
     this.enemy.scale.set(0.7);
-    this.enemy.rotation = 0;
+  //  this.enemy.rotation = 0;
     this.enemy.playRun(5);
     this.objects.push(this.enemy);
 
@@ -94,9 +108,12 @@ export class Game extends Container {
     this.addChild(this.area);
     this.objects.push(this.area);
 
-    this.dragManager  = new DragManager(this);
-  //  this.addChild(this.dragManager);
+    this.dragManager = new DragManager(this);
     this.objects.push(this.dragManager);
+
+    this.timeLine = new TimeLine(this, 1280, 720);
+    this.timeLine.start();
+    this.objects.push(this.timeLine);
 
     // Синий король
     this.blueking = new BlueKing(this);
@@ -106,6 +123,8 @@ export class Game extends Container {
     this.addChild(this.blueking);
     this.objects.push(this.blueking);
     this.blueking.playIdle();
+
+
     // const click = new Howl({ src: ['click.mp3'], volume: 0.6 });
 
     this.on('pointerdown', () => {
@@ -119,7 +138,6 @@ export class Game extends Container {
     });
   }
 
-
   update(delta) {
     // апдейт всех объектов
     for (const obj of this.objects) {
@@ -128,6 +146,10 @@ export class Game extends Container {
         obj._collectUpdate();
       }
     }
+
+    // if (this.timeLine?.timer) {
+    //   this.timeLine.timer.update(delta);
+    // }
   }
 
   resize(DESIGN_W, DESIGN_H, w, h) {

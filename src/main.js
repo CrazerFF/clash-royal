@@ -89,7 +89,6 @@ import { UiLayer } from './Hud/UiLayer.js';
     game.x = (w - DESIGN_W * scaleGame) / 2 - (23*scaleGame);
     game.y = (h - DESIGN_H * scaleGame) / 2 - (68*scaleGame);
     game.resize?.(DESIGN_W, DESIGN_H, w, h);
-
     uiLayer.resize?.(w, h, scale_UI, scaleGame);
   }
 

@@ -17,7 +17,7 @@ export class PlayNow extends Container {
       fill: '#ffffff',
       stroke: {
         color: '#000000',
-        width: 6 * 1.5,
+        width: 7 * 1.5,
       },
       dropShadow: true,
       dropShadowColor: '#000000',
@@ -37,7 +37,7 @@ export class PlayNow extends Container {
     // ===== ПАРАМЕТРЫ КНОПКИ =====
     this.baseScaleX = 0.88;
     this.baseScaleY = 0.68;
-    this.baseScaleText = 1;
+    this.baseScaleText = 0.95;
     this.offSetX = 200;
     this.offSetY = 258;
 

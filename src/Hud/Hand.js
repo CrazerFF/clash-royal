@@ -120,8 +120,8 @@ export class Hand extends Container {
   }
 
   stop() {
-   // this._state = 'idle';
- //   this.visible = false;
+    this._state = 'idle';
+    this.visible = false;
   }
 
   handVisible() {

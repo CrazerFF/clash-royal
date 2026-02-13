@@ -5,6 +5,7 @@ import { PlayNow } from './PlayNow.js';
 import { RoyalTrainer } from './RoyalTrainer.js';
 import { Hand } from './Hand.js';
 import { Giant } from '../objects/Giant.js';
+import { Archer } from '../objects/Archer.js';
 
 
 export class UiLayer extends Container {
@@ -42,7 +43,18 @@ export class UiLayer extends Container {
     this.giant2.alpha = 0.5;
     this.giant2.setAttackFrame(1, 9);
     this.giant2.visible = false;
+    this.giant2.isResize = true;
     this.giant2.scale.set(0.7);
+
+    this.archer2 = new Archer(this);
+    this.archer2.x =  this.designWidth / 2 - 70;
+    this.archer2.y =   this.designHeight / 2 + 150;
+    this.addChild(this.archer2);
+    this.archer2.alpha = 0.5;
+   // this.archer2.setAttackFrame(1, 9);
+    this.archer2.visible = false;
+    this.archer2.isResize = true;
+    this.archer2.scale.set(0.7);
 
     this.royalTrainer = new RoyalTrainer();
     this.addChild(this.royalTrainer);
