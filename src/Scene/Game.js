@@ -83,6 +83,7 @@ export class Game extends Container {
     this.enemy.scale.set(0.7);
   //  this.enemy.rotation = 0;
     this.enemy.playRun(5);
+  // this.enemy.playAttack(8);
     this.objects.push(this.enemy);
 
     // Создаем трон
@@ -119,7 +120,7 @@ export class Game extends Container {
     this.objects.push(this.dragManager);
 
     this.timeLine = new TimeLine(this, 1280, 720);
-    this.timeLine.start();
+    //this.timeLine.start();
     this.objects.push(this.timeLine);
 
     // Синий король

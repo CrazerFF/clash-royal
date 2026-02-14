@@ -19,7 +19,7 @@ export class Giant extends Container {
     this.sprite = new AnimatedSprite(runSheet.animations['giant_run1']);
     this.sprite.anchor.set(0.5, 0.5);
     this.sprite.scale.set(1);
-    this.sprite.animationSpeed = 0.24;
+    this.sprite.animationSpeed = 0.22;
     this.sprite.loop = true;
     this.addChild(this.sprite);
     this.sprite.scale.set(-0.7, 0.7);

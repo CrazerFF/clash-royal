@@ -84,9 +84,6 @@ this.dragPreview.visible = false;
       this.game.giant.alpha = 1;
       this.game.giant.playDeploy();
 
-      this.game.timeLine._userActionResolve();   // просто вызываем resolve
-      this.game.timeLine._userActionResolve = null; // чтобы не вызвать дважды
-     
       this.game.area.point1 = this.game.area.point2;
       this.game.area.object1 = this.game.area.object2;
       this.game.area.startAnimation();
@@ -100,9 +97,6 @@ this.dragPreview.visible = false;
       this.game.area.visible = false;
       this.game.area.setToPoint2();
 
-      this.game.timeLine._userActionResolve();   // просто вызываем resolve
-      this.game.timeLine._userActionResolve = null; // чтобы не вызвать дважды
-      
       // ОСТАНАВЛИВАЕМ РУКУ И ДЕЛАЕМ ЕЕ НЕВИДИМОЙ
       this.game.uiLayer.hand.stop();
       this.game.uiLayer.hand.visible = false;

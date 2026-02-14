@@ -43,6 +43,10 @@ export class Enemy extends Container {
       attack3: attackSheet.animations['mknight_attack3'],
       attack4: attackSheet.animations['mknight_attack4'],
       attack5: attackSheet.animations['mknight_attack5'],
+      attack6: attackSheet.animations['mknight_attack6'],
+      attack7: attackSheet.animations['mknight_attack7'],
+      attack8: attackSheet.animations['mknight_attack8'],
+      attack9: attackSheet.animations['mknight_attack9'],
     };
 
     // Текущая анимация
@@ -67,11 +71,6 @@ export class Enemy extends Container {
 
   // Воспроизвести одну из 5 анимаций атаки
   playAttack(attackNumber) {
-    if (attackNumber < 1 || attackNumber > 5) {
-      console.warn(`Enemy.playAttack: attackNumber must be 1-5, got ${attackNumber}`);
-      return;
-    }
-
     this.playAnimation('attack', attackNumber);
   }
 
