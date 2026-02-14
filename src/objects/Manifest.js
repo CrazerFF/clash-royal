@@ -51,6 +51,10 @@ export const manifest = {
           alias: 'blueking_json',
           src: 'assets/sprites/blueking.json',
         },
+        {
+          alias: 'arrow_json',
+          src: 'assets/sprites/arrow.json',
+        },
       ],
     },
   ],

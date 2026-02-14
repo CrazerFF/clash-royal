@@ -20,7 +20,13 @@ export class TimeLine {
       { time: 3.1, type: 'pause' },
       { time: 3.2, type: 'enemyMove2' },
       { time: 3.3, type: 'giantMove1' },
+     
+
       { time: 3.6, type: 'pause2' },
+       { time: 3.7, type: 'archerAttack' },
+        { time: 3.8, type: 'archerRotate' },
+        { time: 3.9, type: 'archer2PlayRun' },
+
       { time: 3.7, type: 'giantMove2' },
       { time: 3.7, type: 'enemyMove3' },
       { time: 7.7, type: 'enemyMove4' }, // враг поворачивается влево
@@ -56,7 +62,7 @@ export class TimeLine {
     let obj;
     switch (spawn.type) {
       case 'pause':
-        if (!this.scene.giant.visible) {
+        if (!this.scene.giant.visible || !this.scene.archer2.visible) {
           this.scene.isPaused = true;
         }
         break;
@@ -158,15 +164,38 @@ export class TimeLine {
           this.scene.giant.sprite.scale.set(0.7,0.7);
           break;
         case 'giantMove5':
-          // gsap.to(this.scene.giant, {
-          //   x: this.scene.giant.x+100,
-          //   y: this.scene.giant.y - 120,
-          //   duration: 5,
-          //   ease: 'linear',
-          // });
           this.scene.giant.playAttack(1);
           this.scene.giant.sprite.rotation = 0.5;
-          // this.scene.giant.sprite.scale.set(0.7,0.7);
+          break;
+        case 'archerAttack':
+          this.scene.archer.playAttack(4);
+          this.scene.archer2.playAttack(5);
+          break;
+        case 'archerRotate':
+          gsap.to(this.scene.archer.sprite, {
+            // x: this.scene.giant.x,
+            // y: this.scene.giant.y - 150,
+            duration: 1,
+            rotation: -0.2,
+            ease: 'linear',
+          });
+          break;
+        case 'archer2PlayRun':
+          this.scene.archer2.playRun(5);
+          gsap.to(this.scene.archer2, {
+             x: this.scene.archer2.x-20,
+             y: this.scene.archer2.y - 20,
+            duration: 1,
+            ease: 'linear',
+            onComplete: () => {
+              this.scene.archer2.playAttack(5);
+            },
+          });
+          gsap.to(this.scene.archer2.sprite, {
+            duration: 0.5,
+            rotation: -0.05,
+            ease: 'linear',
+          });
           break;
 
       //   case 'clock':

@@ -2,119 +2,191 @@ export class DragManager {
   constructor(game) {
     this.game = game;
     this.dragging = false;
+
+    this.dragObject = null;
+    this.dragObject2 = null;
+
+    this.dragPreview = null;
+    this.dragPreview2 = null;
+
+    this.offset = 25;
   }
 
-start(sourceIcon, localPos) {
-  this.dragging = true;
+  // =========================
+  // START DRAG
+  // =========================
+  start(sourceIcon, localPos) {
+    this.dragging = true;
 
-  if (sourceIcon.icon.texture.label === 'giant_icon') {
-    this.dragObject = this.game.giant;
-    this.dragPreview = this.game.uiLayer.giant2;
-    this.game.area.setToPoint1();
-  } 
-  else if (sourceIcon.icon.texture.label === 'archer_icon') {
-    this.dragObject = this.game.archer;
-    this.dragPreview = this.game.uiLayer.archer3;
-    this.game.area.setToPoint2();
-  }
+    const label = sourceIcon.icon.texture.label;
 
-  if (!this.dragObject) return;
+    // --- GIANT ---
+    if (label === 'giant_icon') {
+      this.dragObject = this.game.giant;
+      this.dragPreview = this.game.uiLayer.giant2;
 
-  this.dragPreview.visible = true;
+      this.game.area.setToPoint1();
 
-  this.dragObject.position.set(localPos.x, localPos.y);
-  this.dragPreview.position.set(localPos.x, localPos.y);
+      this.dragObject.visible = false;
+      this.dragPreview.visible = true;
 
-  this.game.on('pointermove', this.onMove, this);
-  this.game.on('pointerup', this.end, this);
-  this.game.on('pointerupoutside', this.end, this);
-}
-
-
-onMove(event) {
-  if (!this.dragging || !this.dragObject) return;
-
-  const pos = event.getLocalPosition(this.game);
-  const pos2 = event.getLocalPosition(this.game.uiLayer);
-
-  this.dragObject.position.set(pos.x, pos.y);
-  this.dragPreview.position.set(pos2.x, pos2.y);
-}
-
-
-end(event) {
-  this.game.area.startAnimation();
-  if (!this.dragging || !this.dragObject) return;
-
-  this.dragObject.visible = true;
-this.dragPreview.visible = false;
-
-  this.dragObject.visible = true;
-  this.game.uiLayer.giant2.visible = false;
-  this.game.uiLayer.hand.visible = true; // Оставляем руку видимой
-
-  this.dragging = false;
-
-  const pos = event.getLocalPosition(this.game);
-
-  // Создаем области для проверки попадания
-  const areaSize = 95;
-  const areaHalf = areaSize / 2;
-
-  // Проверяем попадание в квадрат point1
-  const isInsidePoint1 =
-    pos.x >= this.game.area.point1.x - areaHalf &&
-    pos.x <= this.game.area.point1.x + areaHalf &&
-    pos.y >= this.game.area.point1.y - areaHalf &&
-    pos.y <= this.game.area.point1.y + areaHalf;
-
-  // Проверяем попадание в квадрат point2
-  const isInsidePoint2 =
-    pos.x >= this.game.area.point2.x - areaHalf &&
-    pos.x <= this.game.area.point2.x + areaHalf &&
-    pos.y >= this.game.area.point2.y - areaHalf &&
-    pos.y <= this.game.area.point2.y + areaHalf;
-
-  let shouldStayVisible = false;
-
-  if (this.dragObject === this.game.giant) {
-    shouldStayVisible = isInsidePoint1;
-
-    if (shouldStayVisible) {
-      this.game.giant.alpha = 1;
-      this.game.giant.playDeploy();
-
-      this.game.area.point1 = this.game.area.point2;
-      this.game.area.object1 = this.game.area.object2;
-      this.game.area.startAnimation();
+      this.updateSingle(localPos);
     }
-  } else if (this.dragObject === this.game.archer) {
-    shouldStayVisible = isInsidePoint2;
 
-    if (shouldStayVisible) {
-      this.game.archer.alpha = 1;
-      this.game.archer.playDeploy();
-      this.game.area.visible = false;
+    // --- ARCHERS ---
+    else if (label === 'archer_icon') {
+      this.dragObject = this.game.archer;
+      this.dragObject2 = this.game.archer2;
+
+      this.dragPreview = this.game.uiLayer.archer3;
+      this.dragPreview2 = this.game.uiLayer.archer4;
+
       this.game.area.setToPoint2();
 
-      // ОСТАНАВЛИВАЕМ РУКУ И ДЕЛАЕМ ЕЕ НЕВИДИМОЙ
-      this.game.uiLayer.hand.stop();
-      this.game.uiLayer.hand.visible = false;
+      this.dragObject.visible = false;
+      this.dragObject2.visible = false;
+
+      this.dragPreview.visible = true;
+      this.dragPreview2.visible = true;
+
+      this.updateDouble(localPos);
+    }
+
+    if (!this.dragObject) return;
+
+    this.game.on('pointermove', this.onMove, this);
+    this.game.on('pointerup', this.end, this);
+    this.game.on('pointerupoutside', this.end, this);
+  }
+
+  // =========================
+  // MOVE
+  // =========================
+  onMove(event) {
+    if (!this.dragging || !this.dragObject) return;
+
+    const pos = event.getLocalPosition(this.game);
+
+    if (this.dragObject2) {
+      this.updateDouble(pos);
+    } else {
+      this.updateSingle(pos);
     }
   }
 
-  if (shouldStayVisible) {
+  updateSingle(pos) {
+    const uiPos = this.toUILayer(pos);
+
     this.dragObject.position.set(pos.x, pos.y);
-  } else {
-    this.dragObject.visible = false;
+    this.dragPreview.position.set(uiPos.x, uiPos.y);
   }
 
-  this.game.off('pointermove', this.onMove, this);
-  this.game.off('pointerup', this.end, this);
-  this.game.off('pointerupoutside', this.end, this);
+  updateDouble(pos) {
+    const uiPos = this.toUILayer(pos);
 
-  this.dragObject = null;
-  this.dragPreview = null;
-  this.dragObject = null;
-}
+    this.dragObject.position.set(pos.x - this.offset, pos.y-25);
+    this.dragObject2.position.set(pos.x + this.offset, pos.y+25);
+
+    this.dragPreview.position.set(uiPos.x - (this.offset-5), uiPos.y);
+    this.dragPreview2.position.set(uiPos.x + (this.offset-5), uiPos.y);
+  }
+
+  toUILayer(pos) {
+    return this.game.uiLayer.toLocal(pos, this.game);
+  }
+
+  // =========================
+  // END DRAG
+  // =========================
+  end(event) {
+    if (!this.dragging || !this.dragObject) return;
+
+    this.dragging = false;
+
+    const pos = event.getLocalPosition(this.game);
+
+    const isInsidePoint1 = this.isInsideArea(pos, this.game.area.point1);
+    const isInsidePoint2 = this.isInsideArea(pos, this.game.area.point2);
+
+    let shouldStay = false;
+
+    // ================= GIANT =================
+    if (this.dragObject === this.game.giant) {
+      shouldStay = isInsidePoint1;
+
+      this.dragPreview.visible = false;
+
+      if (shouldStay) {
+        this.dragObject.visible = true;
+        this.dragObject.alpha = 1;
+        this.dragObject.position.set(pos.x, pos.y);
+        this.dragObject.playDeploy();
+
+        this.game.area.startAnimation();
+      } else {
+        this.dragObject.visible = false;
+      }
+    }
+
+    // ================= ARCHERS =================
+    else if (this.dragObject === this.game.archer) {
+      shouldStay = isInsidePoint2;
+
+      this.dragPreview.visible = false;
+      this.dragPreview2.visible = false;
+
+      if (shouldStay) {
+        this.dragObject.visible = true;
+        this.dragObject2.visible = true;
+
+        this.dragObject.alpha = 1;
+        this.dragObject2.alpha = 1;
+
+        this.dragObject.position.set(pos.x - this.offset, pos.y+5);
+        this.dragObject2.position.set(pos.x + this.offset, pos.y-5);
+
+        this.dragObject.playDeploy();
+        this.dragObject2.playDeploy();
+
+        this.game.uiLayer.hand.stop();
+        this.game.uiLayer.hand.visible = false;
+
+        this.game.area.visible = false;
+      } else {
+        this.dragObject.visible = false;
+        this.dragObject2.visible = false;
+      }
+    }
+
+    this.removeListeners();
+    this.reset();
+  }
+
+  // =========================
+  // HELPERS
+  // =========================
+  isInsideArea(pos, point) {
+    const size = 95;
+    const half = size / 2;
+
+    return (
+      pos.x >= point.x - half &&
+      pos.x <= point.x + half &&
+      pos.y >= point.y - half &&
+      pos.y <= point.y + half
+    );
+  }
+
+  removeListeners() {
+    this.game.off('pointermove', this.onMove, this);
+    this.game.off('pointerup', this.end, this);
+    this.game.off('pointerupoutside', this.end, this);
+  }
+
+  reset() {
+    this.dragObject = null;
+    this.dragObject2 = null;
+    this.dragPreview = null;
+    this.dragPreview2 = null;
+  }
 }

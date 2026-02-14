@@ -1,6 +1,7 @@
 import { Container } from 'pixi.js';
 import { AnimatedSprite, Assets, Text, TextStyle } from 'pixi.js';
 import { HealthBar } from './HealthBar.js';
+import { Arrow } from './Arrow.js';
 
 export class Archer extends Container {
   constructor(scene) {
@@ -19,7 +20,7 @@ export class Archer extends Container {
     this.sprite = new AnimatedSprite(runSheet.animations['archer_run1']);
     this.sprite.anchor.set(0.5, 0.5);
     this.sprite.scale.set(1);
-    this.sprite.animationSpeed = 0.21;
+    this.sprite.animationSpeed = 0.20;
     this.sprite.loop = true;
     this.addChild(this.sprite);
     this.sprite.scale.set(-0.7, 0.7);
@@ -178,7 +179,23 @@ updateFlash(delta) {
     this.sprite.gotoAndPlay(0);
 
     this.currentAnimation = animationKey;
+
+    this.sprite.onLoop = null;
+
+    this.sprite.onLoop = () => {
+      this.shootArrow();
+    };
   }
+
+  shootArrow() {
+  const arrow = new Arrow(this.scene);
+
+  // направление в зависимости от флипа
+  const direction = this.sprite.scale.x < 0 ? -1 : 1;
+
+  this.scene.addChild(arrow);
+  arrow.shoot(this.x, this.y - 20, direction);
+}
 
   playDeploy() {
     this.textarcher.destroy();
@@ -209,7 +226,7 @@ updateFlash(delta) {
 
     this.sprite.onComplete = () => {
       this.sprite.rotation = 0.4;
-      this.playRun(5);
+      this.playRun(1);
       this.scene.isPaused = false;
     };
   }
