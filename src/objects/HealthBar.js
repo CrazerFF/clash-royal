@@ -1,4 +1,5 @@
 import { Container, Graphics } from 'pixi.js';
+import { Smoke } from './Smoke.js';
 
 export class HealthBar extends Container {
   constructor(width = 100, height = 14, type = 'red') {
@@ -72,6 +73,13 @@ export class HealthBar extends Container {
 
   reduceHealth(percent) {
     this.currentHealth = Math.max(0, this.currentHealth - percent);
+    if (this.currentHealth === 0) {
+      this.smoke = new Smoke();
+      this.parent.addChild(this.smoke);
+      this.smoke.position.set(0, 0);
+      this.smoke.play();
+      
+    }
     this.updateHealthFill();
     return this.currentHealth;
   }

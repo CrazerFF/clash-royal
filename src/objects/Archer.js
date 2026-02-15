@@ -188,7 +188,7 @@ export class Archer extends Container {
 
   shootArrow() {
     const arrow = new Arrow(this);
-    arrow.shoot(this.x, this.y, this.scene.enemy);
+    arrow.shoot(this.x-10, this.y-10, this.scene.enemy);
     this.scene.addChild(arrow);
     this.scene.objects.push(arrow);
   }

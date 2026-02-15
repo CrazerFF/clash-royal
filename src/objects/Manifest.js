@@ -55,6 +55,10 @@ export const manifest = {
           alias: 'arrow_json',
           src: 'assets/sprites/arrow.json',
         },
+        {
+          alias: 'smoke_json',
+          src: 'assets/sprites/smoke.json',
+        },
       ],
     },
   ],
