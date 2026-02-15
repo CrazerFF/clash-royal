@@ -20,7 +20,7 @@ export class Archer extends Container {
     this.sprite = new AnimatedSprite(runSheet.animations['archer_run1']);
     this.sprite.anchor.set(0.5, 0.5);
     this.sprite.scale.set(1);
-    this.sprite.animationSpeed = 0.20;
+    this.sprite.animationSpeed = 0.2;
     this.sprite.loop = true;
     this.addChild(this.sprite);
     this.sprite.scale.set(-0.7, 0.7);
@@ -44,9 +44,9 @@ export class Archer extends Container {
     // Переменные для мигания
     this.isFlashing = false;
     this.flashTime = 0;
-    this.originalTint = 0xFFFFFF;
+    this.originalTint = 0xffffff;
     this.healthBar = null;
-    
+
     this.textArcher();
   }
 
@@ -87,38 +87,36 @@ export class Archer extends Container {
   flashStop() {
     this.isFlashing = false;
     this.flashTime = 0;
-    
+
     // Возвращаем оригинальные цвета
     if (this.sprite) {
       this.sprite.tint = this.originalTint;
     }
-    
+
     if (this.healthBar) {
       this.healthBar.setType('blue');
     }
   }
 
-updateFlash(delta) {
-  if (!this.isFlashing) return;
+  updateFlash(delta) {
+    if (!this.isFlashing) return;
 
-  this.flashTime += delta;
+    this.flashTime += delta;
 
-  const flashInterval = 28.15; // оставим твой подобранный интервал
-  const intervals = Math.floor(this.flashTime / flashInterval);
-  const isRedFlash = intervals % 2 === 0;
+    const flashInterval = 28.15; // оставим твой подобранный интервал
+    const intervals = Math.floor(this.flashTime / flashInterval);
+    const isRedFlash = intervals % 2 === 0;
 
-  // Мигаем спрайтом
-  if (this.sprite) {
-    this.sprite.tint = isRedFlash ? 0xFFFFFF : 0xFF8888;
+    // Мигаем спрайтом
+    if (this.sprite) {
+      this.sprite.tint = isRedFlash ? 0xffffff : 0xff8888;
+    }
+
+    // Мигаем хелзбаром белым/синим
+    if (this.healthBar) {
+      this.healthBar.setHealthBarColor(isRedFlash ? 'blue' : 'white');
+    }
   }
-
-  // Мигаем хелзбаром белым/синим
-  if (this.healthBar) {
-    this.healthBar.setHealthBarColor(isRedFlash ? 'blue' : 'white' );
-  }
-}
-
-
 
   setAttackFrame(attackNumber, frameIndex) {
     if (attackNumber < 1 || attackNumber > 5) return;
@@ -184,23 +182,21 @@ updateFlash(delta) {
 
     this.sprite.onLoop = () => {
       this.shootArrow();
+       this.scene.enemy?.healthBar.reduceHealth(5);
     };
   }
 
   shootArrow() {
-  const arrow = new Arrow(this.scene);
-
-  // направление в зависимости от флипа
-  const direction = this.sprite.scale.x < 0 ? -1 : 1;
-
-  this.scene.addChild(arrow);
-  arrow.shoot(this.x, this.y - 20, direction);
-}
+    const arrow = new Arrow(this);
+    arrow.shoot(this.x, this.y, this.scene.enemy);
+    this.scene.addChild(arrow);
+    this.scene.objects.push(arrow);
+  }
 
   playDeploy() {
     this.textarcher.destroy();
     this.textarcher = null;
-    
+
     // Создаем хелзбар
     this.healthBar = new HealthBar(120, 18, 'blue');
     this.healthBar.x -= 40;

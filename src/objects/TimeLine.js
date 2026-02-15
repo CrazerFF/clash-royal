@@ -30,9 +30,9 @@ export class TimeLine {
       { time: 3.7, type: 'giantMove2' },
       { time: 3.7, type: 'enemyMove3' },
       { time: 7.7, type: 'enemyMove4' }, // враг поворачивается влево
-      { time: 8.3, type: 'enemyMove5' }, // враг поворачивается влево
-      { time: 9.0, type: 'enemyMove6' }, // враг поворачивается влево
-      { time: 9.4, type: 'enemyMove7' }, // враг поворачивается влево
+      { time: 8.3, type: 'enemyMove5' }, 
+      { time: 9.0, type: 'enemyMove6' }, 
+      { time: 9.4, type: 'enemyMove7' }, 
 
     
       { time: 7.7, type: 'giantMove3' },
@@ -193,7 +193,7 @@ export class TimeLine {
           });
           gsap.to(this.scene.archer2.sprite, {
             duration: 0.5,
-            rotation: -0.05,
+            rotation: -0.03,
             ease: 'linear',
           });
           break;
