@@ -1,6 +1,7 @@
 import { Container } from 'pixi.js';
 import { AnimatedSprite, Assets } from 'pixi.js';
 import { HealthBar } from './HealthBar.js';
+import { Spine } from '@esotericsoftware/spine-pixi-v8'; // Новый импорт
 
 export class Enemy extends Container {
   constructor(scene) {
@@ -20,7 +21,9 @@ export class Enemy extends Container {
     this.sprite.loop = true;
     this.addChild(this.sprite);
 
-     this.healthBar = new HealthBar(120, 18, 'red');
+    
+
+     this.healthBar = new HealthBar(120, 18, 'red', scene);
         this.healthBar.x -= 60;
         this.healthBar.y -= 165;
         this.addChild(this.healthBar);
@@ -57,6 +60,7 @@ export class Enemy extends Container {
 
     // Стартуем с первой анимации
     this.sprite.play();
+    this.playDeath();
   }
 
   // Воспроизвести одну из 9 анимаций бега
@@ -110,6 +114,38 @@ export class Enemy extends Container {
     this.currentAnimation = animationKey;
     this.currentAnimationType = type;
   }
+
+  playDeath() {
+    const deathFxData = Assets.get('death_fx');
+    console.log('deathFxData', deathFxData);
+
+    // if (!deathFxData) {
+    //     console.error('death_fx не загружен или spineData отсутствует!');
+    //     return;
+    // }
+
+     const deathFx = new Spine({ spineData: deathFxData });
+    // deathFx.x = this.sprite.x;
+    // deathFx.y = this.sprite.y;
+
+    // // Берём первую доступную анимацию
+    // const animName = Object.keys(deathFxData.spineData.animations)[0];
+    // console.log('Используем анимацию:', animName);
+
+    // deathFx.state.setAnimation(0, animName, false);
+    // this.addChild(deathFx);
+
+    // deathFx.state.addListener({
+    //     complete: () => deathFx.destroy()
+    // });
+
+    //this.sprite.visible = false;
+  }
+
+
+
+
+
 
 
   update(delta) {
