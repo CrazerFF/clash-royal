@@ -1,5 +1,5 @@
 import { Container } from 'pixi.js';
-import { AnimatedSprite, Assets } from 'pixi.js';
+import { AnimatedSprite, Assets, Graphics } from 'pixi.js';
 import { HealthBar } from './HealthBar.js';
 import { Spine } from '@esotericsoftware/spine-pixi-v8'; // Новый импорт
 
@@ -8,7 +8,7 @@ export class Enemy extends Container {
     super();
     this.scene = scene;
     this.zIndex = 20;
-
+    this.sortableChildren = true;
     // Загружаем спрайтшиты
     const runSheet = Assets.get('megaknight_run_json');
     const attackSheet = Assets.get('megaknight_attack_json');
@@ -19,11 +19,9 @@ export class Enemy extends Container {
     this.sprite.scale.set(1);
     this.sprite.animationSpeed = 0.40;
     this.sprite.loop = true;
-    this.addChild(this.sprite);
+    this.addChild(this.sprite);    
 
-    
-
-     this.healthBar = new HealthBar(120, 18, 'red', scene);
+    this.healthBar = new HealthBar(120, 18, 'red', scene);
         this.healthBar.x -= 60;
         this.healthBar.y -= 165;
         this.addChild(this.healthBar);
@@ -116,39 +114,71 @@ export class Enemy extends Container {
   }
 
   playDeath() {
-    const deathFxData = Assets.get('death_fx');
-    console.log('deathFxData', deathFxData);
 
-    // if (!deathFxData) {
-    //     console.error('death_fx не загружен или spineData отсутствует!');
-    //     return;
-    // }
+  //   this.graphics = new Graphics();
+  //   this.graphics
+  //     .roundRect(-100, -100, 200, 200, 10)
+  //     .fill({ color: 0xffffff, alpha: 0.5 })
+  //     .stroke({ width: 4, color: 0xffffff });
+  //   this.addChild(this.graphics);
 
-     const deathFx = new Spine({ spineData: deathFxData });
-    // deathFx.x = this.sprite.x;
-    // deathFx.y = this.sprite.y;
+  //   //ресурсы загружаются в мэин до создания объектов
+  //   const deathFx = Spine.from ({ skeleton : "death_fx" , atlas : "death_fx_atlas" }); 
+  //   deathFx.zIndex = 9999;
+  //   // deathFx.x = 0;
+  //   // deathFx.y = -100;
+  //   deathFx.x = this.scene.DESIGN_W / 2;
+  //   deathFx.y = this.scene.DESIGN_H / 2;
 
-    // // Берём первую доступную анимацию
-    // const animName = Object.keys(deathFxData.spineData.animations)[0];
-    // console.log('Используем анимацию:', animName);
+  //   deathFx.autoUpdate = true;
+  //   deathFx.update(0);
+  //  // console.log('Animation state:', deathFx.state.tracks[0]); // Должен быть не null
+  //   deathFx.state.setAnimation(0, "animation", true);// правильное имя анимации  - animation 
+    
+    // Добавляем слушатель событий
+    // deathFx.state.addListener({
+    //     start: (track) => console.log('Animation STARTED at time:', track.trackTime),
+    //   //  complete: (track) => console.log('Animation COMPLETED'),
+    //     end: (track) => console.log('Animation ENDED')
+    // });
 
-    // deathFx.state.setAnimation(0, animName, false);
+// Замораживаем анимацию на первом кадре для проверки
+// setTimeout(() => {
+//     deathFx.state.tracks[0].trackTime = 0;
+//     deathFx.update(0);
+//     console.log('Frozen at first frame');
+// }, 5000); // Заморозка через 5 секунд
+    // console.log('Track 0 exists:', !!deathFx.state.tracks[0]);
+    // console.log('Spine bounds:', deathFx.getBounds());
+
     // this.addChild(deathFx);
+    // deathFx.scale.set(1.5); 
+    // deathFx.visible = true;
+    // deathFx.alpha = 1;
+
+    // console.log('deathFx.skeleton', deathFx.skeleton);
+    // console.log('deathFx.state.tracks', deathFx.state.tracks);
+    // console.log('deathFx', deathFx);
+
+    // deathFx.skeleton.slots.forEach(slot => {
+    //   const attachment = slot.getAttachment();
+    //     if (attachment && attachment.region) {
+    //         console.log('Slot:', slot.name, 'Attachment region name:', attachment.region.name);
+    //     }
+    // });
+
 
     // deathFx.state.addListener({
     //     complete: () => deathFx.destroy()
     // });
 
-    //this.sprite.visible = false;
+   // this.sprite.visible = false;
   }
 
-
-
-
-
-
-
   update(delta) {
-    // Пока пусто, можно добавить логику позже
+     // обновляем все дочерние Spine объекты
+    // this.children.forEach(child => {
+    //     if (child instanceof Spine) child.update(delta);
+    // });
   }
 }

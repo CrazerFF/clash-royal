@@ -2,6 +2,7 @@ import { Application, Assets } from 'pixi.js';
 import { manifest } from './objects/Manifest.js';
 import { Game } from './Scene/Game.js';
 import { UiLayer } from './Hud/UiLayer.js';
+import { Spine } from "@esotericsoftware/spine-pixi-v8";
 
 (async () => {
   const DESIGN_W = 660;
@@ -49,6 +50,15 @@ import { UiLayer } from './Hud/UiLayer.js';
   try {
     await Assets.init({ manifest });
     await Assets.loadBundle('game');
+
+    // регистрируем файлы
+    Assets.add({
+       alias: "death_fx", 
+       src: "assets/sprites/death_fx.json" 
+      });
+      
+    await Assets.load("death_fx");
+
   } catch (error) {
     console.error('Ошибка загрузки ресурсов:', error);
 

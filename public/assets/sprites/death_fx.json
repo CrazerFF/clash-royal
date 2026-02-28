@@ -6,7 +6,7 @@
     "y": -214.78,
     "width": 500,
     "height": 500,
-    "images": "./death_spine/",
+    "images": "./",
     "audio": "./audio"
   },
   "bones": [
