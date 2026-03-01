@@ -58,7 +58,6 @@ export class Enemy extends Container {
 
     // Стартуем с первой анимации
     this.sprite.play();
-    this.playDeath();
   }
 
   // Воспроизвести одну из 9 анимаций бега
@@ -114,65 +113,21 @@ export class Enemy extends Container {
   }
 
   playDeath() {
-
-  //   this.graphics = new Graphics();
-  //   this.graphics
-  //     .roundRect(-100, -100, 200, 200, 10)
-  //     .fill({ color: 0xffffff, alpha: 0.5 })
-  //     .stroke({ width: 4, color: 0xffffff });
-  //   this.addChild(this.graphics);
-
-  //   //ресурсы загружаются в мэин до создания объектов
-  //   const deathFx = Spine.from ({ skeleton : "death_fx" , atlas : "death_fx_atlas" }); 
-  //   deathFx.zIndex = 9999;
-  //   // deathFx.x = 0;
-  //   // deathFx.y = -100;
-  //   deathFx.x = this.scene.DESIGN_W / 2;
-  //   deathFx.y = this.scene.DESIGN_H / 2;
-
-  //   deathFx.autoUpdate = true;
-  //   deathFx.update(0);
-  //  // console.log('Animation state:', deathFx.state.tracks[0]); // Должен быть не null
-  //   deathFx.state.setAnimation(0, "animation", true);// правильное имя анимации  - animation 
+    console.log("playDeath");
     
-    // Добавляем слушатель событий
-    // deathFx.state.addListener({
-    //     start: (track) => console.log('Animation STARTED at time:', track.trackTime),
-    //   //  complete: (track) => console.log('Animation COMPLETED'),
-    //     end: (track) => console.log('Animation ENDED')
-    // });
+    const deathFx = Spine.from({
+        skeleton: 'death_fx',
+        atlas: 'death_fx_atlas'
+    });
+    deathFx.state.setAnimation(0, 'animation', false);
+    this.addChild(deathFx);
 
-// Замораживаем анимацию на первом кадре для проверки
-// setTimeout(() => {
-//     deathFx.state.tracks[0].trackTime = 0;
-//     deathFx.update(0);
-//     console.log('Frozen at first frame');
-// }, 5000); // Заморозка через 5 секунд
-    // console.log('Track 0 exists:', !!deathFx.state.tracks[0]);
-    // console.log('Spine bounds:', deathFx.getBounds());
+    deathFx.state.addListener({
+        complete: () => deathFx.destroy()
+    });
 
-    // this.addChild(deathFx);
-    // deathFx.scale.set(1.5); 
-    // deathFx.visible = true;
-    // deathFx.alpha = 1;
-
-    // console.log('deathFx.skeleton', deathFx.skeleton);
-    // console.log('deathFx.state.tracks', deathFx.state.tracks);
-    // console.log('deathFx', deathFx);
-
-    // deathFx.skeleton.slots.forEach(slot => {
-    //   const attachment = slot.getAttachment();
-    //     if (attachment && attachment.region) {
-    //         console.log('Slot:', slot.name, 'Attachment region name:', attachment.region.name);
-    //     }
-    // });
-
-
-    // deathFx.state.addListener({
-    //     complete: () => deathFx.destroy()
-    // });
-
-   // this.sprite.visible = false;
+   this.sprite.visible = false;
+   this.healthBar.visible = false;
   }
 
   update(delta) {

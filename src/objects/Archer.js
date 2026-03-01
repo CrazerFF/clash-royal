@@ -156,7 +156,7 @@ export class Archer extends Container {
     this.currentAnimation = animationKey;
   }
 
-  playAttack(attackNumber) {
+  playAttack(attackNumber, enemy) {
     if (attackNumber < 1 || attackNumber > 5) {
       console.warn(`archer.playAttack: attackNumber must be 1-5, got ${attackNumber}`);
       return;
@@ -181,16 +181,20 @@ export class Archer extends Container {
     this.sprite.onLoop = null;
 
     this.sprite.onLoop = () => {
-      this.shootArrow();
+      this.shootArrow(enemy);
        this.scene.enemy?.healthBar.reduceHealth(5);
     };
   }
+  clearAnimationCallbacks() {
+    this.sprite.onLoop = null;
+    this.sprite.onComplete = null;
+}
 
-  shootArrow() {
-    const arrow = new Arrow(this);
-    arrow.shoot(this.x-10, this.y-10, this.scene.enemy);
-    this.scene.addChild(arrow);
-    this.scene.objects.push(arrow);
+  shootArrow(enemy) {
+    this.arrow = new Arrow(this);
+    this.arrow.shoot(this.x-10, this.y-10, enemy);
+    this.scene.addChild(this.arrow);
+    this.scene.objects.push(this.arrow);
   }
 
   playDeploy() {

@@ -62,13 +62,11 @@ export const manifest = {
           src: 'assets/sprites/smoke.json',
         },
 
-        // { alias: 'tower_smoke_json', src: 'assets/sprites/tower_smoke.json' },
-        // { alias: 'tower_smoke_atlas', src: 'assets/sprites/tower_smoke.atlas' },
-        // { alias: 'tower_smoke_png', src: 'assets/sprites/tower_smoke.png' },
+        { alias: 'tower_smoke_json', src: 'assets/sprites/tower_smoke.json' },
+        { alias: 'tower_smoke_atlas', src: 'assets/sprites/tower_smoke.atlas' },
 
-        // { alias: 'death_fx', src: 'assets/sprites/death_fx.json' },
-        // { alias: 'death_fx_atlas', src: 'assets/sprites/death_fx.atlas' },
-        // { alias: 'death_fx_png', src: 'assets/sprites/death_fx.png' }
+        { alias: 'death_fx', src: 'assets/sprites/death_fx.json' },
+        { alias: 'death_fx_atlas', src: 'assets/sprites/death_fx.atlas' },
 
       ],
     },

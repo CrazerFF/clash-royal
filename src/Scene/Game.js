@@ -42,38 +42,15 @@ export class Game extends Container {
 
   create() {
     this.sortableChildren = true;
-    
-    
-
-    //ресурсы загружаются в мэин до создания объектов
-    const deathFx = Spine.from ("death_fx"); 
-    deathFx.zIndex = 9999;
-     this.addChild(deathFx);
-    // deathFx.x = 0;
-    // deathFx.y = -100;
-    deathFx.x = this.DESIGN_W / 2;
-    deathFx.y = this.DESIGN_H / 2;
-
-    deathFx.position.set(200, 200);
-
-    deathFx.autoUpdate = true;
-    deathFx.update(0);
-  //  console.log('Animation state:', deathFx.state.tracks[0]); // Должен быть не null
-    deathFx.state.setAnimation(0, "animation", false);// правильное имя анимации  - animation 
-    
-
-
-
-   
     this.eventMode = 'static';
     this.interactive = true;
     // Фон
     this.bg = new Sprite(Assets.get('bg'));
- //   this.addChild(this.bg);
+    this.addChild(this.bg);
     this.bg.anchor.set(0.5, 0.5);
     this.bg.scale.set(2.4);
     this.bg.position.set(this.DESIGN_W / 2, this.DESIGN_H / 2);
-  //  this.objects.push(this.bg);
+    this.objects.push(this.bg);
 
     // Игрок
     this.giant = new Giant(this);
@@ -173,6 +150,8 @@ export class Game extends Container {
       loop: true,
       volume: 0.3,
     });
+
+    
   }
 
   update(delta) {

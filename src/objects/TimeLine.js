@@ -37,7 +37,12 @@ export class TimeLine {
     
       { time: 7.7, type: 'giantMove3' },
       { time: 8.7, type: 'enemyMove5' }, // враг поворачивается влево
-      { time: 11.7, type: 'giantMove4' },//идет к королю 
+      { time: 11.7, type: 'giantMove4' },//идет к королю
+      { time: 9.7, type: 'archerGoToBridge' },
+      { time: 10.7, type: 'archer2GoToBridge' },
+
+      { time: 12.7, type: 'archerAcrossBridge' },
+
       { time: 16.7, type: 'giantMove5' },
 
     ];
@@ -168,8 +173,8 @@ export class TimeLine {
           this.scene.giant.sprite.rotation = 0.5;
           break;
         case 'archerAttack':
-          this.scene.archer.playAttack(4);
-          this.scene.archer2.playAttack(5);
+          this.scene.archer.playAttack(4, this.scene.enemy);
+          this.scene.archer2.playAttack(5, this.scene.enemy);
           break;
         case 'archerRotate':
           gsap.to(this.scene.archer.sprite, {
@@ -195,6 +200,58 @@ export class TimeLine {
             duration: 0.5,
             rotation: -0.03,
             ease: 'linear',
+          });
+          break;
+
+          case 'archerGoToBridge':
+          this.scene.archer.playRun(4);
+          this.scene.archer2. clearAnimationCallbacks();
+          this.scene.archer. clearAnimationCallbacks();
+          
+          gsap.to(this.scene.archer, {
+             x: this.scene.archer.x - 190,
+             y: this.scene.archer.y - 110,
+            duration: 3,
+            ease: 'linear',
+            onComplete: () => {
+              this.scene.archer.playRun(2);
+            },
+          });
+          break;
+
+          case 'archer2GoToBridge':
+          this.scene.archer2.playRun(4);
+          this.scene.archer2. clearAnimationCallbacks();
+          gsap.to(this.scene.archer2, {
+             x: this.scene.archer2.x - 220,
+             y: this.scene.archer2.y - 80,
+            duration: 3,
+            ease: 'linear',
+            onComplete: () => {
+              this.scene.archer2.playRun(2);
+              this.scene.archer.sprite.rotation = 0.18;
+            },
+          });
+          break;
+
+          case 'archerAcrossBridge':
+          this.scene.archer.playRun(2);
+          gsap.to(this.scene.archer, {
+             y: this.scene.archer.y - 100,
+            duration: 2,
+            ease: 'linear',
+             onComplete: () => {
+              this.scene.archer.sprite.rotation = 0.28;
+              gsap.to(this.scene.archer, {
+              x: this.scene.archer.x + 100,
+              y: this.scene.archer.y - 90,
+              duration: 2.8,
+              ease: 'linear',
+              onComplete: () => {
+                 this.scene.archer.playAttack(1, this.scene.redKing);
+              },
+              });
+            }
           });
           break;
 

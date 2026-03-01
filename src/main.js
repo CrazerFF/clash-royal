@@ -50,15 +50,6 @@ import { Spine } from "@esotericsoftware/spine-pixi-v8";
   try {
     await Assets.init({ manifest });
     await Assets.loadBundle('game');
-
-    // регистрируем файлы
-    Assets.add({
-       alias: "death_fx", 
-       src: "assets/sprites/death_fx.json" 
-      });
-      
-    await Assets.load("death_fx");
-
   } catch (error) {
     console.error('Ошибка загрузки ресурсов:', error);
 
@@ -83,7 +74,7 @@ import { Spine } from "@esotericsoftware/spine-pixi-v8";
 
   app.stage.addChild(game);
   app.stage.addChild(uiLayer);
-  app.sortableChildren = true;
+  app.stage.sortableChildren = true;
 
   function resize() {
     const w = window.innerWidth;
