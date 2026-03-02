@@ -42,8 +42,12 @@ export class TimeLine {
       { time: 10.7, type: 'archer2GoToBridge' },
 
       { time: 12.7, type: 'archerAcrossBridge' },
+      { time: 13.7, type: 'archer2AcrossBridge' },
 
       { time: 16.7, type: 'giantMove5' },
+      { time: 17.7, type: 'attackThrone' },
+
+      
 
     ];
   }
@@ -154,7 +158,7 @@ export class TimeLine {
             ease: 'linear',
           });
           this.scene.giant.playRun(1);
-             this.scene.giant.flashStop();
+          this.scene.giant.flashStop();
           this.scene.giant.sprite.rotation = -0.05;
           break;
         case 'giantMove4':
@@ -175,6 +179,7 @@ export class TimeLine {
         case 'archerAttack':
           this.scene.archer.playAttack(4, this.scene.enemy);
           this.scene.archer2.playAttack(5, this.scene.enemy);
+          this.scene.enemy.flashPlay();
           break;
         case 'archerRotate':
           gsap.to(this.scene.archer.sprite, {
@@ -248,12 +253,51 @@ export class TimeLine {
               duration: 2.8,
               ease: 'linear',
               onComplete: () => {
-                 this.scene.archer.playAttack(1, this.scene.redKing);
+                 this.scene.archer.playAttack(1, this.scene.throne);
               },
               });
             }
           });
           break;
+
+          case 'archer2AcrossBridge':
+          this.scene.archer2.playRun(2);
+          gsap.to(this.scene.archer2, {
+             y: this.scene.archer2.y - 100,
+            duration: 2,
+            ease: 'linear',
+             onComplete: () => {
+              this.scene.archer2.sprite.rotation = 0.28;
+              gsap.to(this.scene.archer2, {
+              x: this.scene.archer2.x + 50,
+              y: this.scene.archer2.y - 80,
+              duration: 2.8,
+              ease: 'linear',
+              onComplete: () => {
+                 this.scene.archer2.playAttack(1, this.scene.redKing);
+              },
+              });
+            }
+          });
+          break;
+
+          case 'attackThrone':
+          gsap.to(this.scene.throne, {
+              scaleX: 1.7, // сжатие по X
+              duration: 0.8,
+              ease: 'elastic.inOut(1, 0.3)',
+              yoyo: true,
+              repeat: -1
+          });
+          // Пульсация красного цвета
+          // gsap.to(this.scene.throne, {
+          //     tint: 0xff0000,
+          //     duration: 0.5,
+          //     yoyo: true,
+          //     repeat: -1,
+          //     ease: 'sine.inOut'
+          // });
+          // break;
 
       //   case 'clock':
       //     console.log('ok');

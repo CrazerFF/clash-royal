@@ -182,7 +182,11 @@ export class Archer extends Container {
 
     this.sprite.onLoop = () => {
       this.shootArrow(enemy);
-       this.scene.enemy?.healthBar.reduceHealth(5);
+       if (enemy === this.scene.redKing) {
+        this.scene.redKing?.healthBar.reduceHealth(5);
+      } else {
+        this.scene.enemy?.healthBar.reduceHealth(5);
+      }
     };
   }
   clearAnimationCallbacks() {

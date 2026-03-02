@@ -26,6 +26,11 @@ export class Enemy extends Container {
         this.healthBar.y -= 165;
         this.addChild(this.healthBar);
 
+       // Переменные для мигания
+    this.isFlashing = false;
+    this.flashTime = 0;
+    this.originalTint = 0xFFFFFF;
+
     // Сохраняем все анимации бега
     this.animations = {
       run1: runSheet.animations['megaknight_run1'],
@@ -130,7 +135,48 @@ export class Enemy extends Container {
    this.healthBar.visible = false;
   }
 
+   flashPlay() {
+    this.isFlashing = true;
+    this.flashTime = 0;
+  }
+
+  // Выключить мигание
+  flashStop() {
+    this.isFlashing = false;
+    this.flashTime = 0;
+    
+    // Возвращаем оригинальные цвета
+    if (this.sprite) {
+      this.sprite.tint = this.originalTint;
+    }
+    
+    if (this.healthBar) {
+      this.healthBar.setType('blue');
+    }
+  }
+
+updateFlash(delta) {
+  if (!this.isFlashing) return;
+
+  this.flashTime += delta;
+
+  const flashInterval = 28.15; // оставим твой подобранный интервал
+  const intervals = Math.floor(this.flashTime / flashInterval);
+  const isRedFlash = intervals % 2 === 0;
+
+  // Мигаем спрайтом
+  if (this.sprite) {
+    this.sprite.tint = isRedFlash ? 0xFFFFFF : 0xFF8888;
+  }
+
+  // Мигаем хелзбаром белым/синим
+  if (this.healthBar) {
+    this.healthBar.setHealthBarColor(isRedFlash ? 'blue' : 'white' );
+  }
+}
+
   update(delta) {
+    this.updateFlash(delta);
      // обновляем все дочерние Spine объекты
     // this.children.forEach(child => {
     //     if (child instanceof Spine) child.update(delta);

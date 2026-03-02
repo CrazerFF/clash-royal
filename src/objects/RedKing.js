@@ -1,5 +1,7 @@
 import { Container } from 'pixi.js';
 import { AnimatedSprite, Assets } from 'pixi.js';
+import { HealthBar } from './HealthBar.js';
+
 
 export class RedKing extends Container {
   constructor(scene) {
@@ -19,6 +21,12 @@ export class RedKing extends Container {
     this.sprite.play();
 
     this.currentAnimation = 'idle';
+
+    this.healthBar = new HealthBar(120, 18, 'red', scene);
+        this.healthBar.x -= 150;
+        this.healthBar.y -= 420;
+         this.healthBar.scale.set(2.5);
+        this.addChild(this.healthBar);
   }
 
   // Переключить на анимацию канона
