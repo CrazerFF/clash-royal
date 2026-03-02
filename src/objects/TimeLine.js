@@ -17,7 +17,7 @@ export class TimeLine {
     this.scheduledSpawns = [
       //  { time: 0.0, type: 'startIntro' },
       { time: 1.2, type: 'enemyMove1' },
-      { time: 1.2, type: 'attackThrone' },
+     // { time: 1.2, type: 'attackThrone' },
 
       { time: 3.1, type: 'pause' },
       { time: 3.2, type: 'enemyMove2' },
@@ -284,23 +284,22 @@ export class TimeLine {
           break;
 
           case 'attackThrone':
+          //Пульсация красного цвета
+          const throne = [this.scene.throne, this.scene.redKing];
+
+          const tl = gsap.timeline({ repeat: -1 });
+
+          tl.set(throne, { tint: 0xff0000 })
+            .to({}, { duration: 0.3 })
+            .set(throne, { tint: 0xffffff })
+            .to({}, { duration: 0.3 });
+
           gsap.to(this.scene.throne.scale, {
               x: 0.8, // сжатие 
               duration: 0.3,
               ease: 'elastic.inOut(2, 0.7)',
               yoyo: true,
               repeat: -1
-          });
-          //Пульсация красного цвета
-          gsap.to(this.scene.throne, {
-              tint: 0xff0000,
-              duration: 0.1,
-              yoyo: true,
-              repeat: -1,
-              ease: 'none',
-              onComplete: () => {
-                this.scene.throne.tint = 0xffffff; // обязательно вернуть нормальный цвет
-              }
           });
           break;
 
