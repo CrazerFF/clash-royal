@@ -47,8 +47,9 @@ export class RedKing extends Container {
   }
 
   playDeath() {
-    console.log("tower_smoke_json");
-    
+    this.scene.giant.stop()
+    this.scene.archer.stop()
+    this.scene.archer2.stop()
     const deathFx = Spine.from({
       skeleton: 'tower_smoke_json',
       atlas: 'tower_smoke_atlas',

@@ -28,6 +28,7 @@ export class Game extends Container {
     this.objects = [];
     this.collidables = [];
     this.isPaused = false;
+    this.scenario = 0;
 
     this.create();
 
@@ -56,6 +57,7 @@ export class Game extends Container {
     // создаём контейнер для UI
     this.redArea = new RedArea(this); // координаты в UiLayer
     this.addChild(this.redArea);
+    this.redArea.visible = false
     this.objects.push(this.redArea);
 
     // Игрок

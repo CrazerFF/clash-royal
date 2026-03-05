@@ -88,6 +88,9 @@ export class TimeLine {
         this.timer.resize(window.innerWidth, window.innerHeight)
         this.timer.zIndex = 9999
 
+        this.scene.uiLayer.hand.visible = true;
+        this.scene.area.visible = false;
+
         this.scene.uiLayer.addChild(this.timer)
         this.scene.uiLayer.objects.push(this.timer)
         break
@@ -114,6 +117,10 @@ export class TimeLine {
 case 'showKing': {
   const king = this.scene.uiLayer.labelKing
   const blueTree = this.scene.uiLayer.blueTree
+
+  // this.scene.uiLayer.hand.visible = false;
+  //       this.scene.area.visible = false;
+
 
   if (king.baseY === undefined) {
     king.baseY = king.y
@@ -155,12 +162,17 @@ case 'hideKing': {
   const king = this.scene.uiLayer.labelKing
   const blueTree = this.scene.uiLayer.blueTree
 
+    
+
   gsap.to(king, {
     y: king.baseY + 200,
     duration: 0.7,
     ease: 'power2.in',
     onComplete: () => {
       king.visible = false
+      this.scene.uiLayer.hand.renderable = true;
+        this.scene.area.visible = true;
+        this.scene.redArea.visible = true
     },
   })
 
@@ -177,6 +189,9 @@ case 'hideKing': {
 }
 
       case 'enemyMove1':
+        
+        // this.scene.area.visible = false;
+
         gsap.to(this.scene.enemy, {
           y: this.scene.enemy.y + 180,
           duration: 2,
@@ -280,6 +295,20 @@ case 'hideKing': {
         this.scene.giant.sprite.rotation = 0.5
         break
       case 'archerAttack':
+      const blueTree = this.scene.uiLayer.blueTree
+      const treeBaseY = blueTree.baseY ?? blueTree.y
+      blueTree.baseY = treeBaseY
+
+      gsap.to(blueTree, {
+        y: treeBaseY + 200,
+        duration: 0.7,
+        ease: 'power2.in',
+        onComplete: () => {
+          blueTree.visible = false
+        },
+      })
+
+        this.scene.redArea.renderable = false;
         this.scene.archer.playAttack(4, this.scene.enemy)
         this.scene.archer2.playAttack(5, this.scene.enemy)
         this.scene.enemy.flashPlay()

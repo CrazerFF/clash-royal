@@ -57,6 +57,9 @@ export class BlueTree extends Container {
   // ================================
   selectUnit(unitType) {
     if (unitType === 'giant') {
+      this.uiLayer.game.scenario = 1;
+      console.log("scenario",  this.uiLayer.game.scenario);
+      
       // гигант выбран → исчезает гигант
       gsap.to(this.giantIcon.scale, {
         x: 0,
@@ -73,13 +76,20 @@ export class BlueTree extends Container {
         duration: 0.4,
         ease: 'power2.out',
         onComplete: () => {
-          this.overlay = new CircularOverlay(150)
-          this.addChild(this.overlay)
-          overlay.y-=120
+          // Удаляем старый overlay, если есть
+          if (!this.overlay) {
+            this.overlay = new CircularOverlay(150, this)
+            this.addChild(this.overlay)
+            this.overlay.y -= 120
+          }
         },
       })
     } else if (unitType === 'archer') {
       // лучник выбран → исчезает лучник
+      if (this.uiLayer.game.scenario === 0) {
+        this.uiLayer.game.scenario = 2
+      }
+
       gsap.to(this.archerIcon.scale, {
         x: 0,
         y: 0,
@@ -96,9 +106,12 @@ export class BlueTree extends Container {
         duration: 0.4,
         ease: 'power2.out',
         onComplete: () => {
-          this.overlay = new CircularOverlay(150)
-          this.addChild(this.overlay)
-          overlay.y-=120
+          // Удаляем старый overlay, если есть
+          if (!this.overlay) {
+            this.overlay = new CircularOverlay(150, this)
+            this.addChild(this.overlay)
+            this.overlay.y -= 120
+          }
         },
       })
     }

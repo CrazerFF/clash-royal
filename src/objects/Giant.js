@@ -226,4 +226,8 @@ export class Giant extends Container {
     // Обновляем эффект мигания
     this.updateFlash(delta)
   }
+  stop() {
+    this.sprite.stop(); // Останавливаем анимацию
+    this.sprite.animationSpeed = 0; // Обнуляем скорость
+  }
 }

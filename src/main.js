@@ -2,7 +2,6 @@ import { Application, Assets } from 'pixi.js';
 import { manifest } from './objects/Manifest.js';
 import { Game } from './Scene/Game.js';
 import { UiLayer } from './Hud/UiLayer.js';
-import { Spine } from "@esotericsoftware/spine-pixi-v8";
 
 (async () => {
   const DESIGN_W = 660;

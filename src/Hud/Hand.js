@@ -1,11 +1,13 @@
 import { Container, Sprite, Assets } from 'pixi.js';
 
 export class Hand extends Container {
-  constructor() {
+  constructor(uiLayer) {
     super();
 
-    this.visible = false;
-    this.zIndex=30;
+    this.uiLayer = uiLayer;
+    this.visible = true;
+    this.zIndex=10;
+    this.renderable = false;
 
     // ===== СПРАЙТЫ =====
     this.frame = new Sprite(Assets.get('frame'));
@@ -38,10 +40,24 @@ export class Hand extends Container {
     this._to = { x: 0, y: 0 };
 
     this._state = 'idle';
-    // idle | appear | move | release | hide
   }
 
   play(object, globalTarget) {
+    if (this.uiLayer?.blueTree?.overlay?.handVisible) {
+      this.renderable = true;
+      this.uiLayer.game.redArea.visible = true;
+    } 
+    if (this.renderable) {
+      this.uiLayer.game.redArea.visible = true;
+        this.uiLayer.game.area.visible = true;
+    } else {
+      this.uiLayer.game.redArea.visible = false;
+       this.uiLayer.game.area.visible = false;
+    }
+      
+
+    
+
     const fromGlobal = object.getGlobalPosition();
     
     const toGlobal = globalTarget; // передаем глобальные координаты точки
@@ -58,7 +74,8 @@ export class Hand extends Container {
     this.position.set(this._from.x, this._from.y);
 
     this.visible = true;
-    this.alpha = 0;
+    //this.alpha = 0;
+    
     this.scale.set(this.appearScale *this.scaleLayer);
 
     this.fingerDown.visible = true;

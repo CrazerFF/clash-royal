@@ -2,13 +2,15 @@ import { Container, Graphics } from 'pixi.js'
 import { gsap } from 'gsap'
 
 export class CircularOverlay extends Container {
-  constructor(radius = 200, maskSize = 145, color = 0x000000, alpha = 0.4) {
+  constructor(radius = 200, uiLayer) {
     super()
-
+    this.uiLayer = uiLayer
     this.radius = radius
-    this.color = color
-    this.alphaValue = alpha
-    this.dragFlag = true;
+    this.color = 0x000000
+    this.alphaValue = 0.4
+    this.dragFlag = false;
+     console.log('dragFlag',  this.dragFlag);
+    this.handVisible = false;
     // графика для круга
     this.graphics = new Graphics()
     this.addChild(this.graphics)
@@ -37,6 +39,8 @@ export class CircularOverlay extends Container {
 
   drawOverlay(angle) {
      this.dragFlag = true
+     console.log('dragFlag',  this.dragFlag);
+     
     this.graphics.clear()
     this.graphics
       .arc(0, 0, this.radius, angle-Math.PI/2, Math.PI * 2-Math.PI/2, true) // true = по часовой стрелке
@@ -50,7 +54,12 @@ export class CircularOverlay extends Container {
       duration: duration,
       ease: 'linear',
       onUpdate: () => this.drawOverlay(this.currentAngle),
-      onComplete: () => this.graphics.clear(),
+      onComplete: () => {
+        this.graphics.clear(),
+        this.handVisible = true
+         this.dragFlag = false;
+          console.log('dragFlag',  this.dragFlag);
+      }
     })
      //  this.graphics.rotation += 1.8 // угол старта
 

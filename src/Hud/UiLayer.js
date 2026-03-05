@@ -68,7 +68,7 @@ export class UiLayer extends Container {
     this.royalTrainer = new RoyalTrainer()
     this.addChild(this.royalTrainer)
 
-    this.hand = new Hand()
+    this.hand = new Hand(this)
     this.addChild(this.hand)
 
     this.overlay = new Overlay(this)

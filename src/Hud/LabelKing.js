@@ -11,6 +11,7 @@ export class LabelKing extends Container {
     this.labelKing = new Sprite(Assets.get('blue_king_icon'))
     this.labelKing.anchor.set(0.5, 1)
     this.addChild(this.labelKing)
+    this.labelKing.zIndex=9999
 
     this.baseScale = 0.82
     this.labelKing.scale.set(this.baseScale)

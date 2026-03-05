@@ -17,7 +17,7 @@ export class TutorialManager extends Container {
     this.hand = new Sprite(Assets.get('hand'));
     this.hand.anchor.set(0.5);
     this.hand.scale.set(0.06);
-    this.hand.visible = false;
+    this.hand.visible = true;
     this.hand.zIndex = 1022;
     this.addChild(this.hand);
     this.hand.interactive = true;
@@ -64,9 +64,9 @@ export class TutorialManager extends Container {
     this.game.player.playIdle();
 
     // Активируем большую кликабельную область
-    this.clickArea.visible = true;
+    this.clickArea.visible = false;
 
-    this.hand.visible = true;
+    this.hand.visible = false;
     this.hand.x = this.game.DESIGN_W / 2;
     this.hand.y = this.game.DESIGN_H / 2 + 160;
 
@@ -84,9 +84,9 @@ export class TutorialManager extends Container {
     this.game.flagJump = true;
 
     // Активируем большую кликабельную область
-    this.clickArea.visible = true;
+    this.clickArea.visible = false;
 
-    this.hand.visible = true;
+    this.hand.visible = false;
     this.hand.x = this.game.DESIGN_W / 2;
     this.hand.y = this.game.DESIGN_H / 2 - 40;
 

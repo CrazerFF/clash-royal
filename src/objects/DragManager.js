@@ -9,6 +9,8 @@ export class DragManager {
     this.dragPreview = null
     this.dragPreview2 = null
 
+    this.blockArcherKey = false;
+
     this.offset = 25
   }
 
@@ -16,7 +18,10 @@ export class DragManager {
   // START DRAG
   // =========================
   start(sourceIcon, localPos) {
-  //  if (this.scene.uiLayer.blueTree.overlay) return
+    if(this.blockArcherKey) return
+    if (this.scene?.uiLayer?.blueTree?.overlay?.dragFlag) {
+          return
+    }
     this.dragging = true
 
     const label = sourceIcon.icon.texture.label
@@ -125,7 +130,8 @@ export class DragManager {
         this.dragObject.alpha = 1
         this.dragObject.position.set(pos.x, pos.y)
         this.dragObject.playDeploy()
-
+        this.scene.uiLayer.hand.renderable = false;
+        this.scene.redArea.visible = false
         this.scene.area.point1 = this.scene.area.point2
         this.scene.area.object1 = this.scene.area.object2
 
@@ -142,8 +148,10 @@ export class DragManager {
       this.dragPreview.visible = false
       this.dragPreview2.visible = false
 
+
       if (shouldStay) {
-        this.scene.uiLayer.blueTree.selectUnit('giant')
+        this.scene.uiLayer.blueTree.selectUnit('archer')
+        this.blockArcherKey = true;
 
         this.dragObject.visible = true
         this.dragObject2.visible = true
@@ -161,7 +169,7 @@ export class DragManager {
         this.scene.area.object2 = this.scene.area.object1
         //  this.scene.area.startAnimation();
         // this.scene.uiLayer.hand.stop();
-        this.scene.uiLayer.hand.visible = false
+        this.scene.uiLayer.hand.visible = true
 
         this.scene.area.visible = false
         this.dragObject2.clock()
