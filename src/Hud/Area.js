@@ -102,7 +102,7 @@ export class Area extends Container {
       if (!this.pointTriggered) {
         this.pointTriggered = true;
         const globalPoint1 = this.getGlobalPosition(); // для point1
-        this.uiLayer.hand.play(this.object2, globalPoint1);
+        this.uiLayer.hand.play(this.object1, globalPoint1);
       }
 
       if (this.timer >= this.waitTime) {

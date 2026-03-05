@@ -457,7 +457,7 @@
       }
     },
 
-    "big_character_icon": {
+    "big_character_icon": { 
       "frame": {
         "x": 1227,
         "y": 508,

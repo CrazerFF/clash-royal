@@ -9,6 +9,7 @@ import { BlueKing } from '../objects/BlueKing.js';
 import { BlueThrone } from '../objects/BlueThrone.js';
 import { DragManager } from '../objects/DragManager.js';
 import { Area } from '../Hud/Area.js';
+import { RedArea } from '../objects/RedArea.js';
 import { Hand } from '../Hud/Hand.js';
 import { TimeLine } from '../objects/TimeLine.js';
 import { gsap } from 'gsap';
@@ -51,6 +52,11 @@ export class Game extends Container {
     this.bg.scale.set(2.4);
     this.bg.position.set(this.DESIGN_W / 2, this.DESIGN_H / 2);
     this.objects.push(this.bg);
+
+    // создаём контейнер для UI
+    this.redArea = new RedArea(this); // координаты в UiLayer
+    this.addChild(this.redArea);
+    this.objects.push(this.redArea);
 
     // Игрок
     this.giant = new Giant(this);
