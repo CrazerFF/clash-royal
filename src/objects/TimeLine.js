@@ -1,7 +1,11 @@
+import { Container, Graphics, Sprite, Assets } from 'pixi.js'
 import { Enemy } from './Enemy.js'
 import { sound } from './SoundManager.js'
 import { TextPopup } from './TextPopup.js'
 import { Timer } from '../Hud/Timer.js'
+import { Spine } from '@esotericsoftware/spine-pixi-v8'
+
+
 
 import { gsap } from 'gsap'
 
@@ -20,6 +24,7 @@ export class TimeLine {
       { time: 0.0, type: 'pause' },
       { time: 1.2, type: 'enemyMove1' },
       { time: 1.2, type: 'overlay' },
+      { time: 1.2, type: 'overlayIn' },
       { time: 1.2, type: 'showKing' },
       { time: 1.2, type: 'showKingFirstText' },
       { time: 2.3, type: 'hideKing' },
@@ -54,6 +59,8 @@ export class TimeLine {
 
       { time: 18.7, type: 'giantMove5' },
       { time: 19.0, type: 'attackThrone' },
+      { time: 24.4, type: 'overlayIn' },
+
     ]
   }
 
@@ -95,8 +102,28 @@ export class TimeLine {
       case 'overlay':
         gsap.to(this.scene.uiLayer.overlay, {
           alpha: 0,
-          duration: 1.0,
+          duration: 0.5,
           ease: 'linear',
+        })
+        break
+      case 'overlayIn':
+        gsap.to(this.scene.uiLayer.overlay, {
+          alpha: 0.6,
+          duration: 0.5,
+          ease: 'linear',
+          onComplete: () => {
+                  this.crownAnim = Spine.from({
+            skeleton: 'crown_anim_json',
+            atlas: 'crown_anim_atlas',
+          })
+          this.crownAnim.state.timeScale = 0.01;
+        //  this.crownAnim.state.setAnimation(0, 'animation', false)
+          this.crownAnim.state.setAnimation(0, 'crown', false) 
+          this.crownAnim.x = this.scene.DESIGN_W / 2
+          this.crownAnim.y = this.scene.DESIGN_H /2+150
+          this.scene.addChild(this.crownAnim);
+        //  this.scene.objects.push(this.crownAnim)
+          },
         })
         break
       case 'pause':
@@ -324,7 +351,7 @@ export class TimeLine {
           duration: 1,
           ease: 'linear',
           onComplete: () => {
-            this.scene.archer2.playAttack(5)
+            this.scene.archer2.playAttack(5, this.scene.enemy)
             
           },
         })

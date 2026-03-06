@@ -43,6 +43,11 @@ export class Game extends Container {
     this.sortableChildren = true
     this.eventMode = 'static'
     this.interactive = true
+
+
+    
+
+
     // Фон
     this.bg = new Sprite(Assets.get('bg'))
     this.addChild(this.bg)
@@ -139,9 +144,6 @@ export class Game extends Container {
     this.addChild(this.blueking)
     this.objects.push(this.blueking)
     this.blueking.playIdle()
-
-
-
 
     // const click = new Howl({ src: ['click.mp3'], volume: 0.6 });
 

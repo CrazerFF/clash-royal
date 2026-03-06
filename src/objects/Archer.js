@@ -163,18 +163,18 @@ export class Archer extends Container {
       console.warn(
         `archer.playAttack: attackNumber must be 1-5, got ${attackNumber}`
       )
-      //return
+      return
     }
 
     const animationKey = `attack${attackNumber}`
     const frames = this.animations[animationKey]
 
-    // if (!frames) {
-    //   console.warn(`archer.playAttack: animation ${animationKey} not found`)
-    //   return
-    // }
+    if (!frames) {
+      console.warn(`archer.playAttack: animation ${animationKey} not found`)
+      return
+    }
 
-   // if (this.currentAnimation === animationKey) return
+    if (this.currentAnimation === animationKey) return
 
     this.sprite.textures = frames
     this.sprite.loop = true
@@ -199,12 +199,17 @@ export class Archer extends Container {
     this.sprite.onComplete = null
   }
 
-  shootArrow(enemy) {
-    this.arrow = new Arrow(this)
-    this.arrow.shoot(this.x - 10, this.y - 10, enemy)
-    this.scene.addChild(this.arrow)
-    this.scene.objects.push(this.arrow)
-  }
+shootArrow(enemy) {
+  const arrow = new Arrow(this)
+
+  const startX = this.x + this.sprite.x - 10
+  const startY = this.y + this.sprite.y - 10
+
+  arrow.shoot(startX, startY, enemy)
+
+  this.scene.addChild(arrow)
+  this.scene.objects.push(arrow)
+}
 
   clock() {
     this.clock = new Clock()

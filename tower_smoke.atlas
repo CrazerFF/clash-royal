@@ -1,0 +1,10 @@
+tower_smoke.png
+size:124,48
+filter:Linear,Linear
+scale:0.6
+hit_blow
+bounds:0,0,48,48
+smokecloud1
+bounds:48,10,38,38
+smokecloud2
+bounds:86,10,38,38

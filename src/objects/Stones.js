@@ -13,9 +13,9 @@ export class Stones extends Container {
     // Создаем яму (добавляем в самом начале, чтобы была на заднем плане)
     this.pit = new Sprite(Assets.get('pit'))
     this.pit.anchor.set(0.5)
-    this.pit.scale.set(0.7)
+    this.pit.scale.set(0.6)
     this.pit.x = 0
-    this.pit.y = 10 // яма на том же уровне, куда падают камни
+    this.pit.y = 15 // яма на том же уровне, куда падают камни
     
     // Добавляем яму в контейнер
     this.addChild(this.pit)

@@ -78,6 +78,10 @@ export const manifest = {
         { alias: 'death_fx', src: 'assets/sprites/death_fx.json' },
         { alias: 'death_fx_atlas', src: 'assets/sprites/death_fx.atlas' },
 
+        { alias: 'crown_anim_json', src: 'assets/sprites/crown_anim.json' },
+        { alias: 'crown_anim_atlas', src: 'assets/sprites/crown_anim.atlas' },
+
+
       ],
     },
   ],
