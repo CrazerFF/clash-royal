@@ -2,6 +2,7 @@ import { Container } from 'pixi.js'
 import { AnimatedSprite, Assets } from 'pixi.js'
 import { HealthBar } from './HealthBar.js'
 import { Spine } from '@esotericsoftware/spine-pixi-v8'; // Новый импорт
+import { Stones } from '../objects/Stones.js'
 
 
 export class RedKing extends Container {
@@ -47,6 +48,14 @@ export class RedKing extends Container {
   }
 
   playDeath() {
+
+        // Создаем камни
+    const stones = new Stones()
+    stones.x = 350 // позиция взрыва по X
+    stones.y = 350 // позиция взрыва по Y
+    this.scene.objects.push(stones)
+    this.scene.addChild(stones)
+
     this.scene.giant.stop()
     this.scene.archer.stop()
     this.scene.archer2.stop()

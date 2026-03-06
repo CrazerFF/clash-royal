@@ -171,7 +171,7 @@ updateFlash(delta) {
 
   // Мигаем хелзбаром белым/синим
   if (this.healthBar) {
-    this.healthBar.setHealthBarColor(isRedFlash ? 'blue' : 'white' );
+    this.healthBar.setHealthBarColor(isRedFlash ? 'red' : 'white' );
   }
 }
 

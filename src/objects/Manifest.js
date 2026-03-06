@@ -62,6 +62,16 @@ export const manifest = {
           src: 'assets/sprites/smoke.json',
         },
 
+        {
+          alias: 'stones_json',
+          src: 'assets/sprites/stones.json',
+        },
+
+        {
+          alias: 'pit',
+          src: 'assets/sprites/pit.png',
+        },
+
         { alias: 'tower_smoke_json', src: 'assets/sprites/tower_smoke.json' },
         { alias: 'tower_smoke_atlas', src: 'assets/sprites/tower_smoke.atlas' },
 

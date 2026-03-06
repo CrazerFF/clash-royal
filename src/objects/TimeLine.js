@@ -27,10 +27,9 @@ export class TimeLine {
       { time: 3.2, type: 'enemyMove2' },
       { time: 3.3, type: 'giantMove1' },
 
-     
-    //  { time: 3.6, type: 'showKing' },
-    //  { time: 3.6, type: 'showKingSecondText' },
-    //  { time: 4.8, type: 'hideKing' },
+      //  { time: 3.6, type: 'showKing' },
+      //  { time: 3.6, type: 'showKingSecondText' },
+      //  { time: 4.8, type: 'hideKing' },
       { time: 5.0, type: 'pause2' },
 
       { time: 5.0, type: 'archerAttack' },
@@ -75,7 +74,6 @@ export class TimeLine {
         spawn.spawned = true
       }
     }
-    
   }
 
   spawnByType(spawn) {
@@ -88,8 +86,8 @@ export class TimeLine {
         this.timer.resize(window.innerWidth, window.innerHeight)
         this.timer.zIndex = 9999
 
-        this.scene.uiLayer.hand.visible = true;
-        this.scene.area.visible = false;
+        this.scene.uiLayer.hand.visible = true
+        this.scene.area.visible = false
 
         this.scene.uiLayer.addChild(this.timer)
         this.scene.uiLayer.objects.push(this.timer)
@@ -114,42 +112,41 @@ export class TimeLine {
       case 'pause2':
         this.scene.isPaused = true
         break
-case 'showKing': {
-  const king = this.scene.uiLayer.labelKing
-  const blueTree = this.scene.uiLayer.blueTree
+      case 'showKing': {
+        const king = this.scene.uiLayer.labelKing
+        const blueTree = this.scene.uiLayer.blueTree
 
-  // this.scene.uiLayer.hand.visible = false;
-  //       this.scene.area.visible = false;
+        // this.scene.uiLayer.hand.visible = false;
+        //       this.scene.area.visible = false;
 
+        if (king.baseY === undefined) {
+          king.baseY = king.y
+        }
 
-  if (king.baseY === undefined) {
-    king.baseY = king.y
-  }
+        king.visible = true
 
-  king.visible = true
+        king.y = king.baseY + 200
 
-  king.y = king.baseY + 200
+        gsap.to(king, {
+          y: king.baseY,
+          duration: 0.7,
+          ease: 'power2.out',
+        })
 
-  gsap.to(king, {
-    y: king.baseY,
-    duration: 0.7,
-    ease: 'power2.out',
-  })
+        const treeBaseY = blueTree.baseY ?? blueTree.y
+        blueTree.baseY = treeBaseY
 
-  const treeBaseY = blueTree.baseY ?? blueTree.y
-  blueTree.baseY = treeBaseY
+        gsap.to(blueTree, {
+          y: treeBaseY + 200,
+          duration: 0.7,
+          ease: 'power2.in',
+          onComplete: () => {
+            blueTree.visible = false
+          },
+        })
 
-  gsap.to(blueTree, {
-    y: treeBaseY + 200,
-    duration: 0.7,
-    ease: 'power2.in',
-    onComplete: () => {
-      blueTree.visible = false
-    },
-  })
-
-  break
-}
+        break
+      }
 
       case 'showKingFirstText':
         this.scene.uiLayer.labelKing.showFirstText()
@@ -158,38 +155,35 @@ case 'showKing': {
         this.scene.uiLayer.labelKing.showSecondText()
         break
 
-case 'hideKing': {
-  const king = this.scene.uiLayer.labelKing
-  const blueTree = this.scene.uiLayer.blueTree
+      case 'hideKing': {
+        const king = this.scene.uiLayer.labelKing
+        const blueTree = this.scene.uiLayer.blueTree
 
-    
+        gsap.to(king, {
+          y: king.baseY + 200,
+          duration: 0.7,
+          ease: 'power2.in',
+          onComplete: () => {
+            king.visible = false
+            this.scene.uiLayer.hand.renderable = true
+            this.scene.area.visible = true
+            this.scene.redArea.visible = true
+          },
+        })
 
-  gsap.to(king, {
-    y: king.baseY + 200,
-    duration: 0.7,
-    ease: 'power2.in',
-    onComplete: () => {
-      king.visible = false
-      this.scene.uiLayer.hand.renderable = true;
-        this.scene.area.visible = true;
-        this.scene.redArea.visible = true
-    },
-  })
+        blueTree.visible = true
+        blueTree.y = blueTree.baseY + 200
 
-  blueTree.visible = true
-  blueTree.y = blueTree.baseY + 200
+        gsap.to(blueTree, {
+          y: blueTree.baseY,
+          duration: 0.7,
+          ease: 'power2.out',
+        })
 
-  gsap.to(blueTree, {
-    y: blueTree.baseY,
-    duration: 0.7,
-    ease: 'power2.out',
-  })
-
-  break
-}
+        break
+      }
 
       case 'enemyMove1':
-        
         // this.scene.area.visible = false;
 
         gsap.to(this.scene.enemy, {
@@ -295,20 +289,20 @@ case 'hideKing': {
         this.scene.giant.sprite.rotation = 0.5
         break
       case 'archerAttack':
-      const blueTree = this.scene.uiLayer.blueTree
-      const treeBaseY = blueTree.baseY ?? blueTree.y
-      blueTree.baseY = treeBaseY
+        const blueTree = this.scene.uiLayer.blueTree
+        const treeBaseY = blueTree.baseY ?? blueTree.y
+        blueTree.baseY = treeBaseY
 
-      gsap.to(blueTree, {
-        y: treeBaseY + 200,
-        duration: 0.7,
-        ease: 'power2.in',
-        onComplete: () => {
-          blueTree.visible = false
-        },
-      })
+        gsap.to(blueTree, {
+          y: treeBaseY + 200,
+          duration: 0.7,
+          ease: 'power2.in',
+          onComplete: () => {
+            blueTree.visible = false
+          },
+        })
 
-        this.scene.redArea.renderable = false;
+        this.scene.redArea.renderable = false
         this.scene.archer.playAttack(4, this.scene.enemy)
         this.scene.archer2.playAttack(5, this.scene.enemy)
         this.scene.enemy.flashPlay()
@@ -331,6 +325,7 @@ case 'hideKing': {
           ease: 'linear',
           onComplete: () => {
             this.scene.archer2.playAttack(5)
+            
           },
         })
         gsap.to(this.scene.archer2.sprite, {

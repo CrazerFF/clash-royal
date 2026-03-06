@@ -87,23 +87,28 @@ export class HealthBar extends Container {
     }
   }
 
-reduceHealth(percent) {
-    this.currentHealth = Math.max(0, this.currentHealth - percent);
+  reduceHealth(percent) {
+    this.currentHealth = Math.max(0, this.currentHealth - percent)
 
     // Проверяем enemy
-    if (this.scene?.enemy?.healthBar?.currentHealth === 0 && this.scene.enemy.sprite?.visible) {
-        this.scene.enemy.playDeath();
+    if (
+      this.scene?.enemy?.healthBar?.currentHealth === 0 &&
+      this.scene.enemy.sprite?.visible
+    ) {
+      this.scene.enemy.playDeath()
     }
 
     // Проверяем redKing
-    if (this.scene?.redKing?.healthBar?.currentHealth === 0 && this.scene.redKing.sprite?.visible) {
-        this.scene.redKing.playDeath();
+    if (
+      this.scene?.redKing?.healthBar?.currentHealth === 0 &&
+      this.scene.redKing.sprite?.visible
+    ) {
+      this.scene.redKing.playDeath()
     }
 
-    this.updateHealthFill();
-    return this.currentHealth;
-}
-
+    this.updateHealthFill()
+    return this.currentHealth
+  }
 
   setHealth(percent) {
     this.currentHealth = Math.max(0, Math.min(100, percent))

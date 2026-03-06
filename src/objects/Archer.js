@@ -163,18 +163,18 @@ export class Archer extends Container {
       console.warn(
         `archer.playAttack: attackNumber must be 1-5, got ${attackNumber}`
       )
-      return
+      //return
     }
 
     const animationKey = `attack${attackNumber}`
     const frames = this.animations[animationKey]
 
-    if (!frames) {
-      console.warn(`archer.playAttack: animation ${animationKey} not found`)
-      return
-    }
+    // if (!frames) {
+    //   console.warn(`archer.playAttack: animation ${animationKey} not found`)
+    //   return
+    // }
 
-    if (this.currentAnimation === animationKey) return
+   // if (this.currentAnimation === animationKey) return
 
     this.sprite.textures = frames
     this.sprite.loop = true
@@ -185,9 +185,10 @@ export class Archer extends Container {
     this.sprite.onLoop = null
 
     this.sprite.onLoop = () => {
+        console.log('Attack loop - shooting arrow!') // Отладка
       this.shootArrow(enemy)
       if (enemy === this.scene.redKing) {
-        this.scene.redKing?.healthBar.reduceHealth(5)
+        this.scene.redKing?.healthBar.reduceHealth(15)
       } else {
         this.scene.enemy?.healthBar.reduceHealth(5)
       }
@@ -255,7 +256,7 @@ export class Archer extends Container {
   }
 
   stop() {
-      this.sprite.stop(); // Останавливаем анимацию
-    this.sprite.animationSpeed = 0; // Обнуляем скорость
+    this.sprite.stop() // Останавливаем анимацию
+    this.sprite.animationSpeed = 0 // Обнуляем скорость
   }
 }
