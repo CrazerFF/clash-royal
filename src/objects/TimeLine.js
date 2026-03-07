@@ -5,8 +5,6 @@ import { TextPopup } from './TextPopup.js'
 import { Timer } from '../Hud/Timer.js'
 import { Spine } from '@esotericsoftware/spine-pixi-v8'
 
-
-
 import { gsap } from 'gsap'
 
 export class TimeLine {
@@ -60,7 +58,6 @@ export class TimeLine {
       { time: 18.7, type: 'giantMove5' },
       { time: 19.0, type: 'attackThrone' },
       { time: 24.4, type: 'overlayIn' },
-
     ]
   }
 
@@ -112,17 +109,43 @@ export class TimeLine {
           duration: 0.5,
           ease: 'linear',
           onComplete: () => {
-                  this.crownAnim = Spine.from({
-            skeleton: 'crown_anim_json',
-            atlas: 'crown_anim_atlas',
-          })
-          this.crownAnim.state.timeScale = 0.01;
-        //  this.crownAnim.state.setAnimation(0, 'animation', false)
-          this.crownAnim.state.setAnimation(0, 'crown', false) 
-          this.crownAnim.x = this.scene.DESIGN_W / 2
-          this.crownAnim.y = this.scene.DESIGN_H /2+150
-          this.scene.addChild(this.crownAnim);
-        //  this.scene.objects.push(this.crownAnim)
+            this.crownAnim = Spine.from({
+              skeleton: 'crown_anim_json',
+              atlas: 'crown_anim_atlas',
+            })
+              const bounds = this.crownAnim.getLocalBounds()
+
+  this.crownAnim.pivot.set(
+    bounds.x + bounds.width / 2,
+    bounds.y + bounds.height / 2 )
+            this.crownAnim.state.timeScale = 0.01
+            // Устанавливаем первую анимацию
+            this.crownAnim.state.setAnimation(0, 'crown', false)
+
+this.crownAnim.scale.set(0.7)
+
+this.crownAnim.resize = (w, h, scale_UI, scaleGame) => {
+  const centerX = this.scene.uiLayer.designWidth / 2
+  const centerY = this.scene.uiLayer.designHeight / 2
+console.log('resize');
+
+  this.crownAnim.x = centerX
+  this.crownAnim.y = centerY - 200
+}
+
+this.crownAnim.state.addListener({
+  complete: (entry) => {
+    if (entry.animation.name === 'crown') {
+      this.crownAnim.state.setAnimation(0, 'animation', true)
+    }
+  },
+})
+
+this.crownAnim.state.timeScale = 0.01
+this.crownAnim.zIndex = 9999
+
+this.scene.uiLayer.addChild(this.crownAnim)
+this.scene.objects.push(this.crownAnim)
           },
         })
         break
@@ -352,7 +375,6 @@ export class TimeLine {
           ease: 'linear',
           onComplete: () => {
             this.scene.archer2.playAttack(5, this.scene.enemy)
-            
           },
         })
         gsap.to(this.scene.archer2.sprite, {
