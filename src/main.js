@@ -75,7 +75,7 @@ import { UiLayer } from './Hud/UiLayer.js';
   app.stage.addChild(uiLayer);
   app.stage.sortableChildren = true;
 
-  function resize() {
+  window.resizeGame = function resize() {
     const w = window.innerWidth;
     const h = window.innerHeight;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -91,11 +91,11 @@ import { UiLayer } from './Hud/UiLayer.js';
     game.resize?.(DESIGN_W, DESIGN_H, w, h);
     uiLayer.resize?.(w, h, scale_UI, scaleGame);
   }
+  window.addEventListener('resize', window.resizeGame);
+  window.addEventListener('orientationchange', window.resizeGame);
+console.log('resize');
 
-  window.addEventListener('resize', resize);
-  window.addEventListener('orientationchange', resize);
-
-  resize();
+  window.resizeGame();
 
   app.ticker.add((ticker) => {
     game.update(ticker.deltaTime);

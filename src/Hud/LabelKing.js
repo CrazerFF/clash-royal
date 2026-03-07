@@ -1,4 +1,5 @@
 import { Container, Sprite, Assets, Text, TextStyle } from 'pixi.js'
+import { gsap } from 'gsap'
 
 export class LabelKing extends Container {
   constructor() {
@@ -64,26 +65,48 @@ export class LabelKing extends Container {
   /* =========================
      📢 ПОКАЗ ТЕКСТА
   ========================== */
+showText(text) {
+  this.popupText.text = text
 
-  showText(text) {
-    this.popupText.text = text
+  this.popupText.style.wordWrapWidth =
+    this.popup.width * 0.75
 
-    // Ограничиваем ширину текста (после scale!)
-    this.popupText.style.wordWrapWidth =
-      this.popup.width * 0.75
+  this.popupText.position.set(20, 0)
 
-    // Центр текста относительно popup
-    this.popupText.position.set(20, 0)
+  this.popupContainer.x =
+    this.labelKing.width * 0.75
 
-    // Позиция всего облачка относительно короля
-    this.popupContainer.x =
-      this.labelKing.width * 0.75
+  this.popupContainer.y =
+    -this.labelKing.height * 0.85
 
-    this.popupContainer.y =
-      -this.labelKing.height * 0.85
+  // сбрасываем анимации
+  gsap.killTweensOf(this.popupContainer.scale)
 
-    this.popupContainer.visible = true
-  }
+  // стартовое состояние
+  this.popupContainer.scale.set(0)
+  this.popupContainer.visible = true 
+
+  // задержка появления
+  gsap.delayedCall(2, () => {
+
+    this.popupContainer.visible = false
+
+    gsap.fromTo(
+      this.popupContainer.scale,
+      { x: 0, y: 0 },
+      {
+        x: 1,
+        y: 1,
+        duration: 0.35,
+        ease: 'back.out(2)'
+      }
+    )
+
+  })
+}
+
+
+
 
   showFirstText() {
     this.showText("What's your character?")

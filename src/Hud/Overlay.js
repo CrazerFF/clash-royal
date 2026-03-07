@@ -6,7 +6,7 @@ export class Overlay extends Container {
     
     this.graphics = new Graphics();
     this.addChild(this.graphics);
-    this.zIndex=9999
+    this.zIndex=100
   }
   
   resize(w, h) {

@@ -3,8 +3,10 @@ import { Enemy } from './Enemy.js'
 import { sound } from './SoundManager.js'
 import { TextPopup } from './TextPopup.js'
 import { Timer } from '../Hud/Timer.js'
+import { CrownAnim } from '../Hud/CrownAnim.js'
+import { FinalText } from '../Hud/FinalText.js'
+import { Bg2 } from '../Hud/Bg2.js'
 import { Spine } from '@esotericsoftware/spine-pixi-v8'
-
 import { gsap } from 'gsap'
 
 export class TimeLine {
@@ -12,6 +14,7 @@ export class TimeLine {
     this.scene = scene
     this.designWidth = designWidth
     this.designHeight = designHeight
+    this.sortableChildren = true
 
     // Для точечного спавна
     this.timeAccumulator = 0
@@ -22,18 +25,18 @@ export class TimeLine {
       { time: 0.0, type: 'pause' },
       { time: 1.2, type: 'enemyMove1' },
       { time: 1.2, type: 'overlay' },
-      { time: 1.2, type: 'overlayIn' },
+    //  { time: 1.2, type: 'finalScreen' },
       { time: 1.2, type: 'showKing' },
-      { time: 1.2, type: 'showKingFirstText' },
-      { time: 2.3, type: 'hideKing' },
+      // { time: 1.2, type: 'showKingFirstText' },
+      // { time: 2.3, type: 'hideKing' },
       { time: 3.1, type: 'pause' },
       { time: 3.2, type: 'enemyMove2' },
       { time: 3.3, type: 'giantMove1' },
 
-      //  { time: 3.6, type: 'showKing' },
-      //  { time: 3.6, type: 'showKingSecondText' },
-      //  { time: 4.8, type: 'hideKing' },
-      { time: 5.0, type: 'pause2' },
+      { time: 5.0, type: 'showKing' },
+        // { time: 5.0, type: 'showKingSecondText' },
+        // { time: 5.7, type: 'hideKing' },
+      { time: 5.1, type: 'pause2' },
 
       { time: 5.0, type: 'archerAttack' },
       { time: 5.8, type: 'archerRotate' },
@@ -58,6 +61,7 @@ export class TimeLine {
       { time: 18.7, type: 'giantMove5' },
       { time: 19.0, type: 'attackThrone' },
       { time: 24.4, type: 'overlayIn' },
+      { time: 30.2, type: 'finalScreen' },
     ]
   }
 
@@ -105,47 +109,19 @@ export class TimeLine {
         break
       case 'overlayIn':
         gsap.to(this.scene.uiLayer.overlay, {
-          alpha: 0.6,
+          alpha: 0.8,
           duration: 0.5,
           ease: 'linear',
           onComplete: () => {
-            this.crownAnim = Spine.from({
-              skeleton: 'crown_anim_json',
-              atlas: 'crown_anim_atlas',
-            })
-              const bounds = this.crownAnim.getLocalBounds()
-
-  this.crownAnim.pivot.set(
-    bounds.x + bounds.width / 2,
-    bounds.y + bounds.height / 2 )
-            this.crownAnim.state.timeScale = 0.01
-            // Устанавливаем первую анимацию
-            this.crownAnim.state.setAnimation(0, 'crown', false)
-
-this.crownAnim.scale.set(0.7)
-
-this.crownAnim.resize = (w, h, scale_UI, scaleGame) => {
-  const centerX = this.scene.uiLayer.designWidth / 2
-  const centerY = this.scene.uiLayer.designHeight / 2
-console.log('resize');
-
-  this.crownAnim.x = centerX
-  this.crownAnim.y = centerY - 200
-}
-
-this.crownAnim.state.addListener({
-  complete: (entry) => {
-    if (entry.animation.name === 'crown') {
-      this.crownAnim.state.setAnimation(0, 'animation', true)
-    }
-  },
-})
-
-this.crownAnim.state.timeScale = 0.01
-this.crownAnim.zIndex = 9999
-
-this.scene.uiLayer.addChild(this.crownAnim)
-this.scene.objects.push(this.crownAnim)
+           this.crownAnim = new CrownAnim(
+              this.scene.uiLayer.w,
+              this.scene.uiLayer.h,
+              this.scene.uiLayer.scaleUI,
+              this.scene.uiLayer.scaleGame,
+              this.scene
+           )
+           this.crownAnim.setAnimation1()
+          this.scene.uiLayer.addChild(this.crownAnim)
           },
         })
         break
@@ -162,41 +138,94 @@ this.scene.objects.push(this.crownAnim)
       case 'pause2':
         this.scene.isPaused = true
         break
-      case 'showKing': {
-        const king = this.scene.uiLayer.labelKing
-        const blueTree = this.scene.uiLayer.blueTree
+case 'showKing': {
+  const king = this.scene.uiLayer.labelKing
+  const blueTree = this.scene.uiLayer.blueTree
+  
+  // Создаем флаг в конструкторе TimeLine или здесь проверяем
+  if (this.kingFirstTime === undefined) {
+    this.kingFirstTime = true // первый раз
+  }
+  
+  if (king.baseY === undefined) king.baseY = king.y
+  if (blueTree.baseY === undefined) blueTree.baseY = blueTree.y
+ king.popupContainer.scale.set(1, 1)
+  
+  // Появление короля
+  // Сначала ставим нужный текст
+if (this.kingFirstTime) {
+  king.showFirstText()
+} else {
+  king.showSecondText()
+}
 
-        // this.scene.uiLayer.hand.visible = false;
-        //       this.scene.area.visible = false;
+king.popupContainer.scale.set(1, 1)
 
-        if (king.baseY === undefined) {
-          king.baseY = king.y
-        }
+king.visible = true
+king.y = king.baseY + 200
 
-        king.visible = true
-
-        king.y = king.baseY + 200
-
-        gsap.to(king, {
-          y: king.baseY,
-          duration: 0.7,
-          ease: 'power2.out',
+gsap.to(king, {
+  y: king.baseY,
+  duration: 0.7,
+  ease: 'power2.out',
+  onComplete: () => {
+      // Показываем текст в зависимости от флага
+      
+      // Через 0.7 секунды скрываем
+      setTimeout(() => {
+        gsap.to(king.popupContainer.scale, {
+          x: 0,
+          y: 0,
+          duration: 0.25,
+          ease: 'power2.in',
         })
-
-        const treeBaseY = blueTree.baseY ?? blueTree.y
-        blueTree.baseY = treeBaseY
-
-        gsap.to(blueTree, {
-          y: treeBaseY + 200,
+        
+        gsap.to(king.popupContainer, {
+          y: king.popupContainer.y - 20,
+          duration: 0.25,
+          ease: 'power2.in',
+        })
+        
+        gsap.to(king, {
+          y: king.baseY + 200,
           duration: 0.7,
           ease: 'power2.in',
           onComplete: () => {
-            blueTree.visible = false
+            king.visible = false
+            this.scene.uiLayer.hand.renderable = true
+            this.scene.area.visible = true
+            this.scene.redArea.visible = true
+            
+            // Меняем флаг после первого раза
+            if (this.kingFirstTime) {
+              this.kingFirstTime = false
+            }
           },
         })
+        
+        blueTree.visible = true
+        blueTree.y = blueTree.baseY + 200
+        gsap.to(blueTree, {
+          y: blueTree.baseY,
+          duration: 0.7,
+          ease: 'power2.out',
+        })
+      }, 700)
+    }
+  })
 
-        break
-      }
+  // Анимация дерева
+  gsap.to(blueTree, {
+    y: blueTree.baseY + 200,
+    duration: 0.7,
+    ease: 'power2.in',
+    onComplete: () => {
+      blueTree.visible = false
+    },
+  })
+
+  break
+}
 
       case 'showKingFirstText':
         this.scene.uiLayer.labelKing.showFirstText()
@@ -208,6 +237,23 @@ this.scene.objects.push(this.crownAnim)
       case 'hideKing': {
         const king = this.scene.uiLayer.labelKing
         const blueTree = this.scene.uiLayer.blueTree
+
+        // 💬 POPUP исчезает в точку
+        gsap.to(king.popupContainer.scale, {
+          x: 0,
+          y: 0,
+          duration: 0.25,
+          ease: 'power2.in',
+        })
+
+        gsap.to(king.popupContainer, {
+          y: king.popupContainer.y - 20,
+          duration: 0.25,
+          ease: 'power2.in',
+          onComplete: () => {
+            king.showSecondText()
+          }
+        })
 
         gsap.to(king, {
           y: king.baseY + 200,
@@ -234,8 +280,6 @@ this.scene.objects.push(this.crownAnim)
       }
 
       case 'enemyMove1':
-        // this.scene.area.visible = false;
-
         gsap.to(this.scene.enemy, {
           y: this.scene.enemy.y + 180,
           duration: 2,
@@ -359,8 +403,6 @@ this.scene.objects.push(this.crownAnim)
         break
       case 'archerRotate':
         gsap.to(this.scene.archer.sprite, {
-          // x: this.scene.giant.x,
-          // y: this.scene.giant.y - 150,
           duration: 1,
           rotation: -0.2,
           ease: 'linear',
@@ -383,7 +425,6 @@ this.scene.objects.push(this.crownAnim)
           ease: 'linear',
         })
         break
-
       case 'archerGoToBridge':
         this.scene.archer.playRun(4)
         this.scene.archer2.clearAnimationCallbacks()
@@ -399,7 +440,6 @@ this.scene.objects.push(this.crownAnim)
           },
         })
         break
-
       case 'archer2GoToBridge':
         this.scene.archer2.playRun(4)
         this.scene.archer2.clearAnimationCallbacks()
@@ -414,7 +454,6 @@ this.scene.objects.push(this.crownAnim)
           },
         })
         break
-
       case 'archerAcrossBridge':
         this.scene.archer.playRun(2)
         gsap.to(this.scene.archer, {
@@ -435,7 +474,6 @@ this.scene.objects.push(this.crownAnim)
           },
         })
         break
-
       case 'archer2AcrossBridge':
         this.scene.archer2.playRun(2)
         gsap.to(this.scene.archer2, {
@@ -456,7 +494,6 @@ this.scene.objects.push(this.crownAnim)
           },
         })
         break
-
       case 'attackThrone':
         //Пульсация красного цвета
         const throne = [this.scene.throne, this.scene.redKing]
@@ -476,38 +513,42 @@ this.scene.objects.push(this.crownAnim)
           repeat: -1,
         })
         break
+      case 'finalScreen':
+        this.bg2 = new Bg2(this.scene.uiLayer.w, this.scene.uiLayer.h);
+        this.scene.uiLayer.addChild(this.bg2);
+        this.scene.objects.push(this.bg2);
 
-      //   case 'clock':
-      //     console.log('ok');
+        this.scene.uiLayer.overlay.alpha = 0;
+        this.crownAnim.destroy()
 
-      //     obj = new Sprite(Assets.get('clock'));
-      //     obj.scale.set(1.0);
-      //     obj.type = 'clock';
-      //     obj.anchor.set(0.5, 0.5);
-      //     obj.zIndex = 350;
-      //     break;
-      //   case 'firework':
-      //     this.scene.gameFinished = true;
-      //     this.scene.seq.start();
-      //     this.scene.uiLayer.installButton.visible = true;
-      //     this.textPopup = new TextPopup(
-      //       'Congratulations!',
-      //       this.designWidth / 2 - 510,
-      //       this.designHeight / 2 - 200,
-      //       40
-      //     );
-      //     this.scene.addChild(this.textPopup);
-      //     this.textPopup.zIndex = 2700;
-      //     break;
-      //   case 'fail':
-      //     obj = new Sprite(Assets.get('fail'));
-      //     obj.scale.set(1);
-      //     obj.anchor.set(0.5, 0.5);
-      //     obj.type = 'fail';
-      //     obj.zIndex = 5000;
-      //     sound.play('fail');
-      //     sound.stopMusic();
-      //     break;
+        this.scene.uiLayer.playNow.visible = true
+        this.scene.uiLayer.playNow.isInCenter = true
+        this.scene.uiLayer.playNow.x = this.scene.uiLayer.w / 2
+        this.scene.uiLayer.playNow.y = this.scene.uiLayer.h / 2 + 200
+
+        this.scene.uiLayer.label.visible = true
+        this.scene.uiLayer.label.isInCenter = true
+        this.scene.uiLayer.label.x = this.scene.uiLayer.w / 2
+        this.scene.uiLayer.label.y = this.scene.uiLayer.h / 2 
+
+        // ПУЛЬСАЦИЯ
+        gsap.to(this.scene.uiLayer.label.scale, {
+          x: "+=0.05",
+          y: "+=0.05",
+          duration: 1.2,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1
+        });
+
+        this.finalText = new FinalText(this.scene.uiLayer.scaleUI);
+        this.finalText.x = this.scene.uiLayer.w / 2
+        this.finalText.y = this.scene.uiLayer.h / 2
+        this.scene.uiLayer.addChild(this.finalText)
+
+        window.resizeGame()
+      break
+
     }
     if (!obj) return
 

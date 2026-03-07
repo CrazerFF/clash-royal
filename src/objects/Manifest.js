@@ -10,6 +10,10 @@ export const manifest = {
           src: 'assets/sprites/bg.webp',
         },
         {
+          alias: 'bg2',
+          src: 'assets/sprites/bg2.webp',
+        },
+        {
           alias: 'giant_run_json',
           src: 'assets/sprites/giant_run.json',
         },

@@ -40,6 +40,7 @@ export class PlayNow extends Container {
     this.baseScaleText = 0.95;
     this.offSetX = 200;
     this.offSetY = 258;
+    this.zIndex = 200
 
     // this.roundPixels = true;
     // this.text.roundPixels = true;
@@ -52,9 +53,12 @@ export class PlayNow extends Container {
   pulseAnimation(delta) {
     this.pulseTime += delta * 0.09;
     const scaleOffset = Math.sin(this.pulseTime) * 0.05;
-
+if (this.isInCenter) {
+    this.scale.set(1.7 + scaleOffset);
+} else {
     // масштабируем весь контейнер
     this.scale.set(1.1 + scaleOffset);
+}
   }
 
   update(delta) {
@@ -62,19 +66,24 @@ export class PlayNow extends Container {
   }
 
   // ===== РЕСАЙЗ КНОПКИ =====
-  resize(w, h, scale_UI) {
-    this.x = this.offSetX * scale_UI;
-    this.y = this.offSetY * scale_UI;
+resize(w, h, scale_UI) {
+    this.screenWidth = w;
+    this.screenHeight = h;
+    this.currentScaleUI = scale_UI;
+
+    // Используем флаг для определения позиции
+    if (this.isInCenter) {
+        
+        this.x = w / 2;
+        this.y = h / 2 + 300 *scale_UI;
+    } else {
+        this.x = this.offSetX * scale_UI;
+        this.y = this.offSetY * scale_UI;
+    }
 
     this.playNow.scale.set(this.baseScaleX * scale_UI, this.baseScaleY * scale_UI);
     this.text.scale.set(this.baseScaleText * scale_UI * 0.7);
-
     this.text.x = this.playNow.x + 3 * scale_UI;
     this.text.y = this.playNow.y;
-
-     if (w > h) {
-      this.scale.set()
-
-     }
-  }
+}
 }

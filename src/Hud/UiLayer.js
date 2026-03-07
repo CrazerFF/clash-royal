@@ -86,9 +86,14 @@ export class UiLayer extends Container {
       }
     })
   }
-  resize(w, h, scale_UI, scaleGame) {
+  resize(w, h, scale_UI, scaleGame) {    
     this.x = 0
     this.y = 0
+
+    this.w = w
+    this.h = h
+    this.scaleUI = scale_UI
+    this.scaleGame = scaleGame
 
     const startGlobal = this.blueTree.giantIcon.getGlobalPosition()
 
