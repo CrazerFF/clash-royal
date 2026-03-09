@@ -185,7 +185,6 @@ export class Archer extends Container {
     this.sprite.onLoop = null
 
     this.sprite.onLoop = () => {
-        console.log('Attack loop - shooting arrow!') // Отладка
       this.shootArrow(enemy)
       if (enemy === this.scene.redKing) {
         this.scene.redKing?.healthBar.reduceHealth(15)

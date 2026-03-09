@@ -25,7 +25,7 @@ export class TimeLine {
       { time: 0.0, type: 'pause' },
       { time: 1.2, type: 'enemyMove1' },
       { time: 1.2, type: 'overlay' },
-    //  { time: 1.2, type: 'finalScreen' },
+     // { time: 1.2, type: 'finalScreen' },
       { time: 1.2, type: 'showKing' },
       // { time: 1.2, type: 'showKingFirstText' },
       // { time: 2.3, type: 'hideKing' },
@@ -36,9 +36,9 @@ export class TimeLine {
       { time: 5.0, type: 'showKing' },
         // { time: 5.0, type: 'showKingSecondText' },
         // { time: 5.7, type: 'hideKing' },
-      { time: 5.1, type: 'pause2' },
+      { time: 5.0, type: 'pause2' },
 
-      { time: 5.0, type: 'archerAttack' },
+      { time: 5.1, type: 'archerAttack' },
       { time: 5.8, type: 'archerRotate' },
       { time: 5.9, type: 'archer2PlayRun' },
 
@@ -149,7 +149,7 @@ case 'showKing': {
   
   if (king.baseY === undefined) king.baseY = king.y
   if (blueTree.baseY === undefined) blueTree.baseY = blueTree.y
- king.popupContainer.scale.set(1, 1)
+ king.popupContainer.scale.set(0)
   
   // Появление короля
   // Сначала ставим нужный текст
@@ -159,10 +159,17 @@ if (this.kingFirstTime) {
   king.showSecondText()
 }
 
-king.popupContainer.scale.set(1, 1)
+king.popupContainer.scale.set(0)
 
 king.visible = true
 king.y = king.baseY + 200
+
+gsap.to(king.popupContainer.scale, {
+  y: 1,
+  x: 1,
+  duration: 0.7,
+  ease: 'power2.out',
+})
 
 gsap.to(king, {
   y: king.baseY,

@@ -17,14 +17,21 @@ export class Bg2 extends Container {
     this.DESIGN_H = DESIGN_H;
   }
 
-  resize(w, h, scaleGame) {
-    // Масштабируем спрайт относительно игры
-    this.bg2.scale.set(2.4 * scaleGame);
-    
-    // Позиция остается по центру игрового поля
-    this.bg2.position.set(
-      this.DESIGN_W / 2 * scaleGame,
-      this.DESIGN_H / 2 * scaleGame
-    );
-  }
+resize(w, h) {
+
+  const texW = this.bg2.texture.width
+  const texH = this.bg2.texture.height
+
+  const scale = Math.max(w / texW, h / texH)
+
+  this.bg2.scale.set(scale)
+
+  this.bg2.position.set(
+    w / 2,
+    h / 2
+  )
+
+  this.bg2.anchor.set(0.5)
+}
+
 }

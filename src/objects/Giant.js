@@ -3,6 +3,7 @@ import { AnimatedSprite, Assets, Text, TextStyle } from 'pixi.js'
 import { HealthBar } from './HealthBar.js'
 import { Clock } from './Clock.js'
 
+
 export class Giant extends Container {
   constructor(scene) {
     super()

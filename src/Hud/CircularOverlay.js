@@ -9,7 +9,7 @@ export class CircularOverlay extends Container {
     this.color = 0x000000
     this.alphaValue = 0.4
     this.dragFlag = false;
-     console.log('dragFlag',  this.dragFlag);
+    // console.log('dragFlag',  this.dragFlag);
     this.handVisible = false;
     // графика для круга
     this.graphics = new Graphics()
@@ -39,7 +39,7 @@ export class CircularOverlay extends Container {
 
   drawOverlay(angle) {
      this.dragFlag = true
-     console.log('dragFlag',  this.dragFlag);
+   //  console.log('dragFlag',  this.dragFlag);
      
     this.graphics.clear()
     this.graphics
@@ -58,11 +58,8 @@ export class CircularOverlay extends Container {
         this.graphics.clear(),
         this.handVisible = true
          this.dragFlag = false;
-          console.log('dragFlag',  this.dragFlag);
       }
     })
-     //  this.graphics.rotation += 1.8 // угол старта
-
   }
 
   fillOverlay(duration = 3) {

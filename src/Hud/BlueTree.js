@@ -2,6 +2,7 @@ import { Container, Sprite, Assets } from 'pixi.js'
 import { CharacterIcon } from './CharacterIcon'
 import { gsap } from 'gsap'
 import { CircularOverlay } from './CircularOverlay'
+import { ColorMatrixFilter } from 'pixi.js'
 
 export class BlueTree extends Container {
   constructor(uiLayer) {
@@ -13,6 +14,10 @@ export class BlueTree extends Container {
     this.baseScale = 0.61
     this.offSetX = 0
     this.offSetY = 20
+
+     // Создаем фильтр
+    this.grayFilter = new ColorMatrixFilter()
+    this.grayFilter.desaturate() // ВАЖНО: вызываем метод!
 
     // ===== ПЛАШКА =====
     this.blueTree = new Sprite(Assets.get('blue_tree'))
@@ -56,10 +61,18 @@ export class BlueTree extends Container {
   // выбор юнита: "giant" или "archer"
   // ================================
   selectUnit(unitType) {
-    if (unitType === 'giant') {
-      this.uiLayer.game.scenario = 1;
-      console.log("scenario",  this.uiLayer.game.scenario);
-      
+  if (unitType === 'giant') {
+    this.uiLayer.game.scenario = 1
+
+       // Применяем фильтр к лучнику
+      this.archerIcon.icon.filters = [this.grayFilter]
+      // Снимаем фильтр через 1 секунду
+    gsap.delayedCall(6, () => {
+      if (this.archerIcon?.icon) {
+        this.archerIcon.icon.filters = null
+      }
+    })
+
       // гигант выбран → исчезает гигант
       gsap.to(this.giantIcon.scale, {
         x: 0,
@@ -70,6 +83,7 @@ export class BlueTree extends Container {
           this.giantIcon.visible = false
         },
       })
+
       // лучник переезжает в центр
       gsap.to(this.archerIcon, {
         x: this.centerX,
@@ -89,6 +103,9 @@ export class BlueTree extends Container {
       if (this.uiLayer.game.scenario === 0) {
         this.uiLayer.game.scenario = 2
       }
+
+      // гигант → черно-белый
+    this.giantIcon.icon.filters = [this.grayFilter]
 
       gsap.to(this.archerIcon.scale, {
         x: 0,

@@ -158,7 +158,7 @@ export class Game extends Container {
     })
   }
 
-  update(delta) {
+  update(delta) { 
     // апдейт всех объектов
     for (const obj of this.objects) {
       if (obj.update) obj.update(delta)
