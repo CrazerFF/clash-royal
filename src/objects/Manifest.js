@@ -7,7 +7,10 @@ export const manifest = {
       assets: [
         {
           alias: 'bg',
-          src: 'assets/sprites/bg.webp',
+          src: ['assets/sprites/bg.webp',
+            'assets/sprites/bg@2x.webp',
+            'assets/sprites/bg@3x.webp'
+          ]
         },
         {
           alias: 'bg2',

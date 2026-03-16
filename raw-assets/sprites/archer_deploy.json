@@ -1,0 +1,125 @@
+{
+  "frames": {
+    "archer_deploy1.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 66,
+        "h": 53
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 115,
+        "y": 72,
+        "w": 66,
+        "h": 53
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      }
+    },
+    "archer_deploy2.png": {
+      "frame": {
+        "x": 1,
+        "y": 56,
+        "w": 66,
+        "h": 59
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 125,
+        "y": 79,
+        "w": 66,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      }
+    },
+    "archer_deploy3.png": {
+      "frame": {
+        "x": 1,
+        "y": 117,
+        "w": 71,
+        "h": 83
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 129,
+        "y": 84,
+        "w": 71,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      }
+    },
+    "archer_deploy4.png": {
+      "frame": {
+        "x": 1,
+        "y": 263,
+        "w": 75,
+        "h": 85
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 126,
+        "y": 94,
+        "w": 75,
+        "h": 85
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      }
+    },
+    "archer_deploy5.png": {
+      "frame": {
+        "x": 1,
+        "y": 190,
+        "w": 71,
+        "h": 86
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 127,
+        "y": 94,
+        "w": 71,
+        "h": 86
+      },
+      "sourceSize": {
+        "w": 320,
+        "h": 320
+      }
+    }
+  },
+  "animations": {
+    "archer_deploy": [
+      "archer_deploy1.png",
+      "archer_deploy2.png",
+      "archer_deploy3.png",
+      "archer_deploy4.png",
+      "archer_deploy5.png"
+    ]
+  },
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "1.1",
+    "image": "archer_deploy.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 88,
+      "h": 339
+    },
+    "scale": "0.83333",
+    "smartupdate": "$TexturePacker:SmartUpdate:3064b2a93d9f04e0f75bc8931a45f3e1:c040b8aaf323425ea034371e18086e61:ddffb6eb52e530cc9efe435a3ca742ba$"
+  }
+}

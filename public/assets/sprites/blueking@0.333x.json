@@ -1,0 +1,379 @@
+{
+  "frames": {
+    "blueking_canon1.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon2.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon3.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon4.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon5.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon6.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon7.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon8.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon9.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon10.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon11.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon12.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon13.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon14.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon15.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon16.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon17.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon18.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon19.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon20.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon21.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon22.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon23.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon24.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon25.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon26.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon27.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon28.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_canon29.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle1.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle2.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle3.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle4.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle5.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle6.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle7.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle8.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle9.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle10.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle11.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle12.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle13.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle14.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle15.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle16.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle17.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle18.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle19.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle20.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle21.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "blueking_idle22.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    }
+  },
+  "animations": {
+    "blueking_canon": [
+      "blueking_canon1.png",
+      "blueking_canon2.png",
+      "blueking_canon3.png",
+      "blueking_canon4.png",
+      "blueking_canon5.png",
+      "blueking_canon6.png",
+      "blueking_canon7.png",
+      "blueking_canon8.png",
+      "blueking_canon9.png",
+      "blueking_canon10.png",
+      "blueking_canon11.png",
+      "blueking_canon12.png",
+      "blueking_canon13.png",
+      "blueking_canon14.png",
+      "blueking_canon15.png",
+      "blueking_canon16.png",
+      "blueking_canon17.png",
+      "blueking_canon18.png",
+      "blueking_canon19.png",
+      "blueking_canon20.png",
+      "blueking_canon21.png",
+      "blueking_canon22.png",
+      "blueking_canon23.png",
+      "blueking_canon24.png",
+      "blueking_canon25.png",
+      "blueking_canon26.png",
+      "blueking_canon27.png",
+      "blueking_canon28.png",
+      "blueking_canon29.png"
+    ],
+    "blueking_idle": [
+      "blueking_idle1.png",
+      "blueking_idle2.png",
+      "blueking_idle3.png",
+      "blueking_idle4.png",
+      "blueking_idle5.png",
+      "blueking_idle6.png",
+      "blueking_idle7.png",
+      "blueking_idle8.png",
+      "blueking_idle9.png",
+      "blueking_idle10.png",
+      "blueking_idle11.png",
+      "blueking_idle12.png",
+      "blueking_idle13.png",
+      "blueking_idle14.png",
+      "blueking_idle15.png",
+      "blueking_idle16.png",
+      "blueking_idle17.png",
+      "blueking_idle18.png",
+      "blueking_idle19.png",
+      "blueking_idle20.png",
+      "blueking_idle21.png",
+      "blueking_idle22.png"
+    ]
+  },
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "1.1",
+    "image": "blueking@0.333x.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 341,
+      "h": 95
+    },
+    "scale": 0.333,
+    "smartupdate": "$TexturePacker:SmartUpdate:8fadf1fb1400a0566127fe2e58e3df8c:924b1c73f028167807a0a143c33545c5:de32cb0509912f703e893ca78e9126b6$"
+  }
+}

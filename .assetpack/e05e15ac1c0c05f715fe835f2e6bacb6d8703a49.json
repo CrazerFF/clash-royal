@@ -1,0 +1,875 @@
+{
+    "assets": {
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites": {
+            "isFolder": true,
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835945,
+                "duration": 9.71139999999997,
+                "success": true
+            }
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/archer_attack.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835946,
+                "duration": 11.444299999999998,
+                "success": true
+            },
+            "hash": "gPsf"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/archer_attack.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/archer_attack.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/archer_attack.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835948,
+                "duration": 9.632299999999987,
+                "success": true
+            },
+            "hash": "-i4k"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/archer_attack.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/archer_attack.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/archer_deploy.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835950,
+                "duration": 7.119199999999978,
+                "success": true
+            },
+            "hash": "Wute"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/archer_deploy.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/archer_deploy.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/archer_deploy.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835952,
+                "duration": 4.879599999999982,
+                "success": true
+            },
+            "hash": "lNJOZg"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/archer_deploy.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/archer_deploy.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/archer_run.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835955,
+                "duration": 12.565600000000018,
+                "success": true
+            },
+            "hash": "cZNFfQ"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/archer_run.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/archer_run.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/archer_run.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835957,
+                "duration": 15.601500000000044,
+                "success": true
+            },
+            "hash": "_SAFHQ"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/archer_run.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/archer_run.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/arrow.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835961,
+                "duration": 11.8005,
+                "success": true
+            },
+            "hash": "o2XsIQ"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/arrow.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/arrow.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/arrow.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835965,
+                "duration": 8.52539999999999,
+                "success": true
+            },
+            "hash": "NeqHKw"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/arrow.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/arrow.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/bg.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835966,
+                "duration": 7.168099999999981,
+                "success": true
+            },
+            "hash": "xfWdnQ"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/bg.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/bg.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/bg1.jpg": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835968,
+                "duration": 13.32929999999999,
+                "success": true
+            },
+            "hash": "prhcug"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/bg1.jpg": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/bg1.jpg",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/bg2.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835973,
+                "duration": 10.033299999999997,
+                "success": true
+            },
+            "hash": "XNq1pQ"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/bg2.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/bg2.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/blueking.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835975,
+                "duration": 8.018500000000017,
+                "success": true
+            },
+            "hash": "m7lmKA"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/blueking.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/blueking.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/blueking.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835977,
+                "duration": 6.5423999999999864,
+                "success": true
+            },
+            "hash": "Pcm2CA"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/blueking.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/blueking.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/crown_anim.atlas": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835980,
+                "duration": 3.3122000000000185,
+                "success": true
+            },
+            "hash": "YQS-ZA"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/crown_anim.atlas": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/crown_anim.atlas",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/crown_anim.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835981,
+                "duration": 7.9909000000000106,
+                "success": true
+            },
+            "hash": "3vnj2Q"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/crown_anim.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/crown_anim.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/death_fx.atlas": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835983,
+                "duration": 8.697100000000034,
+                "success": true
+            },
+            "hash": "0exHmw"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/death_fx.atlas": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/death_fx.atlas",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/death_fx.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835985,
+                "duration": 7.511599999999987,
+                "success": true
+            },
+            "hash": "XfQrnw"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/death_fx.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/death_fx.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/death_fx.png": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835986,
+                "duration": 5.850300000000004,
+                "success": true
+            },
+            "hash": "cCxmtQ"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/death_fx.png": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/death_fx.png",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/giant_attack.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835988,
+                "duration": 4.040500000000009,
+                "success": true
+            },
+            "hash": "IitixA"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/giant_attack.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/giant_attack.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/giant_attack.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835990,
+                "duration": 12.666300000000035,
+                "success": true
+            },
+            "hash": "iREatw"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/giant_attack.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/giant_attack.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/giant_deploy.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835992,
+                "duration": 11.802899999999966,
+                "success": true
+            },
+            "hash": "2789Og"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/giant_deploy.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/giant_deploy.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/giant_deploy.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835994,
+                "duration": 9.870600000000024,
+                "success": true
+            },
+            "hash": "fyDrvQ"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/giant_deploy.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/giant_deploy.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/giant_run.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571835999,
+                "duration": 5.388599999999997,
+                "success": true
+            },
+            "hash": "MCzKeA"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/giant_run.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/giant_run.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/giant_run.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836000,
+                "duration": 3.9096000000000117,
+                "success": true
+            },
+            "hash": "eDUi"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/giant_run.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/giant_run.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/megaknight_attack.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836002,
+                "duration": 9.081999999999994,
+                "success": true
+            },
+            "hash": "8cFGOQ"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/megaknight_attack.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/megaknight_attack.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/megaknight_attack.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836004,
+                "duration": 9.509999999999991,
+                "success": true
+            },
+            "hash": "RVFgJA"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/megaknight_attack.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/megaknight_attack.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/megaknight_run.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836006,
+                "duration": 7.214400000000012,
+                "success": true
+            },
+            "hash": "TgHjOw"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/megaknight_run.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/megaknight_run.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/megaknight_run.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836008,
+                "duration": 5.702800000000025,
+                "success": true
+            },
+            "hash": "kwLVUQ"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/megaknight_run.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/megaknight_run.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/otherAll.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836010,
+                "duration": 3.817100000000039,
+                "success": true
+            },
+            "hash": "q6RctQ"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/otherAll.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/otherAll.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/otherAll.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836011,
+                "duration": 7.927799999999991,
+                "success": true
+            },
+            "hash": "V7ltFQ"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/otherAll.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/otherAll.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/pit.png": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836013,
+                "duration": 7.6270000000000095,
+                "success": true
+            },
+            "hash": "HNG8"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/pit.png": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/pit.png",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/redking.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836015,
+                "duration": 6.3326000000000136,
+                "success": true
+            },
+            "hash": "fXO6jw"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/redking.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/redking.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/redking.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836016,
+                "duration": 5.0120000000000005,
+                "success": true
+            },
+            "hash": "vQA53Q"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/redking.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/redking.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/smoke.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836018,
+                "duration": 3.255999999999972,
+                "success": true
+            },
+            "hash": "izvPsw"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/smoke.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/smoke.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/smoke.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836019,
+                "duration": 8.198799999999949,
+                "success": true
+            },
+            "hash": "ErysVA"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/smoke.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/smoke.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/smoke2.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836021,
+                "duration": 7.021000000000015,
+                "success": true
+            },
+            "hash": "xxsvTA"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/smoke2.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/smoke2.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/smokes.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836023,
+                "duration": 5.476400000000012,
+                "success": true
+            },
+            "hash": "LpZPRQ"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/smokes.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/smokes.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/stones.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836025,
+                "duration": 3.4501000000000204,
+                "success": true
+            },
+            "hash": "tVib"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/stones.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/stones.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/stones.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836026,
+                "duration": 2.175800000000038,
+                "success": true
+            },
+            "hash": "iIOkkQ"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/stones.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/stones.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/tower_smoke.atlas": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836027,
+                "duration": 5.745599999999968,
+                "success": true
+            },
+            "hash": "82A6tA"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/tower_smoke.atlas": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/tower_smoke.atlas",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/tower_smoke.json": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836028,
+                "duration": 5.081799999999987,
+                "success": true
+            },
+            "hash": "j03Sxg"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/tower_smoke.json": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/tower_smoke.json",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/tower_smoke.png": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836030,
+                "duration": 3.6111999999999966,
+                "success": true
+            },
+            "hash": "fC87"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/tower_smoke.png": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/tower_smoke.png",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/win.webp": {
+            "isFolder": false,
+            "parent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {},
+            "stats": {
+                "date": 1773571836031,
+                "duration": 2.5375999999999976,
+                "success": true
+            },
+            "hash": "xDoNbw"
+        },
+        "C:/Anton/JS/01.Pixi/clash-royal/public/assets/sprites/win.webp": {
+            "isFolder": false,
+            "transformParent": "C:/Anton/JS/01.Pixi/clash-royal/raw-assets/sprites/win.webp",
+            "metaData": {},
+            "inheritedMetaData": {},
+            "transformData": {}
+        }
+    }
+}

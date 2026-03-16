@@ -1,0 +1,238 @@
+{
+  "frames": {
+    "archer_attack1_1.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack1_2.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack1_3.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack1_4.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack1_5.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack1_6.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack2_1.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack2_2.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack2_3.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack2_4.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack2_5.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack2_6.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack3_1.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack3_2.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack3_3.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack3_4.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack3_5.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack3_6.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack4_1.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack4_2.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack4_3.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack4_4.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack4_5.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack4_6.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack5_1.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack5_2.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack5_3.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack5_4.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack5_5.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    },
+    "archer_attack5_6.png": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+    }
+  },
+  "animations": {
+    "archer_attack1": [
+      "archer_attack1_1.png",
+      "archer_attack1_2.png",
+      "archer_attack1_3.png",
+      "archer_attack1_4.png",
+      "archer_attack1_5.png",
+      "archer_attack1_6.png"
+    ],
+    "archer_attack2": [
+      "archer_attack2_1.png",
+      "archer_attack2_2.png",
+      "archer_attack2_3.png",
+      "archer_attack2_4.png",
+      "archer_attack2_5.png",
+      "archer_attack2_6.png"
+    ],
+    "archer_attack3": [
+      "archer_attack3_1.png",
+      "archer_attack3_2.png",
+      "archer_attack3_3.png",
+      "archer_attack3_4.png",
+      "archer_attack3_5.png",
+      "archer_attack3_6.png"
+    ],
+    "archer_attack4": [
+      "archer_attack4_1.png",
+      "archer_attack4_2.png",
+      "archer_attack4_3.png",
+      "archer_attack4_4.png",
+      "archer_attack4_5.png",
+      "archer_attack4_6.png"
+    ],
+    "archer_attack5": [
+      "archer_attack5_1.png",
+      "archer_attack5_2.png",
+      "archer_attack5_3.png",
+      "archer_attack5_4.png",
+      "archer_attack5_5.png",
+      "archer_attack5_6.png"
+    ]
+  },
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "1.1",
+    "image": "archer_attack@0.333x.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 170,
+      "h": 128
+    },
+    "scale": 0.333,
+    "smartupdate": "$TexturePacker:SmartUpdate:1a850c733e6270317daf1f3efd91859f:6006053f81ae33e55cd22c90f5458646:8dd5f8c349c9897f60c9a94823b8a151$"
+  }
+}

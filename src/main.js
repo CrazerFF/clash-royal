@@ -16,7 +16,7 @@ import { UiLayer } from './Hud/UiLayer.js';
   await app.init({
     backgroundColor: 0x000000,
     antialias: false,
-    resolution: Math.min(window.devicePixelRatio || 1, 2),
+    resolution: Math.min(window.devicePixelRatio || 1, 3),
     autoDensity: true,
   });
 
@@ -47,8 +47,16 @@ import { UiLayer } from './Hud/UiLayer.js';
 
   // =====  ЗАГРУЗКА РЕСУРСОВ =====
   try {
-    await Assets.init({ manifest });
+    await Assets.init({
+      manifest,
+      preferences: {
+        resolution: Math.min(window.devicePixelRatio || 3, 3)
+      }
+    });
+    Assets.backgroundLoadBundle('game');
     await Assets.loadBundle('game');
+    console.log('window.devicePixelRatio', Math.min(window.devicePixelRatio));
+
   } catch (error) {
     console.error('Ошибка загрузки ресурсов:', error);
 
@@ -78,7 +86,7 @@ import { UiLayer } from './Hud/UiLayer.js';
   window.resizeGame = function resize() {
     const w = window.innerWidth;
     const h = window.innerHeight;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(window.devicePixelRatio || 1, 3);
     app.renderer.resolution = dpr;
     app.renderer.resize(window.innerWidth, window.innerHeight);
 
@@ -93,8 +101,6 @@ import { UiLayer } from './Hud/UiLayer.js';
   }
   window.addEventListener('resize', window.resizeGame);
   window.addEventListener('orientationchange', window.resizeGame);
-console.log('resize');
-
   window.resizeGame();
 
   app.ticker.add((ticker) => {

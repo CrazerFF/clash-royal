@@ -1,0 +1,293 @@
+{
+  "frames": {
+    "smoke01.png": {
+      "frame": {
+        "x": 164,
+        "y": 273,
+        "w": 49,
+        "h": 69
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 45,
+        "y": 52,
+        "w": 49,
+        "h": 69
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 140
+      }
+    },
+    "smoke02.png": {
+      "frame": {
+        "x": 164,
+        "y": 324,
+        "w": 44,
+        "h": 52
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 48,
+        "y": 45,
+        "w": 44,
+        "h": 52
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 140
+      }
+    },
+    "smoke03.png": {
+      "frame": {
+        "x": 94,
+        "y": 273,
+        "w": 68,
+        "h": 81
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 36,
+        "y": 30,
+        "w": 68,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 140
+      }
+    },
+    "smoke04.png": {
+      "frame": {
+        "x": 1,
+        "y": 273,
+        "w": 91,
+        "h": 103
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 24,
+        "y": 19,
+        "w": 91,
+        "h": 103
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 140
+      }
+    },
+    "smoke05.png": {
+      "frame": {
+        "x": 245,
+        "y": 1,
+        "w": 114,
+        "h": 121
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 13,
+        "y": 10,
+        "w": 114,
+        "h": 121
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 140
+      }
+    },
+    "smoke06.png": {
+      "frame": {
+        "x": 1,
+        "y": 137,
+        "w": 120,
+        "h": 134
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 10,
+        "y": 3,
+        "w": 120,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 140
+      }
+    },
+    "smoke07.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 121,
+        "h": 134
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 3,
+        "w": 121,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 140
+      }
+    },
+    "smoke08.png": {
+      "frame": {
+        "x": 123,
+        "y": 137,
+        "w": 120,
+        "h": 134
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 10,
+        "y": 3,
+        "w": 120,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 140
+      }
+    },
+    "smoke09.png": {
+      "frame": {
+        "x": 124,
+        "y": 1,
+        "w": 119,
+        "h": 134
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 10,
+        "y": 3,
+        "w": 119,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 140
+      }
+    },
+    "smoke10.png": {
+      "frame": {
+        "x": 124,
+        "y": 1,
+        "w": 119,
+        "h": 134
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 10,
+        "y": 3,
+        "w": 119,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 140
+      }
+    },
+    "smoke11.png": {
+      "frame": {
+        "x": 245,
+        "y": 239,
+        "w": 113,
+        "h": 134
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 13,
+        "y": 3,
+        "w": 113,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 140
+      }
+    },
+    "smoke12.png": {
+      "frame": {
+        "x": 245,
+        "y": 117,
+        "w": 120,
+        "h": 120
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 10,
+        "y": 10,
+        "w": 120,
+        "h": 120
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 140
+      }
+    },
+    "smoke13.png": {
+      "frame": {
+        "x": 368,
+        "y": 1,
+        "w": 3,
+        "h": 3
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 3,
+        "h": 3
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 140
+      }
+    }
+  },
+  "animations": {
+    "smoke": [
+      "smoke01.png",
+      "smoke02.png",
+      "smoke03.png",
+      "smoke04.png",
+      "smoke05.png",
+      "smoke06.png",
+      "smoke07.png",
+      "smoke08.png",
+      "smoke09.png",
+      "smoke10.png",
+      "smoke11.png",
+      "smoke12.png",
+      "smoke13.png"
+    ]
+  },
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "1.1",
+    "image": "smoke.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 377,
+      "h": 377
+    },
+    "scale": "0.7",
+    "smartupdate": "$TexturePacker:SmartUpdate:526de796e519571f0b7b3e97a3e37d50:b879e1e2cb44a83c8f5082d266542d4f:557cac7724a8d29be5c43a56587d549b$"
+  }
+}
