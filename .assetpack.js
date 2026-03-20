@@ -10,8 +10,8 @@ export default {
       template: '@%%x',
       resolutions: {
         "": 1,
-        "@0.5x": 0.5,
-        "@0.333x": 0.333
+        "@2x": 2,
+        "@3x": 3
       }
     })
   ]

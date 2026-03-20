@@ -2,102 +2,102 @@
   "frames": {
     "archer_deploy1.png": {
       "frame": {
-        "x": 1,
-        "y": 1,
-        "w": 66,
-        "h": 53
+        "x": 0,
+        "y": 0,
+        "w": 22,
+        "h": 18
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 115,
-        "y": 72,
-        "w": 66,
-        "h": 53
+        "x": 38,
+        "y": 24,
+        "w": 22,
+        "h": 18
       },
       "sourceSize": {
-        "w": 320,
-        "h": 320
+        "w": 107,
+        "h": 107
       }
     },
     "archer_deploy2.png": {
       "frame": {
-        "x": 1,
-        "y": 56,
-        "w": 66,
-        "h": 59
+        "x": 0,
+        "y": 19,
+        "w": 22,
+        "h": 20
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 125,
-        "y": 79,
-        "w": 66,
-        "h": 59
+        "x": 42,
+        "y": 26,
+        "w": 22,
+        "h": 20
       },
       "sourceSize": {
-        "w": 320,
-        "h": 320
+        "w": 107,
+        "h": 107
       }
     },
     "archer_deploy3.png": {
       "frame": {
-        "x": 1,
-        "y": 117,
-        "w": 71,
-        "h": 83
+        "x": 0,
+        "y": 39,
+        "w": 24,
+        "h": 28
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 129,
-        "y": 84,
-        "w": 71,
-        "h": 83
+        "x": 43,
+        "y": 28,
+        "w": 24,
+        "h": 28
       },
       "sourceSize": {
-        "w": 320,
-        "h": 320
+        "w": 107,
+        "h": 107
       }
     },
     "archer_deploy4.png": {
       "frame": {
-        "x": 1,
-        "y": 263,
-        "w": 75,
-        "h": 85
+        "x": 0,
+        "y": 88,
+        "w": 25,
+        "h": 28
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 126,
-        "y": 94,
-        "w": 75,
-        "h": 85
+        "x": 42,
+        "y": 31,
+        "w": 25,
+        "h": 28
       },
       "sourceSize": {
-        "w": 320,
-        "h": 320
+        "w": 107,
+        "h": 107
       }
     },
     "archer_deploy5.png": {
       "frame": {
-        "x": 1,
-        "y": 190,
-        "w": 71,
-        "h": 86
+        "x": 0,
+        "y": 63,
+        "w": 24,
+        "h": 29
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 127,
-        "y": 94,
-        "w": 71,
-        "h": 86
+        "x": 42,
+        "y": 31,
+        "w": 24,
+        "h": 29
       },
       "sourceSize": {
-        "w": 320,
-        "h": 320
+        "w": 107,
+        "h": 107
       }
     }
   },
@@ -116,10 +116,10 @@
     "image": "archer_deploy.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 88,
-      "h": 339
+      "w": 29,
+      "h": 113
     },
-    "scale": "0.83333",
+    "scale": 0.333,
     "smartupdate": "$TexturePacker:SmartUpdate:3064b2a93d9f04e0f75bc8931a45f3e1:c040b8aaf323425ea034371e18086e61:ddffb6eb52e530cc9efe435a3ca742ba$"
   }
 }

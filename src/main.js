@@ -50,7 +50,8 @@ import { UiLayer } from './Hud/UiLayer.js';
     await Assets.init({
       manifest,
       preferences: {
-        resolution: Math.min(window.devicePixelRatio || 3, 3)
+        //resolution: Math.min(window.devicePixelRatio || 1, 3)
+        resolution: 3
       }
     });
     Assets.backgroundLoadBundle('game');

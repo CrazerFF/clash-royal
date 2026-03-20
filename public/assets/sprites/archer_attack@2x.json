@@ -1,0 +1,658 @@
+{
+  "frames": {
+    "archer_attack1_1.png": {
+      "frame": {
+        "x": 67,
+        "y": 147,
+        "w": 31,
+        "h": 42
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 65,
+        "y": 48,
+        "w": 31,
+        "h": 42
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack1_2.png": {
+      "frame": {
+        "x": 99,
+        "y": 138,
+        "w": 35,
+        "h": 41
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 64,
+        "y": 49,
+        "w": 35,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack1_3.png": {
+      "frame": {
+        "x": 1,
+        "y": 51,
+        "w": 37,
+        "h": 48
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 62,
+        "y": 42,
+        "w": 37,
+        "h": 48
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack1_4.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 35,
+        "h": 50
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 63,
+        "y": 40,
+        "w": 35,
+        "h": 50
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack1_5.png": {
+      "frame": {
+        "x": 36,
+        "y": 1,
+        "w": 39,
+        "h": 48
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 62,
+        "y": 43,
+        "w": 39,
+        "h": 48
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack1_6.png": {
+      "frame": {
+        "x": 111,
+        "y": 1,
+        "w": 33,
+        "h": 41
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 65,
+        "y": 48,
+        "w": 33,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack2_1.png": {
+      "frame": {
+        "x": 67,
+        "y": 96,
+        "w": 36,
+        "h": 42
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 65,
+        "y": 48,
+        "w": 36,
+        "h": 42
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack2_2.png": {
+      "frame": {
+        "x": 146,
+        "y": 42,
+        "w": 40,
+        "h": 39
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 64,
+        "y": 52,
+        "w": 40,
+        "h": 39
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack2_3.png": {
+      "frame": {
+        "x": 39,
+        "y": 49,
+        "w": 34,
+        "h": 46
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 65,
+        "y": 44,
+        "w": 34,
+        "h": 46
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack2_4.png": {
+      "frame": {
+        "x": 1,
+        "y": 100,
+        "w": 29,
+        "h": 48
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 66,
+        "y": 42,
+        "w": 29,
+        "h": 48
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack2_5.png": {
+      "frame": {
+        "x": 31,
+        "y": 100,
+        "w": 36,
+        "h": 46
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 63,
+        "y": 45,
+        "w": 36,
+        "h": 46
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack2_6.png": {
+      "frame": {
+        "x": 183,
+        "y": 1,
+        "w": 36,
+        "h": 40
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 66,
+        "y": 50,
+        "w": 36,
+        "h": 40
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack3_1.png": {
+      "frame": {
+        "x": 74,
+        "y": 49,
+        "w": 37,
+        "h": 41
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 66,
+        "y": 48,
+        "w": 37,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack3_2.png": {
+      "frame": {
+        "x": 145,
+        "y": 1,
+        "w": 40,
+        "h": 38
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 65,
+        "y": 52,
+        "w": 40,
+        "h": 38
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack3_3.png": {
+      "frame": {
+        "x": 76,
+        "y": 1,
+        "w": 34,
+        "h": 41
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 66,
+        "y": 48,
+        "w": 34,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack3_4.png": {
+      "frame": {
+        "x": 36,
+        "y": 147,
+        "w": 30,
+        "h": 43
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 66,
+        "y": 46,
+        "w": 30,
+        "h": 43
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack3_5.png": {
+      "frame": {
+        "x": 104,
+        "y": 91,
+        "w": 34,
+        "h": 41
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 65,
+        "y": 49,
+        "w": 34,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack3_6.png": {
+      "frame": {
+        "x": 173,
+        "y": 82,
+        "w": 35,
+        "h": 39
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 67,
+        "y": 51,
+        "w": 35,
+        "h": 39
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack4_1.png": {
+      "frame": {
+        "x": 139,
+        "y": 84,
+        "w": 33,
+        "h": 40
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 68,
+        "y": 48,
+        "w": 33,
+        "h": 40
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack4_2.png": {
+      "frame": {
+        "x": 172,
+        "y": 155,
+        "w": 37,
+        "h": 37
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 67,
+        "y": 51,
+        "w": 37,
+        "h": 37
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack4_3.png": {
+      "frame": {
+        "x": 220,
+        "y": 1,
+        "w": 38,
+        "h": 35
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 65,
+        "y": 54,
+        "w": 38,
+        "h": 35
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack4_4.png": {
+      "frame": {
+        "x": 210,
+        "y": 155,
+        "w": 36,
+        "h": 37
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 61,
+        "y": 51,
+        "w": 36,
+        "h": 37
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack4_5.png": {
+      "frame": {
+        "x": 173,
+        "y": 118,
+        "w": 38,
+        "h": 35
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 62,
+        "y": 54,
+        "w": 38,
+        "h": 35
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack4_6.png": {
+      "frame": {
+        "x": 220,
+        "y": 39,
+        "w": 34,
+        "h": 38
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 67,
+        "y": 51,
+        "w": 34,
+        "h": 38
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack5_1.png": {
+      "frame": {
+        "x": 220,
+        "y": 78,
+        "w": 33,
+        "h": 39
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 67,
+        "y": 48,
+        "w": 33,
+        "h": 39
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack5_2.png": {
+      "frame": {
+        "x": 134,
+        "y": 133,
+        "w": 40,
+        "h": 37
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 63,
+        "y": 50,
+        "w": 40,
+        "h": 37
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack5_3.png": {
+      "frame": {
+        "x": 1,
+        "y": 149,
+        "w": 43,
+        "h": 35
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 60,
+        "y": 52,
+        "w": 43,
+        "h": 35
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack5_4.png": {
+      "frame": {
+        "x": 186,
+        "y": 41,
+        "w": 39,
+        "h": 34
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 59,
+        "y": 53,
+        "w": 39,
+        "h": 34
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack5_5.png": {
+      "frame": {
+        "x": 111,
+        "y": 43,
+        "w": 41,
+        "h": 34
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 60,
+        "y": 53,
+        "w": 41,
+        "h": 34
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    },
+    "archer_attack5_6.png": {
+      "frame": {
+        "x": 212,
+        "y": 117,
+        "w": 38,
+        "h": 37
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 62,
+        "y": 50,
+        "w": 38,
+        "h": 37
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 160
+      }
+    }
+  },
+  "animations": {
+    "archer_attack1": [
+      "archer_attack1_1.png",
+      "archer_attack1_2.png",
+      "archer_attack1_3.png",
+      "archer_attack1_4.png",
+      "archer_attack1_5.png",
+      "archer_attack1_6.png"
+    ],
+    "archer_attack2": [
+      "archer_attack2_1.png",
+      "archer_attack2_2.png",
+      "archer_attack2_3.png",
+      "archer_attack2_4.png",
+      "archer_attack2_5.png",
+      "archer_attack2_6.png"
+    ],
+    "archer_attack3": [
+      "archer_attack3_1.png",
+      "archer_attack3_2.png",
+      "archer_attack3_3.png",
+      "archer_attack3_4.png",
+      "archer_attack3_5.png",
+      "archer_attack3_6.png"
+    ],
+    "archer_attack4": [
+      "archer_attack4_1.png",
+      "archer_attack4_2.png",
+      "archer_attack4_3.png",
+      "archer_attack4_4.png",
+      "archer_attack4_5.png",
+      "archer_attack4_6.png"
+    ],
+    "archer_attack5": [
+      "archer_attack5_1.png",
+      "archer_attack5_2.png",
+      "archer_attack5_3.png",
+      "archer_attack5_4.png",
+      "archer_attack5_5.png",
+      "archer_attack5_6.png"
+    ]
+  },
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "1.1",
+    "image": "archer_attack@2x.webp",
+    "format": "RGBA8888",
+    "size": {
+      "w": 255,
+      "h": 192
+    },
+    "scale": 0.5,
+    "smartupdate": "$TexturePacker:SmartUpdate:1a850c733e6270317daf1f3efd91859f:6006053f81ae33e55cd22c90f5458646:8dd5f8c349c9897f60c9a94823b8a151$"
+  }
+}
