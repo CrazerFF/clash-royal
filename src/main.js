@@ -45,19 +45,19 @@ import { UiLayer } from './Hud/UiLayer.js';
 
   await document.fonts.ready;
 
+  Assets.resolver.resolution = 3;
+
   // =====  ЗАГРУЗКА РЕСУРСОВ =====
   try {
     await Assets.init({
       manifest,
-      preferences: {
-        //resolution: Math.min(window.devicePixelRatio || 1, 3)
-        resolution: 3
-      }
+      preferences: { resolution: 2 }
     });
+
+    console.log('Resolution:', Assets.resolver.resolution);
+
     Assets.backgroundLoadBundle('game');
     await Assets.loadBundle('game');
-    console.log('window.devicePixelRatio', Math.min(window.devicePixelRatio));
-
   } catch (error) {
     console.error('Ошибка загрузки ресурсов:', error);
 

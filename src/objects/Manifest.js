@@ -7,9 +7,10 @@ export const manifest = {
       assets: [
         {
           alias: 'bg',
-          src: ['assets/sprites/bg.webp',
-            'assets/sprites/bg@2x.webp',
-            'assets/sprites/bg@3x.webp'
+          src: [
+            'assets/sprites/bg.json' ,      // потом 1x
+            'assets/sprites/bg@2x.json',  // сначала пробуем 2x
+
           ]
         },
         {
@@ -43,6 +44,9 @@ export const manifest = {
         {
           alias: 'megaknight_run_json',
           src: 'assets/sprites/megaknight_run.json',
+          resolution: { 
+            '@': [0.5, 1, 2] 
+          }
         },
         {
           alias: 'megaknight_attack_json',

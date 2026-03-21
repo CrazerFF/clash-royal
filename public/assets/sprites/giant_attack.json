@@ -2,1002 +2,1002 @@
   "frames": {
     "giant_attack1_1.png": {
       "frame": {
-        "x": 132,
-        "y": 230,
-        "w": 41,
-        "h": 36
+        "x": 396,
+        "y": 692,
+        "w": 123,
+        "h": 109
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 59,
-        "y": 49,
-        "w": 41,
-        "h": 36
+        "x": 177,
+        "y": 148,
+        "w": 123,
+        "h": 109
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack1_2.png": {
       "frame": {
-        "x": 270,
-        "y": 0,
-        "w": 45,
-        "h": 35
+        "x": 812,
+        "y": 1,
+        "w": 135,
+        "h": 106
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 59,
-        "y": 50,
-        "w": 45,
-        "h": 35
+        "x": 178,
+        "y": 151,
+        "w": 135,
+        "h": 106
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack1_3.png": {
       "frame": {
-        "x": 119,
-        "y": 138,
-        "w": 46,
-        "h": 40
+        "x": 356,
+        "y": 414,
+        "w": 137,
+        "h": 119
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 61,
-        "y": 46,
-        "w": 46,
-        "h": 40
+        "x": 183,
+        "y": 139,
+        "w": 137,
+        "h": 119
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack1_4.png": {
       "frame": {
-        "x": 249,
-        "y": 46,
-        "w": 40,
-        "h": 44
+        "x": 749,
+        "y": 138,
+        "w": 119,
+        "h": 133
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 63,
-        "y": 44,
-        "w": 40,
-        "h": 44
+        "x": 190,
+        "y": 133,
+        "w": 119,
+        "h": 133
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack1_5.png": {
       "frame": {
-        "x": 132,
-        "y": 184,
-        "w": 46,
-        "h": 39
+        "x": 396,
+        "y": 553,
+        "w": 137,
+        "h": 116
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 59,
-        "y": 47,
-        "w": 46,
-        "h": 39
+        "x": 178,
+        "y": 142,
+        "w": 137,
+        "h": 116
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack1_6.png": {
       "frame": {
-        "x": 46,
-        "y": 192,
-        "w": 41,
-        "h": 48
+        "x": 138,
+        "y": 578,
+        "w": 124,
+        "h": 143
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 57,
-        "y": 38,
-        "w": 41,
-        "h": 48
+        "x": 170,
+        "y": 114,
+        "w": 124,
+        "h": 143
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack1_7.png": {
       "frame": {
-        "x": 48,
-        "y": 141,
-        "w": 35,
-        "h": 51
+        "x": 144,
+        "y": 423,
+        "w": 104,
+        "h": 153
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 59,
-        "y": 35,
-        "w": 35,
-        "h": 51
+        "x": 177,
+        "y": 106,
+        "w": 104,
+        "h": 153
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack1_8.png": {
       "frame": {
-        "x": 83,
-        "y": 141,
-        "w": 35,
-        "h": 48
+        "x": 250,
+        "y": 423,
+        "w": 104,
+        "h": 145
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 59,
-        "y": 37,
-        "w": 35,
-        "h": 48
+        "x": 178,
+        "y": 112,
+        "w": 104,
+        "h": 145
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack1_9.png": {
       "frame": {
-        "x": 173,
-        "y": 228,
-        "w": 40,
-        "h": 41
+        "x": 521,
+        "y": 685,
+        "w": 119,
+        "h": 123
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 59,
-        "y": 45,
-        "w": 40,
-        "h": 41
+        "x": 176,
+        "y": 134,
+        "w": 119,
+        "h": 123
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack1_10.png": {
       "frame": {
-        "x": 225,
-        "y": 131,
-        "w": 44,
-        "h": 39
+        "x": 675,
+        "y": 393,
+        "w": 131,
+        "h": 117
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 58,
-        "y": 47,
-        "w": 44,
-        "h": 39
+        "x": 175,
+        "y": 140,
+        "w": 131,
+        "h": 117
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack2_1.png": {
       "frame": {
-        "x": 45,
-        "y": 284,
-        "w": 41,
-        "h": 37
+        "x": 136,
+        "y": 852,
+        "w": 122,
+        "h": 112
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 59,
-        "y": 50,
-        "w": 41,
-        "h": 37
+        "x": 176,
+        "y": 149,
+        "w": 122,
+        "h": 112
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack2_2.png": {
       "frame": {
-        "x": 131,
-        "y": 267,
-        "w": 42,
-        "h": 36
+        "x": 392,
+        "y": 803,
+        "w": 125,
+        "h": 109
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 61,
-        "y": 51,
-        "w": 42,
-        "h": 36
+        "x": 183,
+        "y": 152,
+        "w": 125,
+        "h": 109
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack2_3.png": {
       "frame": {
-        "x": 214,
-        "y": 268,
-        "w": 40,
-        "h": 42
+        "x": 642,
+        "y": 806,
+        "w": 119,
+        "h": 127
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 63,
-        "y": 46,
-        "w": 40,
-        "h": 42
+        "x": 188,
+        "y": 138,
+        "w": 119,
+        "h": 127
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack2_4.png": {
       "frame": {
-        "x": 147,
-        "y": 91,
-        "w": 32,
-        "h": 46
+        "x": 441,
+        "y": 272,
+        "w": 96,
+        "h": 137
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 63,
-        "y": 45,
-        "w": 32,
-        "h": 46
+        "x": 190,
+        "y": 135,
+        "w": 96,
+        "h": 137
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack2_5.png": {
       "frame": {
-        "x": 254,
-        "y": 240,
-        "w": 43,
-        "h": 40
+        "x": 763,
+        "y": 720,
+        "w": 128,
+        "h": 121
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 63,
-        "y": 47,
-        "w": 43,
-        "h": 40
+        "x": 188,
+        "y": 140,
+        "w": 128,
+        "h": 121
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack2_6.png": {
       "frame": {
-        "x": 101,
-        "y": 91,
-        "w": 47,
-        "h": 45
+        "x": 304,
+        "y": 272,
+        "w": 140,
+        "h": 135
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 57,
-        "y": 42,
-        "w": 47,
-        "h": 45
+        "x": 171,
+        "y": 126,
+        "w": 140,
+        "h": 135
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack2_7.png": {
       "frame": {
-        "x": 0,
-        "y": 141,
-        "w": 47,
-        "h": 49
+        "x": 1,
+        "y": 423,
+        "w": 141,
+        "h": 147
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 56,
-        "y": 38,
-        "w": 47,
-        "h": 49
+        "x": 169,
+        "y": 114,
+        "w": 141,
+        "h": 147
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack2_8.png": {
       "frame": {
-        "x": 55,
-        "y": 94,
-        "w": 45,
-        "h": 46
+        "x": 166,
+        "y": 282,
+        "w": 136,
+        "h": 139
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 57,
-        "y": 41,
-        "w": 45,
-        "h": 46
+        "x": 170,
+        "y": 122,
+        "w": 136,
+        "h": 139
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack2_9.png": {
       "frame": {
-        "x": 88,
-        "y": 190,
-        "w": 47,
-        "h": 43
+        "x": 264,
+        "y": 570,
+        "w": 142,
+        "h": 130
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 56,
-        "y": 44,
-        "w": 47,
-        "h": 43
+        "x": 169,
+        "y": 132,
+        "w": 142,
+        "h": 130
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack2_10.png": {
       "frame": {
-        "x": 203,
-        "y": 45,
-        "w": 46,
-        "h": 41
+        "x": 610,
+        "y": 135,
+        "w": 137,
+        "h": 122
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 57,
-        "y": 47,
-        "w": 46,
-        "h": 41
+        "x": 171,
+        "y": 140,
+        "w": 137,
+        "h": 122
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack3_1.png": {
       "frame": {
-        "x": 173,
-        "y": 270,
-        "w": 37,
-        "h": 40
+        "x": 519,
+        "y": 810,
+        "w": 111,
+        "h": 119
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 60,
-        "y": 50,
-        "w": 37,
-        "h": 40
+        "x": 181,
+        "y": 149,
+        "w": 111,
+        "h": 119
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack3_2.png": {
       "frame": {
-        "x": 87,
-        "y": 270,
-        "w": 36,
-        "h": 38
+        "x": 260,
+        "y": 810,
+        "w": 109,
+        "h": 115
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 63,
-        "y": 51,
-        "w": 36,
-        "h": 38
+        "x": 188,
+        "y": 152,
+        "w": 109,
+        "h": 115
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack3_3.png": {
       "frame": {
-        "x": 192,
-        "y": 134,
-        "w": 32,
-        "h": 45
+        "x": 578,
+        "y": 403,
+        "w": 95,
+        "h": 134
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 64,
-        "y": 47,
-        "w": 32,
-        "h": 45
+        "x": 191,
+        "y": 140,
+        "w": 95,
+        "h": 134
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack3_4.png": {
       "frame": {
-        "x": 179,
-        "y": 88,
-        "w": 32,
-        "h": 46
+        "x": 539,
+        "y": 264,
+        "w": 96,
+        "h": 137
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 65,
-        "y": 46,
-        "w": 32,
-        "h": 46
+        "x": 196,
+        "y": 139,
+        "w": 96,
+        "h": 137
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack3_5.png": {
       "frame": {
-        "x": 264,
-        "y": 173,
-        "w": 38,
-        "h": 42
+        "x": 794,
+        "y": 521,
+        "w": 115,
+        "h": 125
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 64,
-        "y": 47,
-        "w": 38,
-        "h": 42
+        "x": 192,
+        "y": 141,
+        "w": 115,
+        "h": 125
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack3_6.png": {
       "frame": {
-        "x": 0,
-        "y": 190,
-        "w": 50,
-        "h": 45
+        "x": 1,
+        "y": 572,
+        "w": 151,
+        "h": 135
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 60,
-        "y": 43,
-        "w": 50,
-        "h": 45
+        "x": 179,
+        "y": 130,
+        "w": 151,
+        "h": 135
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack3_7.png": {
       "frame": {
-        "x": 0,
-        "y": 47,
-        "w": 57,
-        "h": 47
+        "x": 1,
+        "y": 140,
+        "w": 171,
+        "h": 140
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 56,
-        "y": 42,
-        "w": 57,
-        "h": 47
+        "x": 169,
+        "y": 125,
+        "w": 171,
+        "h": 140
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack3_8.png": {
       "frame": {
-        "x": 0,
-        "y": 94,
-        "w": 54,
-        "h": 46
+        "x": 1,
+        "y": 282,
+        "w": 163,
+        "h": 139
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 56,
-        "y": 42,
-        "w": 54,
-        "h": 46
+        "x": 169,
+        "y": 126,
+        "w": 163,
+        "h": 139
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack3_9.png": {
       "frame": {
-        "x": 0,
-        "y": 241,
-        "w": 51,
-        "h": 44
+        "x": 1,
+        "y": 725,
+        "w": 152,
+        "h": 133
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 56,
-        "y": 44,
-        "w": 51,
-        "h": 44
+        "x": 169,
+        "y": 133,
+        "w": 152,
+        "h": 133
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack3_10.png": {
       "frame": {
-        "x": 114,
-        "y": 47,
-        "w": 43,
-        "h": 42
+        "x": 343,
+        "y": 140,
+        "w": 130,
+        "h": 126
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 58,
-        "y": 47,
-        "w": 43,
-        "h": 42
+        "x": 174,
+        "y": 140,
+        "w": 130,
+        "h": 126
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack4_1.png": {
       "frame": {
-        "x": 254,
-        "y": 281,
-        "w": 30,
-        "h": 42
+        "x": 763,
+        "y": 843,
+        "w": 89,
+        "h": 127
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 64,
-        "y": 50,
-        "w": 30,
-        "h": 42
+        "x": 192,
+        "y": 149,
+        "w": 89,
+        "h": 127
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack4_2.png": {
       "frame": {
-        "x": 0,
-        "y": 293,
-        "w": 28,
-        "h": 42
+        "x": 1,
+        "y": 879,
+        "w": 84,
+        "h": 127
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 65,
-        "y": 50,
-        "w": 28,
-        "h": 42
+        "x": 196,
+        "y": 149,
+        "w": 84,
+        "h": 127
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack4_3.png": {
       "frame": {
-        "x": 159,
-        "y": 137,
-        "w": 33,
-        "h": 45
+        "x": 477,
+        "y": 411,
+        "w": 99,
+        "h": 135
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 66,
-        "y": 48,
-        "w": 33,
-        "h": 45
+        "x": 198,
+        "y": 144,
+        "w": 99,
+        "h": 135
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack4_4.png": {
       "frame": {
-        "x": 214,
-        "y": 225,
-        "w": 40,
-        "h": 43
+        "x": 642,
+        "y": 675,
+        "w": 119,
+        "h": 129
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 61,
-        "y": 48,
-        "w": 40,
-        "h": 43
+        "x": 182,
+        "y": 144,
+        "w": 119,
+        "h": 129
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack4_5.png": {
       "frame": {
-        "x": 88,
-        "y": 238,
-        "w": 31,
-        "h": 42
+        "x": 264,
+        "y": 714,
+        "w": 94,
+        "h": 126
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 67,
-        "y": 47,
-        "w": 31,
-        "h": 42
+        "x": 201,
+        "y": 142,
+        "w": 94,
+        "h": 126
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack4_6.png": {
       "frame": {
-        "x": 171,
-        "y": 0,
-        "w": 49,
-        "h": 44
+        "x": 515,
+        "y": 1,
+        "w": 147,
+        "h": 131
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 64,
-        "y": 46,
-        "w": 49,
-        "h": 44
+        "x": 191,
+        "y": 137,
+        "w": 147,
+        "h": 131
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack4_7.png": {
       "frame": {
-        "x": 0,
-        "y": 0,
-        "w": 60,
-        "h": 46
+        "x": 1,
+        "y": 1,
+        "w": 181,
+        "h": 137
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 58,
-        "y": 44,
-        "w": 60,
-        "h": 46
+        "x": 175,
+        "y": 131,
+        "w": 181,
+        "h": 137
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack4_8.png": {
       "frame": {
-        "x": 61,
-        "y": 0,
-        "w": 57,
-        "h": 46
+        "x": 184,
+        "y": 1,
+        "w": 170,
+        "h": 137
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 59,
-        "y": 44,
-        "w": 57,
-        "h": 46
+        "x": 176,
+        "y": 132,
+        "w": 170,
+        "h": 137
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack4_9.png": {
       "frame": {
-        "x": 221,
-        "y": 0,
-        "w": 49,
-        "h": 44
+        "x": 664,
+        "y": 1,
+        "w": 146,
+        "h": 132
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 59,
-        "y": 46,
-        "w": 49,
-        "h": 44
+        "x": 177,
+        "y": 137,
+        "w": 146,
+        "h": 132
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack4_10.png": {
       "frame": {
-        "x": 45,
-        "y": 241,
-        "w": 37,
-        "h": 42
+        "x": 136,
+        "y": 725,
+        "w": 111,
+        "h": 125
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 61,
-        "y": 48,
-        "w": 37,
-        "h": 42
+        "x": 183,
+        "y": 144,
+        "w": 111,
+        "h": 125
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack5_1.png": {
       "frame": {
-        "x": 171,
-        "y": 182,
-        "w": 24,
-        "h": 45
+        "x": 514,
+        "y": 548,
+        "w": 71,
+        "h": 135
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 67,
-        "y": 48,
-        "w": 24,
-        "h": 45
+        "x": 200,
+        "y": 144,
+        "w": 71,
+        "h": 135
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack5_2.png": {
       "frame": {
-        "x": 195,
-        "y": 179,
-        "w": 32,
-        "h": 45
+        "x": 587,
+        "y": 539,
+        "w": 95,
+        "h": 134
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 65,
-        "y": 48,
-        "w": 32,
-        "h": 45
+        "x": 196,
+        "y": 144,
+        "w": 95,
+        "h": 134
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack5_3.png": {
       "frame": {
-        "x": 212,
-        "y": 86,
-        "w": 41,
-        "h": 44
+        "x": 637,
+        "y": 259,
+        "w": 124,
+        "h": 132
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 60,
-        "y": 48,
-        "w": 41,
-        "h": 44
+        "x": 180,
+        "y": 144,
+        "w": 124,
+        "h": 132
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack5_4.png": {
       "frame": {
-        "x": 157,
-        "y": 45,
-        "w": 46,
-        "h": 43
+        "x": 471,
+        "y": 134,
+        "w": 137,
+        "h": 128
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 55,
-        "y": 48,
-        "w": 46,
-        "h": 43
+        "x": 166,
+        "y": 144,
+        "w": 137,
+        "h": 128
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack5_5.png": {
       "frame": {
-        "x": 228,
-        "y": 175,
-        "w": 34,
-        "h": 43
+        "x": 684,
+        "y": 526,
+        "w": 102,
+        "h": 129
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 67,
-        "y": 48,
-        "w": 34,
-        "h": 43
+        "x": 202,
+        "y": 143,
+        "w": 102,
+        "h": 129
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack5_6.png": {
       "frame": {
-        "x": 254,
-        "y": 86,
-        "w": 41,
-        "h": 43
+        "x": 763,
+        "y": 259,
+        "w": 123,
+        "h": 130
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 70,
-        "y": 47,
-        "w": 41,
-        "h": 43
+        "x": 209,
+        "y": 142,
+        "w": 123,
+        "h": 130
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack5_7.png": {
       "frame": {
-        "x": 58,
-        "y": 47,
-        "w": 56,
-        "h": 43
+        "x": 174,
+        "y": 140,
+        "w": 167,
+        "h": 130
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 63,
-        "y": 47,
-        "w": 56,
-        "h": 43
+        "x": 190,
+        "y": 142,
+        "w": 167,
+        "h": 130
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack5_8.png": {
       "frame": {
-        "x": 119,
-        "y": 0,
-        "w": 52,
-        "h": 43
+        "x": 356,
+        "y": 1,
+        "w": 157,
+        "h": 130
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 63,
-        "y": 47,
-        "w": 52,
-        "h": 43
+        "x": 189,
+        "y": 142,
+        "w": 157,
+        "h": 130
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack5_9.png": {
       "frame": {
-        "x": 264,
-        "y": 130,
-        "w": 42,
-        "h": 43
+        "x": 794,
+        "y": 391,
+        "w": 125,
+        "h": 128
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 64,
-        "y": 48,
-        "w": 42,
-        "h": 43
+        "x": 191,
+        "y": 144,
+        "w": 125,
+        "h": 128
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     },
     "giant_attack5_10.png": {
       "frame": {
-        "x": 262,
-        "y": 212,
-        "w": 27,
-        "h": 43
+        "x": 788,
+        "y": 638,
+        "w": 80,
+        "h": 130
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 66,
-        "y": 48,
-        "w": 27,
-        "h": 43
+        "x": 199,
+        "y": 145,
+        "w": 80,
+        "h": 130
       },
       "sourceSize": {
-        "w": 160,
-        "h": 160
+        "w": 480,
+        "h": 480
       }
     }
   },
@@ -1069,10 +1069,10 @@
     "image": "giant_attack.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 306,
-      "h": 321
+      "w": 920,
+      "h": 965
     },
-    "scale": 0.333,
+    "scale": "0.83333",
     "smartupdate": "$TexturePacker:SmartUpdate:163dcc4cbdb0a3fe13a3e0554f22f6a6:64977d5c13f88fdaebb9da3c5a003db6:714a66a1db583f1517db2c73027b410d$"
   }
 }

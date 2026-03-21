@@ -6,7 +6,7 @@
     "y": -18.11,
     "width": 324.96,
     "height": 190.94,
-    "images": "./",
+    "images": "./",   
     "audio": "./audio"
   },
   "bones": [

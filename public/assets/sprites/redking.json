@@ -2,1022 +2,1022 @@
   "frames": {
     "redking_canon1.png": {
       "frame": {
-        "x": 217,
-        "y": 59,
-        "w": 20,
-        "h": 28
+        "x": 652,
+        "y": 176,
+        "w": 61,
+        "h": 85
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 12,
-        "w": 20,
-        "h": 28
+        "x": 65,
+        "y": 35,
+        "w": 61,
+        "h": 85
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon2.png": {
       "frame": {
-        "x": 292,
-        "y": 28,
-        "w": 21,
-        "h": 27
+        "x": 876,
+        "y": 85,
+        "w": 64,
+        "h": 81
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 21,
-        "y": 13,
-        "w": 21,
-        "h": 27
+        "x": 63,
+        "y": 39,
+        "w": 64,
+        "h": 81
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon3.png": {
       "frame": {
-        "x": 49,
-        "y": 90,
-        "w": 24,
-        "h": 25
+        "x": 148,
+        "y": 271,
+        "w": 73,
+        "h": 74
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 19,
-        "y": 15,
-        "w": 24,
-        "h": 25
+        "x": 56,
+        "y": 46,
+        "w": 73,
+        "h": 74
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon4.png": {
       "frame": {
-        "x": 289,
-        "y": 56,
-        "w": 25,
-        "h": 24
+        "x": 869,
+        "y": 169,
+        "w": 74,
+        "h": 72
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 19,
-        "y": 16,
-        "w": 25,
-        "h": 24
+        "x": 57,
+        "y": 48,
+        "w": 74,
+        "h": 72
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon5.png": {
       "frame": {
-        "x": 25,
-        "y": 0,
-        "w": 25,
-        "h": 30
+        "x": 75,
+        "y": 1,
+        "w": 76,
+        "h": 89
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 19,
-        "y": 10,
-        "w": 25,
-        "h": 30
+        "x": 57,
+        "y": 31,
+        "w": 76,
+        "h": 89
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon6.png": {
       "frame": {
-        "x": 25,
-        "y": 70,
-        "w": 24,
-        "h": 32
+        "x": 74,
+        "y": 209,
+        "w": 72,
+        "h": 95
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 20,
-        "y": 8,
-        "w": 24,
-        "h": 32
+        "x": 60,
+        "y": 25,
+        "w": 72,
+        "h": 95
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon7.png": {
       "frame": {
-        "x": 0,
-        "y": 36,
-        "w": 24,
-        "h": 33
+        "x": 1,
+        "y": 107,
+        "w": 72,
+        "h": 100
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 20,
-        "y": 7,
-        "w": 24,
-        "h": 33
+        "x": 60,
+        "y": 20,
+        "w": 72,
+        "h": 100
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon8.png": {
       "frame": {
-        "x": 0,
-        "y": 0,
-        "w": 24,
-        "h": 35
+        "x": 1,
+        "y": 1,
+        "w": 72,
+        "h": 104
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 20,
-        "y": 5,
-        "w": 24,
-        "h": 35
+        "x": 60,
+        "y": 16,
+        "w": 72,
+        "h": 104
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon9.png": {
       "frame": {
-        "x": 0,
-        "y": 70,
-        "w": 24,
-        "h": 32
+        "x": 1,
+        "y": 209,
+        "w": 71,
+        "h": 96
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 20,
-        "y": 8,
-        "w": 24,
-        "h": 32
+        "x": 61,
+        "y": 24,
+        "w": 71,
+        "h": 96
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon10.png": {
       "frame": {
-        "x": 25,
-        "y": 31,
-        "w": 24,
-        "h": 30
+        "x": 75,
+        "y": 92,
+        "w": 71,
+        "h": 89
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 20,
-        "y": 10,
-        "w": 24,
-        "h": 30
+        "x": 61,
+        "y": 31,
+        "w": 71,
+        "h": 89
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon11.png": {
       "frame": {
-        "x": 49,
-        "y": 31,
-        "w": 24,
-        "h": 29
+        "x": 148,
+        "y": 92,
+        "w": 72,
+        "h": 88
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 20,
-        "y": 11,
-        "w": 24,
-        "h": 29
+        "x": 60,
+        "y": 32,
+        "w": 72,
+        "h": 88
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon12.png": {
       "frame": {
-        "x": 75,
-        "y": 90,
-        "w": 24,
-        "h": 27
+        "x": 224,
+        "y": 271,
+        "w": 72,
+        "h": 82
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 20,
-        "y": 13,
-        "w": 24,
-        "h": 27
+        "x": 59,
+        "y": 38,
+        "w": 72,
+        "h": 82
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon13.png": {
       "frame": {
-        "x": 216,
-        "y": 88,
-        "w": 25,
-        "h": 27
+        "x": 650,
+        "y": 265,
+        "w": 74,
+        "h": 82
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 19,
-        "y": 13,
-        "w": 25,
-        "h": 27
+        "x": 57,
+        "y": 38,
+        "w": 74,
+        "h": 82
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon14.png": {
       "frame": {
-        "x": 103,
-        "y": 89,
-        "w": 25,
-        "h": 28
+        "x": 308,
+        "y": 268,
+        "w": 76,
+        "h": 83
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 18,
-        "y": 12,
-        "w": 25,
-        "h": 28
+        "x": 54,
+        "y": 37,
+        "w": 76,
+        "h": 83
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon15.png": {
       "frame": {
-        "x": 187,
-        "y": 88,
-        "w": 25,
-        "h": 28
+        "x": 563,
+        "y": 265,
+        "w": 75,
+        "h": 85
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 18,
-        "y": 12,
-        "w": 25,
-        "h": 28
+        "x": 54,
+        "y": 35,
+        "w": 75,
+        "h": 85
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon16.png": {
       "frame": {
-        "x": 244,
-        "y": 87,
-        "w": 23,
-        "h": 28
+        "x": 734,
+        "y": 261,
+        "w": 69,
+        "h": 83
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 20,
-        "y": 12,
-        "w": 23,
-        "h": 28
+        "x": 61,
+        "y": 37,
+        "w": 69,
+        "h": 83
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon17.png": {
       "frame": {
-        "x": 292,
-        "y": 0,
-        "w": 22,
-        "h": 27
+        "x": 878,
+        "y": 1,
+        "w": 66,
+        "h": 82
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 13,
-        "w": 22,
-        "h": 27
+        "x": 65,
+        "y": 38,
+        "w": 66,
+        "h": 82
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon18.png": {
       "frame": {
-        "x": 243,
-        "y": 29,
-        "w": 23,
-        "h": 28
+        "x": 731,
+        "y": 87,
+        "w": 69,
+        "h": 84
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 21,
-        "y": 12,
-        "w": 23,
-        "h": 28
+        "x": 63,
+        "y": 36,
+        "w": 69,
+        "h": 84
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon19.png": {
       "frame": {
-        "x": 267,
-        "y": 28,
-        "w": 24,
-        "h": 27
+        "x": 802,
+        "y": 85,
+        "w": 72,
+        "h": 82
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 20,
-        "y": 12,
-        "w": 24,
-        "h": 27
+        "x": 60,
+        "y": 35,
+        "w": 72,
+        "h": 82
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon20.png": {
       "frame": {
-        "x": 268,
-        "y": 86,
-        "w": 27,
-        "h": 27
+        "x": 805,
+        "y": 257,
+        "w": 81,
+        "h": 81
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 16,
-        "y": 11,
-        "w": 27,
-        "h": 27
+        "x": 48,
+        "y": 32,
+        "w": 81,
+        "h": 81
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon21.png": {
       "frame": {
-        "x": 265,
-        "y": 0,
-        "w": 27,
-        "h": 27
+        "x": 795,
+        "y": 1,
+        "w": 81,
+        "h": 82
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 15,
-        "y": 9,
-        "w": 27,
-        "h": 27
+        "x": 45,
+        "y": 28,
+        "w": 81,
+        "h": 82
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon22.png": {
       "frame": {
-        "x": 262,
-        "y": 58,
-        "w": 27,
-        "h": 27
+        "x": 787,
+        "y": 173,
+        "w": 80,
+        "h": 82
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 16,
-        "y": 9,
-        "w": 27,
-        "h": 27
+        "x": 47,
+        "y": 28,
+        "w": 80,
+        "h": 82
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon23.png": {
       "frame": {
-        "x": 131,
-        "y": 89,
-        "w": 25,
-        "h": 28
+        "x": 393,
+        "y": 266,
+        "w": 76,
+        "h": 83
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 18,
-        "y": 9,
-        "w": 25,
-        "h": 28
+        "x": 53,
+        "y": 27,
+        "w": 76,
+        "h": 83
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon24.png": {
       "frame": {
-        "x": 159,
-        "y": 88,
-        "w": 25,
-        "h": 28
+        "x": 478,
+        "y": 265,
+        "w": 76,
+        "h": 83
       },
       "rotated": true,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 18,
-        "y": 9,
-        "w": 25,
-        "h": 28
+        "x": 55,
+        "y": 27,
+        "w": 76,
+        "h": 83
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon25.png": {
       "frame": {
-        "x": 240,
-        "y": 0,
-        "w": 24,
-        "h": 28
+        "x": 722,
+        "y": 1,
+        "w": 71,
+        "h": 84
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 20,
-        "y": 9,
-        "w": 24,
-        "h": 28
+        "x": 61,
+        "y": 26,
+        "w": 71,
+        "h": 84
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon26.png": {
       "frame": {
-        "x": 238,
-        "y": 58,
-        "w": 23,
-        "h": 28
+        "x": 715,
+        "y": 175,
+        "w": 70,
+        "h": 84
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 21,
-        "y": 9,
-        "w": 23,
-        "h": 28
+        "x": 63,
+        "y": 26,
+        "w": 70,
+        "h": 84
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon27.png": {
       "frame": {
-        "x": 200,
-        "y": 30,
-        "w": 22,
-        "h": 28
+        "x": 600,
+        "y": 89,
+        "w": 66,
+        "h": 85
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 22,
-        "h": 28
+        "x": 65,
+        "y": 25,
+        "w": 66,
+        "h": 85
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon28.png": {
       "frame": {
-        "x": 219,
-        "y": 0,
-        "w": 21,
-        "h": 28
+        "x": 657,
+        "y": 1,
+        "w": 63,
+        "h": 85
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 21,
-        "h": 28
+        "x": 65,
+        "y": 25,
+        "w": 63,
+        "h": 85
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_canon29.png": {
       "frame": {
-        "x": 95,
-        "y": 30,
-        "w": 20,
-        "h": 29
+        "x": 285,
+        "y": 90,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle1.png": {
       "frame": {
-        "x": 114,
-        "y": 0,
-        "w": 20,
-        "h": 29
+        "x": 342,
+        "y": 1,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle2.png": {
       "frame": {
-        "x": 112,
-        "y": 59,
-        "w": 20,
-        "h": 29
+        "x": 337,
+        "y": 178,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle3.png": {
       "frame": {
-        "x": 116,
-        "y": 30,
-        "w": 20,
-        "h": 29
+        "x": 348,
+        "y": 89,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle4.png": {
       "frame": {
-        "x": 72,
-        "y": 0,
-        "w": 20,
-        "h": 29
+        "x": 216,
+        "y": 1,
+        "w": 61,
+        "h": 87
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 23,
+        "w": 61,
+        "h": 87
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle5.png": {
       "frame": {
-        "x": 49,
-        "y": 61,
-        "w": 20,
-        "h": 29
+        "x": 148,
+        "y": 182,
+        "w": 61,
+        "h": 87
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 23,
+        "w": 61,
+        "h": 87
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle6.png": {
       "frame": {
-        "x": 70,
-        "y": 61,
-        "w": 20,
-        "h": 29
+        "x": 211,
+        "y": 182,
+        "w": 61,
+        "h": 87
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 23,
+        "w": 61,
+        "h": 87
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle7.png": {
       "frame": {
-        "x": 74,
-        "y": 30,
-        "w": 20,
-        "h": 29
+        "x": 222,
+        "y": 90,
+        "w": 61,
+        "h": 87
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 23,
+        "w": 61,
+        "h": 87
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle8.png": {
       "frame": {
-        "x": 93,
-        "y": 0,
-        "w": 20,
-        "h": 29
+        "x": 279,
+        "y": 1,
+        "w": 61,
+        "h": 87
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 23,
+        "w": 61,
+        "h": 87
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle9.png": {
       "frame": {
-        "x": 51,
-        "y": 0,
-        "w": 20,
-        "h": 29
+        "x": 153,
+        "y": 1,
+        "w": 61,
+        "h": 88
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 7,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 22,
+        "w": 61,
+        "h": 88
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle10.png": {
       "frame": {
-        "x": 91,
-        "y": 60,
-        "w": 20,
-        "h": 29
+        "x": 274,
+        "y": 179,
+        "w": 61,
+        "h": 87
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 23,
+        "w": 61,
+        "h": 87
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle11.png": {
       "frame": {
-        "x": 135,
-        "y": 0,
-        "w": 20,
-        "h": 29
+        "x": 405,
+        "y": 1,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle12.png": {
       "frame": {
-        "x": 222,
-        "y": 29,
-        "w": 20,
-        "h": 28
+        "x": 668,
+        "y": 88,
+        "w": 61,
+        "h": 85
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 28
+        "x": 65,
+        "y": 25,
+        "w": 61,
+        "h": 85
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle13.png": {
       "frame": {
-        "x": 133,
-        "y": 59,
-        "w": 20,
-        "h": 29
+        "x": 400,
+        "y": 177,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle14.png": {
       "frame": {
-        "x": 137,
-        "y": 30,
-        "w": 20,
-        "h": 29
+        "x": 411,
+        "y": 89,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle15.png": {
       "frame": {
-        "x": 156,
-        "y": 0,
-        "w": 20,
-        "h": 29
+        "x": 468,
+        "y": 1,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle16.png": {
       "frame": {
-        "x": 154,
-        "y": 59,
-        "w": 20,
-        "h": 29
+        "x": 463,
+        "y": 177,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle17.png": {
       "frame": {
-        "x": 158,
-        "y": 30,
-        "w": 20,
-        "h": 29
+        "x": 474,
+        "y": 89,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle18.png": {
       "frame": {
-        "x": 177,
-        "y": 0,
-        "w": 20,
-        "h": 29
+        "x": 531,
+        "y": 1,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle19.png": {
       "frame": {
-        "x": 175,
-        "y": 59,
-        "w": 20,
-        "h": 29
+        "x": 526,
+        "y": 177,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle20.png": {
       "frame": {
-        "x": 179,
-        "y": 30,
-        "w": 20,
-        "h": 29
+        "x": 537,
+        "y": 89,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle21.png": {
       "frame": {
-        "x": 198,
-        "y": 0,
-        "w": 20,
-        "h": 29
+        "x": 594,
+        "y": 1,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     },
     "redking_idle22.png": {
       "frame": {
-        "x": 196,
-        "y": 59,
-        "w": 20,
-        "h": 29
+        "x": 589,
+        "y": 177,
+        "w": 61,
+        "h": 86
       },
       "rotated": false,
       "trimmed": true,
       "spriteSourceSize": {
-        "x": 22,
-        "y": 8,
-        "w": 20,
-        "h": 29
+        "x": 65,
+        "y": 24,
+        "w": 61,
+        "h": 86
       },
       "sourceSize": {
-        "w": 64,
-        "h": 64
+        "w": 192,
+        "h": 192
       }
     }
   },
@@ -1084,10 +1084,10 @@
     "image": "redking.webp",
     "format": "RGBA8888",
     "size": {
-      "w": 315,
-      "h": 115
+      "w": 945,
+      "h": 345
     },
-    "scale": 0.333,
+    "scale": "0.5",
     "smartupdate": "$TexturePacker:SmartUpdate:76f38b51106c43b10ec6df1c41d77dc7:64b24ccde79b3cc5a2db62131921bb12:0080c952db875b96640cde0b082d903b$"
   }
 }

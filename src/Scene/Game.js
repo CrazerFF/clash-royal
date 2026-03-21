@@ -52,7 +52,7 @@ export class Game extends Container {
     this.bg = new Sprite(Assets.get('bg'))
     this.addChild(this.bg)
     this.bg.anchor.set(0.5, 0.5)
-    this.bg.scale.set(2.4)
+    this.bg.scale.set(1.6)
     this.bg.position.set(this.DESIGN_W / 2, this.DESIGN_H / 2)
     this.objects.push(this.bg)
 
