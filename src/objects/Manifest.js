@@ -8,11 +8,17 @@ export const manifest = {
         {
           alias: 'bg',
           src: [
-            'assets/sprites/bg.json' ,      // потом 1x
-            'assets/sprites/bg@2x.json',  // сначала пробуем 2x
-
+            'assets/sprites/bg.json', 
+            'assets/sprites/bg@2x.json'
           ]
         },
+        // {
+        //   alias: 'bg',
+        //   src: [
+        //     'assets/sprites/bg@2x.webp',
+        //     'assets/sprites/bg.webp', 
+        //   ]
+        // },
         {
           alias: 'bg2',
           src: 'assets/sprites/bg2.webp',

@@ -3,6 +3,14 @@ import { manifest } from './objects/Manifest.js';
 import { Game } from './Scene/Game.js';
 import { UiLayer } from './Hud/UiLayer.js';
 
+import { extensions, ExtensionType, Resolver, resolveTextureUrl } from 'pixi.js';
+
+// extensions.add({
+//   extension: ExtensionType.ResolveParser,
+//   test: (value) => Resolver.RETINA_PREFIX.test(value),
+//   parse: resolveTextureUrl.parse,
+// });
+
 (async () => {
   const DESIGN_W = 660;
   const DESIGN_H = 1220;
@@ -45,18 +53,20 @@ import { UiLayer } from './Hud/UiLayer.js';
 
   await document.fonts.ready;
 
-  Assets.resolver.resolution = 3;
-
   // =====  ЗАГРУЗКА РЕСУРСОВ =====
+  await Assets.reset();
+  
   try {
+
     await Assets.init({
       manifest,
-      preferences: { resolution: 2 }
+      texturePreference: {
+        resolution: 1,
+        format: 'webp'
+    }
     });
 
-    console.log('Resolution:', Assets.resolver.resolution);
-
-    Assets.backgroundLoadBundle('game');
+  //  Assets.backgroundLoadBundle('game');
     await Assets.loadBundle('game');
   } catch (error) {
     console.error('Ошибка загрузки ресурсов:', error);
