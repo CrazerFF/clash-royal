@@ -44,10 +44,6 @@ export class Game extends Container {
     this.eventMode = 'static'
     this.interactive = true
 
-
-    
-
-
     // Фон
     this.bg = new Sprite(Assets.get('bg'))
     this.addChild(this.bg)

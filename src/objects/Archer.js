@@ -3,6 +3,8 @@ import { AnimatedSprite, Assets, Text, TextStyle } from 'pixi.js'
 import { HealthBar } from './HealthBar.js'
 import { Arrow } from './Arrow.js'
 import { Clock } from './Clock.js'
+import { Spine } from '@esotericsoftware/spine-pixi-v8'
+import { sound } from './SoundManager.js'
 
 export class Archer extends Container {
   constructor(scene) {
@@ -17,6 +19,15 @@ export class Archer extends Container {
     const attackSheet = Assets.get('archer_attack_json')
     const deploySheet = Assets.get('archer_deploy_json')
 
+    this.shadow = new AnimatedSprite(runSheet.animations['archer_run1'])
+    this.shadow.anchor.set(0.5, 0.5)
+    this.shadow.scale.set(-0.7, -0.9) // сплющивание
+    this.shadow.skew.x = -0.7
+    this.shadow.tint = 0x676e66 // чёрный цвет
+    this.shadow.animationSpeed = 0.4
+    this.shadow.loop = true
+    this.shadow.alpha = 0.3
+    this.addChild(this.shadow)
     // Создаем анимированный спрайт
     this.sprite = new AnimatedSprite(runSheet.animations['archer_run1'])
     this.sprite.anchor.set(0.5, 0.5)
@@ -155,6 +166,9 @@ export class Archer extends Container {
     this.sprite.loop = true
     this.sprite.gotoAndPlay(0)
 
+    this.shadow.textures = frames
+    this.shadow.gotoAndPlay(0)
+
     this.currentAnimation = animationKey
   }
 
@@ -180,6 +194,9 @@ export class Archer extends Container {
     this.sprite.loop = true
     this.sprite.gotoAndPlay(0)
 
+    this.shadow.textures = frames
+    this.shadow.gotoAndPlay(0)
+
     this.currentAnimation = animationKey
 
     this.sprite.onLoop = null
@@ -187,7 +204,11 @@ export class Archer extends Container {
     this.sprite.onLoop = () => {
       this.shootArrow(enemy)
       if (enemy === this.scene.redKing) {
-        this.scene.redKing?.healthBar.reduceHealth(15)
+        if (this.scene.scenario === 1) {
+          this.scene.redKing?.healthBar.reduceHealth(15)
+        } else {
+          this.scene.redKing?.healthBar.reduceHealth(5)
+        }
       } else {
         this.scene.enemy?.healthBar.reduceHealth(5)
       }
@@ -198,17 +219,17 @@ export class Archer extends Container {
     this.sprite.onComplete = null
   }
 
-shootArrow(enemy) {
-  const arrow = new Arrow(this)
+  shootArrow(enemy) {
+    const arrow = new Arrow(this)
 
-  const startX = this.x + this.sprite.x - 10
-  const startY = this.y + this.sprite.y - 10
+    const startX = this.x + this.sprite.x - 10
+    const startY = this.y + this.sprite.y - 10
 
-  arrow.shoot(startX, startY, enemy)
+    arrow.shoot(startX, startY, enemy)
 
-  this.scene.addChild(arrow)
-  this.scene.objects.push(arrow)
-}
+    this.scene.addChild(arrow)
+    this.scene.objects.push(arrow)
+  }
 
   clock() {
     this.clock = new Clock()
@@ -217,6 +238,13 @@ shootArrow(enemy) {
   }
 
   playDeploy() {
+    sound.play('giant_deploy')
+    if (this.scene.scenario === 1) {
+      this.scene.timeLine.currentSpawns = this.scene.timeLine.scheduledSpawns1
+    }
+    if (this.scene.scenario === 2) {
+      this.scene.timeLine.currentSpawns = this.scene.timeLine.scheduledSpawns2
+    }
     this.textarcher = null
 
     // Создаем хелзбар
@@ -240,6 +268,9 @@ shootArrow(enemy) {
     this.sprite.loop = false
     this.sprite.gotoAndPlay(0)
 
+    this.shadow.textures = frames
+    this.shadow.gotoAndPlay(0)
+
     this.currentAnimation = animationKey
 
     this.sprite.onComplete = () => {
@@ -247,6 +278,25 @@ shootArrow(enemy) {
       this.playRun(1)
       this.scene.isPaused = false
     }
+  }
+
+  playDeath() {
+    sound.play('knight_death')
+
+    const deathFx = Spine.from({
+      skeleton: 'death_fx',
+      atlas: 'death_fx_atlas',
+    })
+    deathFx.state.setAnimation(0, 'animation', false)
+    this.addChild(deathFx)
+
+    deathFx.state.addListener({
+      complete: () => deathFx.destroy(),
+    })
+
+    this.sprite.visible = false
+    this.shadow.visible = false
+    this.healthBar.visible = false
   }
 
   resize(w, h, scale_UI, scaleGame) {

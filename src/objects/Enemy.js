@@ -1,37 +1,47 @@
-import { Container } from 'pixi.js';
-import { AnimatedSprite, Assets, Graphics } from 'pixi.js';
-import { HealthBar } from './HealthBar.js';
-import { Spine } from '@esotericsoftware/spine-pixi-v8'; // Новый импорт
+import { sound } from './SoundManager.js'
+import { Container } from 'pixi.js'
+import { AnimatedSprite, Assets, Graphics } from 'pixi.js'
+import { HealthBar } from './HealthBar.js'
+import { Spine } from '@esotericsoftware/spine-pixi-v8'
 
 export class Enemy extends Container {
   constructor(scene) {
-    super();
-    this.scene = scene;
-    this.zIndex = 20;
-    this.sortableChildren = true;
-    // Загружаем спрайтшиты
-    const runSheet = Assets.get('megaknight_run_json');
-    const attackSheet = Assets.get('megaknight_attack_json');
+    super()
+    this.scene = scene
+    this.zIndex = 20
+    this.sortableChildren = true
 
-    // Создаем анимированный спрайт (по умолчанию с анимацией бега)
-    this.sprite = new AnimatedSprite(runSheet.animations['megaknight_run1']);
-    this.sprite.anchor.set(0.5, 0.5);
-    this.sprite.scale.set(1);
-    this.sprite.animationSpeed = 0.40;
-    this.sprite.loop = true;
-    this.addChild(this.sprite);    
+    const runSheet = Assets.get('megaknight_run_json')
+    const attackSheet = Assets.get('megaknight_attack_json')
 
-    this.healthBar = new HealthBar(120, 18, 'red', scene);
-        this.healthBar.x -= 60;
-        this.healthBar.y -= 165;
-        this.addChild(this.healthBar);
+    this.shadow = new AnimatedSprite(runSheet.animations['megaknight_run1'])
+    this.shadow.anchor.set(0.5, 0.5)
+    this.shadow.scale.set(0.7, -0.9) // сплющивание
+    this.shadow.skew.x = -0.7
+    this.shadow.tint = 0x676e66 // чёрный цвет
+    this.shadow.animationSpeed = 0.4
+    this.shadow.loop = true
+    this.shadow.alpha = 0.3
+    this.addChild(this.shadow)
 
-       // Переменные для мигания
-    this.isFlashing = false;
-    this.flashTime = 0;
-    this.originalTint = 0xFFFFFF;
+    this.sprite = new AnimatedSprite(runSheet.animations['megaknight_run1'])
+    this.sprite.anchor.set(0.5, 0.5)
+    this.sprite.scale.set(1)
+    this.sprite.animationSpeed = 0.4
+    this.sprite.loop = true
+    this.addChild(this.sprite)
 
-    // Сохраняем все анимации бега
+    this.healthBar = new HealthBar(120, 18, 'red', scene)
+    this.healthBar.x -= 60
+    this.healthBar.y -= 165
+    this.addChild(this.healthBar)
+
+    // Переменные для мигания
+    this.isFlashing = false
+    this.flashTime = 0
+    this.originalTint = 0xffffff
+
+    // Сохраняем все анимации
     this.animations = {
       run1: runSheet.animations['megaknight_run1'],
       run2: runSheet.animations['megaknight_run2'],
@@ -42,8 +52,7 @@ export class Enemy extends Container {
       run7: runSheet.animations['megaknight_run7'],
       run8: runSheet.animations['megaknight_run8'],
       run9: runSheet.animations['megaknight_run9'],
-      
-      // Добавляем анимации атаки
+
       attack1: attackSheet.animations['mknight_attack1'],
       attack2: attackSheet.animations['mknight_attack2'],
       attack3: attackSheet.animations['mknight_attack3'],
@@ -53,133 +62,142 @@ export class Enemy extends Container {
       attack7: attackSheet.animations['mknight_attack7'],
       attack8: attackSheet.animations['mknight_attack8'],
       attack9: attackSheet.animations['mknight_attack9'],
-    };
-
-    // Текущая анимация
-    this.currentAnimation = 'run1';
-    
-    // Флаг для определения типа текущей анимации
-    this.currentAnimationType = 'run';
-
-    // Стартуем с первой анимации
-    this.sprite.play();
-  }
-
-  // Воспроизвести одну из 9 анимаций бега
-  playRun(runNumber) {
-    if (runNumber < 1 || runNumber > 9) {
-      console.warn(`Enemy.playRun: runNumber must be 1-9, got ${runNumber}`);
-      return;
     }
 
-    this.playAnimation('run', runNumber);
+    this.currentAnimation = 'run1'
+    this.currentAnimationType = 'run'
+
+    // // Привязываем методы к контексту
+    // this.onAnimationLoop = this.onAnimationLoop.bind(this)
+    // this.sprite.on('loop', this.onAnimationLoop)
+
+    this.sprite.play()
   }
 
-  // Воспроизвести одну из 5 анимаций атаки
+  playRun(runNumber) {
+    if (runNumber < 1 || runNumber > 9) {
+      console.warn(`Enemy.playRun: runNumber must be 1-9, got ${runNumber}`)
+      return
+    }
+
+    this.playAnimation('run', runNumber)
+  }
+
   playAttack(attackNumber) {
-    this.playAnimation('attack', attackNumber);
+    this.playAnimation('attack', attackNumber)
   }
 
-  // Общий метод для воспроизведения анимаций
   playAnimation(type, number) {
-    const animationKey = `${type}${number}`;
-    const frames = this.animations[animationKey];
+    const animationKey = `${type}${number}`
+    const frames = this.animations[animationKey]
 
     if (!frames) {
-      console.warn(`Enemy.playAnimation: animation ${animationKey} not found`);
-      return;
+      console.warn(`Enemy.playAnimation: animation ${animationKey} not found`)
+      return
     }
 
     // Если уже играет эта анимация - ничего не делаем
-    if (this.currentAnimation === animationKey) return;
+    if (this.currentAnimation === animationKey) return
 
     // Устанавливаем новые кадры
-    this.sprite.textures = frames;
-    this.sprite.gotoAndPlay(0);
-    
+    this.sprite.textures = frames
+    this.sprite.gotoAndPlay(0)
+
+    this.shadow.textures = frames
+    this.shadow.gotoAndPlay(0)
+
     // Настраиваем параметры в зависимости от типа анимации
     if (type === 'attack') {
-      this.sprite.animationSpeed = 0.25; // Можно настроить скорость для атак
-      this.sprite.loop = true; // Атака обычно проигрывается один раз
-      
-      // Добавляем обработчик завершения анимации атаки
-      this.sprite.onComplete = () => {
-        // Возвращаемся к анимации бега после завершения атаки
-      //  this.playRun(1);
-      };
+      this.sprite.animationSpeed = 0.25
+      this.sprite.loop = true
     } else {
-      this.sprite.animationSpeed = 0.40;
-      this.sprite.loop = true;
-      this.sprite.onComplete = null; // Убираем обработчик для бега
+      this.sprite.animationSpeed = 0.4
+      this.sprite.loop = true
     }
 
-    this.currentAnimation = animationKey;
-    this.currentAnimationType = type;
+    this.currentAnimation = animationKey
+    this.currentAnimationType = type
+
+    this.sprite.onLoop = () => {
+      if (this.currentAnimationType === 'run') {
+        // Первый шаг
+        const id1 = sound.sounds.sfx.play('knight_footstep')
+        const volume1 = this.scene.isPaused ? 0.0 : 0.3
+        sound.sounds.sfx.volume(volume1, id1)
+
+        // Второй шаг через 250 мс
+        setTimeout(() => {
+          const id2 = sound.sounds.sfx.play('knight_footstep')
+          const volume2 = this.scene.isPaused ? 0.0 : 0.3
+          sound.sounds.sfx.volume(volume2, id2)
+        }, 250)
+      }
+    }
   }
 
   playDeath() {
-    console.log("playDeath");
-    
+    sound.play('knight_death')
     const deathFx = Spine.from({
-        skeleton: 'death_fx',
-        atlas: 'death_fx_atlas'
-    });
-    deathFx.state.setAnimation(0, 'animation', false);
-    this.addChild(deathFx);
+      skeleton: 'death_fx',
+      atlas: 'death_fx_atlas',
+    })
+    deathFx.state.setAnimation(0, 'animation', false)
+    this.addChild(deathFx)
 
     deathFx.state.addListener({
-        complete: () => deathFx.destroy()
-    });
+      complete: () => deathFx.destroy(),
+    })
 
-   this.sprite.visible = false;
-   this.healthBar.visible = false;
+    this.sprite.visible = false
+    this.shadow.visible = false
+
+    this.healthBar.visible = false
   }
 
-   flashPlay() {
-    this.isFlashing = true;
-    this.flashTime = 0;
+  flashPlay() {
+    this.isFlashing = true
+    this.flashTime = 0
   }
 
-  // Выключить мигание
   flashStop() {
-    this.isFlashing = false;
-    this.flashTime = 0;
-    
-    // Возвращаем оригинальные цвета
+    this.isFlashing = false
+    this.flashTime = 0
+
     if (this.sprite) {
-      this.sprite.tint = this.originalTint;
+      this.sprite.tint = this.originalTint
     }
-    
+
     if (this.healthBar) {
-      this.healthBar.setType('blue');
+      this.healthBar.setType('blue')
     }
   }
 
-updateFlash(delta) {
-  if (!this.isFlashing) return;
+  updateFlash(delta) {
+    if (!this.isFlashing) return
 
-  this.flashTime += delta;
+    this.flashTime += delta
 
-  const flashInterval = 28.15; // оставим твой подобранный интервал
-  const intervals = Math.floor(this.flashTime / flashInterval);
-  const isRedFlash = intervals % 2 === 0;
+    const flashInterval = 28.15
+    const intervals = Math.floor(this.flashTime / flashInterval)
+    const isRedFlash = intervals % 2 === 0
 
-  // Мигаем спрайтом
-  if (this.sprite) {
-    this.sprite.tint = isRedFlash ? 0xFFFFFF : 0xFF8888;
+    if (this.sprite) {
+      this.sprite.tint = isRedFlash ? 0xffffff : 0xff8888
+    }
+
+    if (this.healthBar) {
+      this.healthBar.setHealthBarColor(isRedFlash ? 'red' : 'white')
+    }
   }
-
-  // Мигаем хелзбаром белым/синим
-  if (this.healthBar) {
-    this.healthBar.setHealthBarColor(isRedFlash ? 'red' : 'white' );
-  }
-}
 
   update(delta) {
-    this.updateFlash(delta);
-     // обновляем все дочерние Spine объекты
-    // this.children.forEach(child => {
-    //     if (child instanceof Spine) child.update(delta);
-    // });
+    this.updateFlash(delta)
+  }
+
+  // Важно: очищаем обработчики при уничтожении
+  destroy() {
+    this.sprite.off('loop', this.onAnimationLoop)
+    this.shadow.off('loop', this.onAnimationLoop)
+    super.destroy()
   }
 }

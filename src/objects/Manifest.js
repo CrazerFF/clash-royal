@@ -50,9 +50,6 @@ export const manifest = {
         {
           alias: 'megaknight_run_json',
           src: 'assets/sprites/megaknight_run.json',
-          resolution: { 
-            '@': [0.5, 1, 2] 
-          }
         },
         {
           alias: 'megaknight_attack_json',

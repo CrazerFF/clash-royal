@@ -25,7 +25,8 @@ export class PlayNow extends Container {
       dropShadowAngle: Math.PI / 2,
       align: 'center',
     });
-
+  const dpr666 = window.devicePixelRatio
+  console.log('dpr666', dpr666)
     // ===== ТЕКСТ КНОПКИ =====
     this.text = new Text({
       text: 'PLAY NOW',
