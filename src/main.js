@@ -1,123 +1,161 @@
-import { Application, Assets } from 'pixi.js';
-import { manifest } from './objects/Manifest.js';
-import { Game } from './Scene/Game.js';
-import { UiLayer } from './Hud/UiLayer.js';
+import { Application, Assets } from 'pixi.js'
+import { manifest } from './objects/Manifest.js'
+import { Game } from './Scene/Game.js'
+import { UiLayer } from './Hud/UiLayer.js'
+import { gsap } from 'gsap'
 
-import { extensions, ExtensionType, Resolver, resolveTextureUrl } from 'pixi.js';
+// ===== ЧЕРНЫЙ ЭКРАН =====
 
-// extensions.add({
-//   extension: ExtensionType.ResolveParser,
-//   test: (value) => Resolver.RETINA_PREFIX.test(value),
-//   parse: resolveTextureUrl.parse,
-// });
+const loadingScreen = document.createElement('div')
+
+loadingScreen.style.position = 'fixed'
+loadingScreen.style.left = '0'
+loadingScreen.style.top = '0'
+loadingScreen.style.width = '100%'
+loadingScreen.style.height = '100%'
+loadingScreen.style.background = '#000'
+loadingScreen.style.zIndex = '9999'
+
+document.body.appendChild(loadingScreen);
 
 (async () => {
-  const DESIGN_W = 660;
-  const DESIGN_H = 1220;
+  const DESIGN_W = 660
+  const DESIGN_H = 1220
 
-  const DESIGN_W_UI = 1044;
-  const DESIGN_H_UI = 1220;
+  const DESIGN_W_UI = 1044
+  const DESIGN_H_UI = 1220
 
-  const app = new Application();
+  const app = new Application()
 
-  // =====  ИНИЦИАЛИЗАЦИЯ — ЧЁРНЫЙ ЭКРАН =====
   await app.init({
-    backgroundColor: 0x000000,
+    backgroundColor: 0x1d9612,
     antialias: false,
-    resolution: Math.min(window.devicePixelRatio || 1, 3),
+    resolution: Math.min(window.devicePixelRatio || 1, 2),
     autoDensity: true,
-  });
+  })
 
-  globalThis.__PIXI_APP__ = app;
+  globalThis.__PIXI_APP__ = app
 
-  document.body.style.margin = '0';
-  document.body.style.padding = '0';
-  document.body.style.background = '#000';
+  document.body.appendChild(app.canvas)
+  
+  app.canvas.addEventListener('contextmenu', (e) => e.preventDefault())
+  app.canvas.style.touchAction = 'none'
 
-  document.body.appendChild(app.canvas);
-
-  app.canvas.addEventListener('contextmenu', (e) => e.preventDefault());
-  app.canvas.style.touchAction = 'none';
-
-  // =====  ЗАГРУЗКА ШРИФТА =====
-  let fontLoaded = false;
+  // ===== ШРИФТ =====
 
   try {
-    const font = new FontFace('font', 'url(assets/fonts/font4.woff2)');
-    const loadedFont = await font.load();
-    document.fonts.add(loadedFont);
-    fontLoaded = true;
+    const font = new FontFace('font', 'url(assets/fonts/font4.woff2)')
+    const loadedFont = await font.load()
+    document.fonts.add(loadedFont)
   } catch (e) {
-    console.warn('Шрифт не загрузился, используем системный');
+    //  console.warn('Шрифт не загрузился')
   }
 
-  await document.fonts.ready;
+  await document.fonts.ready
 
-  // =====  ЗАГРУЗКА РЕСУРСОВ =====
-  await Assets.reset();
-  
+  // ===== РЕСУРСЫ =====
+
   try {
-
-    await Assets.init({
+    await Assets.init({ 
       manifest,
       texturePreference: {
         resolution: 1,
-        format: 'webp'
-    }
-    });
-
-  //  Assets.backgroundLoadBundle('game');
-    await Assets.loadBundle('game');
+        format: 'webp',
+      }
+     })
+    await Assets.loadBundle('gameStart')
   } catch (error) {
-    console.error('Ошибка загрузки ресурсов:', error);
+    // console.error('Ошибка загрузки ресурсов:', error)
 
-    const bundle = manifest.bundles.find((b) => b.name === 'game');
+    const bundle = manifest.bundles.find((b) => b.name === 'game')
+
     if (bundle) {
       for (const asset of bundle.assets) {
         try {
-          await Assets.load(asset.alias);
-        } catch (e) {
-          console.warn(`Не удалось загрузить ${asset.alias}`);
+          await Assets.load(asset.alias)
+        } catch {
+          //   console.warn(`Не удалось загрузить ${asset.alias}`)
         }
       }
     }
   }
-  const w = window.innerWidth;
-  const h = window.innerHeight;
 
-  const uiLayer = new UiLayer(w, h);
-  const game = new Game(DESIGN_W, DESIGN_H, w, h, uiLayer);
-  uiLayer.game = game;
-  app.renderer.background.color = 0xa4ed45;
+  let game
+  let uiLayer
 
-  app.stage.addChild(game);
-  app.stage.addChild(uiLayer);
-  app.stage.sortableChildren = true;
+  function startGame() {
+    const w = window.innerWidth
+    const h = window.innerHeight
 
-  window.resizeGame = function resize() {
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    const dpr = Math.min(window.devicePixelRatio || 1, 3);
-    app.renderer.resolution = dpr;
-    app.renderer.resize(window.innerWidth, window.innerHeight);
+    uiLayer = new UiLayer(w, h)
+    game = new Game(DESIGN_W, DESIGN_H, w, h, uiLayer)
 
-    const scaleGame = Math.min(w / DESIGN_W, h / DESIGN_H);
-    const scale_UI = Math.min(w / DESIGN_W_UI, h / DESIGN_H_UI);
+    uiLayer.game = game
 
-    game.scale.set(scaleGame * 1.07);
-    game.x = (w - DESIGN_W * scaleGame) / 2 - 23 * scaleGame;
-    game.y = (h - DESIGN_H * scaleGame) / 2 - 68 * scaleGame;
-    game.resize?.(DESIGN_W, DESIGN_H, w, h);
-    uiLayer.resize?.(w, h, scale_UI, scaleGame);
+    app.stage.addChild(game)
+    app.stage.addChild(uiLayer)
+
+    app.stage.sortableChildren = true
+
+    window.resizeGame()
   }
-  window.addEventListener('resize', window.resizeGame);
-  window.addEventListener('orientationchange', window.resizeGame);
-  window.resizeGame();
+
+  window.restartGame = function () {
+    gsap.killTweensOf('*')
+
+    if (game) {
+      app.stage.removeChild(game)
+      game.destroy({ children: true })
+    }
+
+    if (uiLayer) {
+      app.stage.removeChild(uiLayer)
+      uiLayer.destroy({ children: true })
+    }
+
+    startGame()
+  }
+
+  // ===== RESIZE =====
+
+  window.resizeGame = function () {
+    const w = window.innerWidth
+    const h = window.innerHeight
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2)
+
+    app.renderer.resolution = dpr
+    app.renderer.resize(w, h)
+
+    if (!game || !uiLayer) return
+
+    const scaleGame = Math.min(w / DESIGN_W, h / DESIGN_H)
+    const scale_UI = Math.min(w / DESIGN_W_UI, h / DESIGN_H_UI)
+
+    game.scale.set(scaleGame * 1.07)
+
+    game.x = (w - DESIGN_W * scaleGame) / 2 - 23 * scaleGame
+    game.y = (h - DESIGN_H * scaleGame) / 2 - 68 * scaleGame
+
+    game.resize?.(DESIGN_W, DESIGN_H, w, h)
+
+    uiLayer.resize?.(w, h, scale_UI, scaleGame)
+  }
+
+  window.addEventListener('resize', window.resizeGame)
+  window.addEventListener('orientationchange', window.resizeGame)
+
+  // ===== СТАРТ ИГРЫ =====
+
+  startGame()
+  loadingScreen.remove()
+
+  // ===== TICKER =====
 
   app.ticker.add((ticker) => {
-    game.update(ticker.deltaTime);
-    uiLayer.update?.(ticker.deltaTime);
-  });
+    game?.update(ticker.deltaTime)
+    uiLayer?.update?.(ticker.deltaTime)
+  })
 })().catch((error) => {
-  console.error('Фатальная ошибка при запуске:', error);
-});
+  console.error('Фатальная ошибка при запуске:', error)
+})

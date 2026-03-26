@@ -2,7 +2,7 @@ import { Container } from 'pixi.js'
 import { AnimatedSprite, Assets, Text, TextStyle } from 'pixi.js'
 import { HealthBar } from './HealthBar.js'
 import { Clock } from './Clock.js'
-
+import { sound } from './SoundManager.js'
 
 export class Giant extends Container {
   constructor(scene) {
@@ -17,6 +17,15 @@ export class Giant extends Container {
     const attackSheet = Assets.get('giant_attack_json')
     const deploySheet = Assets.get('giant_deploy_json')
 
+    this.shadow = new AnimatedSprite(runSheet.animations['giant_run1'])
+    this.shadow.anchor.set(0.5, 0.5)
+    this.shadow.scale.set(0.7, -0.9) // сплющивание
+    this.shadow.skew.x = -0.7
+    this.shadow.tint = 0x676e66 // чёрный цвет
+    this.shadow.animationSpeed = 0.4
+    this.shadow.loop = true
+    this.shadow.alpha = 0.3
+    this.addChild(this.shadow)
     // Создаем анимированный спрайт
     this.sprite = new AnimatedSprite(runSheet.animations['giant_run1'])
     this.sprite.anchor.set(0.5, 0.5)
@@ -111,6 +120,15 @@ export class Giant extends Container {
     // Мигаем спрайтом
     if (this.sprite) {
       this.sprite.tint = isRedFlash ? 0xffffff : 0xff8888
+
+      if (this.sprite.tint === 0xffffff) {
+        this.block = 1
+      }
+      if (this.sprite.tint === 0xff8888 && this.block === 1) {
+        const id = sound.sounds.sfx.play('giant_attack_swing')
+        sound.sounds.sfx.volume(0.3, id)
+        this.block = 0
+      }
     }
 
     // Мигаем хелзбаром белым/синим
@@ -154,6 +172,9 @@ export class Giant extends Container {
     this.sprite.loop = true
     this.sprite.gotoAndPlay(0)
 
+    this.shadow.textures = frames
+    this.shadow.gotoAndPlay(0)
+
     this.currentAnimation = animationKey
   }
 
@@ -179,10 +200,19 @@ export class Giant extends Container {
     this.sprite.loop = true
     this.sprite.gotoAndPlay(0)
 
+    this.shadow.textures = frames
+    this.shadow.gotoAndPlay(0)
+
     this.currentAnimation = animationKey
+
+    this.sprite.onLoop = () => {
+      sound.play('giant_hit')
+    }
   }
 
   playDeploy() {
+    const id = sound.sounds.sfx.play('giant_deploy')
+    sound.sounds.sfx.volume(0.3, id)
     this.clock = new Clock()
     this.addChild(this.clock)
 
@@ -209,6 +239,9 @@ export class Giant extends Container {
     this.sprite.loop = false
     this.sprite.gotoAndPlay(0)
 
+    this.shadow.textures = frames
+    this.shadow.gotoAndPlay(0)
+
     this.currentAnimation = animationKey
 
     this.sprite.onComplete = () => {
@@ -228,7 +261,8 @@ export class Giant extends Container {
     this.updateFlash(delta)
   }
   stop() {
-    this.sprite.stop(); // Останавливаем анимацию
-    this.sprite.animationSpeed = 0; // Обнуляем скорость
+    this.shadow.stop() // Останавливаем анимацию
+    this.sprite.stop() // Останавливаем анимацию
+    this.sprite.animationSpeed = 0 // Обнуляем скорость
   }
 }
