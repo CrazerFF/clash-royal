@@ -11,6 +11,11 @@ export const manifest = {
         },
 
         {
+          alias: 'bg3',
+          src: 'assets/sprites/bg.webp',
+        },
+
+        {
           alias: 'megaknight_run_json',
           src: 'assets/sprites/megaknight_run.json',
         },

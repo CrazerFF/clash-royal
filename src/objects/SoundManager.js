@@ -4,6 +4,7 @@ class SoundManager {
   constructor() {
     Howler.autoSuspend = false
 
+    
     // пользовательский мут (кнопка)
     this.enabled = true
 
@@ -68,6 +69,7 @@ class SoundManager {
     }
 
     this.initFocusHandlers()
+    
   }
 
   // ===============================
