@@ -63,7 +63,7 @@ document.body.appendChild(loadingScreen);
         format: 'webp',
       }
      })
-    await Assets.loadBundle('game')
+    await Assets.loadBundle('gameStart')
   } catch (error) {
     // console.error('Ошибка загрузки ресурсов:', error)
 

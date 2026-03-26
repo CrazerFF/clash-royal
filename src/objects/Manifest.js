@@ -1,24 +1,42 @@
-import { Spine } from '@esotericsoftware/spine-pixi-v8';
+import { Spine } from '@esotericsoftware/spine-pixi-v8'
 
 export const manifest = {
   bundles: [
     {
-      name: 'game',
+      name: 'gameStart',
       assets: [
         {
           alias: 'bg',
-          src: [
-            'assets/sprites/bg.json', 
-            'assets/sprites/bg@2x.json'
-          ]
+          src: 'assets/sprites/bg.webp',
         },
-        // {
-        //   alias: 'bg',
-        //   src: [
-        //     'assets/sprites/bg@2x.webp',
-        //     'assets/sprites/bg.webp', 
-        //   ]
-        // },
+
+        {
+          alias: 'megaknight_run_json',
+          src: 'assets/sprites/megaknight_run.json',
+        },
+        {
+          alias: 'megaknight_attack_json',
+          src: 'assets/sprites/megaknight_attack.json',
+        },
+
+        {
+          alias: 'otherAll_json',
+          src: 'assets/sprites/otherAll.json',
+        },
+        {
+          alias: 'redking_json',
+          src: 'assets/sprites/redking.json',
+        },
+        {
+          alias: 'blueking_json',
+          src: 'assets/sprites/blueking.json',
+        },
+      ],
+    },
+
+    {
+      name: 'gameContinue',
+      assets: [
         {
           alias: 'bg2',
           src: 'assets/sprites/bg2.webp',
@@ -35,7 +53,7 @@ export const manifest = {
           alias: 'giant_deploy_json',
           src: 'assets/sprites/giant_deploy.json',
         },
-         {
+        {
           alias: 'archer_run_json',
           src: 'assets/sprites/archer_run.json',
         },
@@ -48,26 +66,6 @@ export const manifest = {
           src: 'assets/sprites/archer_deploy.json',
         },
         {
-          alias: 'megaknight_run_json',
-          src: 'assets/sprites/megaknight_run.json',
-        },
-        {
-          alias: 'megaknight_attack_json',
-          src: 'assets/sprites/megaknight_attack.json',
-        },
-        {
-          alias: 'otherAll_json',
-          src: 'assets/sprites/otherAll.json',
-        },
-        {
-          alias: 'redking_json',
-          src: 'assets/sprites/redking.json',
-        },
-        {
-          alias: 'blueking_json',
-          src: 'assets/sprites/blueking.json',
-        },
-        {
           alias: 'arrow_json',
           src: 'assets/sprites/arrow.json',
         },
@@ -75,12 +73,10 @@ export const manifest = {
           alias: 'smoke_json',
           src: 'assets/sprites/smoke.json',
         },
-
         {
           alias: 'stones_json',
           src: 'assets/sprites/stones.json',
         },
-
         {
           alias: 'pit',
           src: 'assets/sprites/pit.png',
@@ -94,9 +90,7 @@ export const manifest = {
 
         { alias: 'crown_anim_json', src: 'assets/sprites/crown_anim.json' },
         { alias: 'crown_anim_atlas', src: 'assets/sprites/crown_anim.atlas' },
-
-
       ],
     },
   ],
-};
+}

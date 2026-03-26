@@ -109,6 +109,7 @@ export class Enemy extends Container {
     // Настраиваем параметры в зависимости от типа анимации
     if (type === 'attack') {
       this.sprite.animationSpeed = 0.25
+      this.shadow.animationSpeed = 0.25
       this.sprite.loop = true
     } else {
       this.sprite.animationSpeed = 0.4

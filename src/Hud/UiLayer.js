@@ -34,6 +34,21 @@ export class UiLayer extends Container {
     this.playNow = new PlayNow()
     this.addChild(this.playNow)
 
+    this.royalTrainer = new RoyalTrainer()
+    this.addChild(this.royalTrainer)
+
+    this.hand = new Hand(this)
+    this.addChild(this.hand)
+
+    this.overlay = new Overlay(this)
+    this.addChild(this.overlay)
+
+    this.labelKing = new LabelKing(this)
+    this.addChild(this.labelKing)
+    this.labelKing.visible = false
+  }
+
+  createContinue() {
     this.giant2 = new Giant(this)
     this.giant2.x = this.designWidth / 2 - 70
     this.giant2.y = this.designHeight / 2 + 150
@@ -64,19 +79,6 @@ export class UiLayer extends Container {
     this.archer4.visible = false
     this.archer4.isResize = true
     this.archer4.scale.set(0.7)
-
-    this.royalTrainer = new RoyalTrainer()
-    this.addChild(this.royalTrainer)
-
-    this.hand = new Hand(this)
-    this.addChild(this.hand)
-
-    this.overlay = new Overlay(this)
-    this.addChild(this.overlay)
-
-    this.labelKing = new LabelKing(this)
-    this.addChild(this.labelKing)
-    this.labelKing.visible = false
   }
 
   update(delta) {
@@ -86,7 +88,7 @@ export class UiLayer extends Container {
       }
     })
   }
-  resize(w, h, scale_UI, scaleGame) {    
+  resize(w, h, scale_UI, scaleGame) {
     this.x = 0
     this.y = 0
 

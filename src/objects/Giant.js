@@ -261,6 +261,7 @@ export class Giant extends Container {
     this.updateFlash(delta)
   }
   stop() {
+    this.shadow.stop() // Останавливаем анимацию
     this.sprite.stop() // Останавливаем анимацию
     this.sprite.animationSpeed = 0 // Обнуляем скорость
   }

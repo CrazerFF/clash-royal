@@ -310,6 +310,7 @@ export class Archer extends Container {
   }
 
   stop() {
+    this.shadow.stop() // Останавливаем анимацию
     this.sprite.stop() // Останавливаем анимацию
     this.sprite.animationSpeed = 0 // Обнуляем скорость
   }

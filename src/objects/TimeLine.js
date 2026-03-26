@@ -160,9 +160,9 @@ export class TimeLine {
         })
         break
       case 'pause':
-        if (!this.scene.giant.visible || !this.scene.archer2.visible) {
-          this.scene.isPaused = true
-        }
+        //if (!this.scene.giant.visible || !this.scene.archer2.visible) {
+        this.scene.isPaused = true
+        //}
         break
       case 'unPause':
         if (!this.scene.giant.visible || !this.scene.archer2.visible) {
@@ -203,6 +203,9 @@ export class TimeLine {
           x: 1,
           duration: 0.7,
           ease: 'power2.out',
+          onComplete: () => {
+            window.resizeGame()
+          },
         })
 
         gsap.to(king, {
@@ -210,6 +213,7 @@ export class TimeLine {
           duration: 0.7,
           ease: 'power2.out',
           onComplete: () => {
+            window.resizeGame()
             // Показываем текст в зависимости от флага
 
             // Через 0.7 секунды скрываем
@@ -236,7 +240,7 @@ export class TimeLine {
                   this.scene.uiLayer.hand.renderable = true
                   this.scene.area.visible = true
                   this.scene.redArea.visible = true
-
+                  window.resizeGame()
                   // Меняем флаг после первого раза
                   if (this.kingFirstTime) {
                     this.kingFirstTime = false
@@ -250,6 +254,9 @@ export class TimeLine {
                 y: blueTree.baseY,
                 duration: 0.7,
                 ease: 'power2.out',
+                onComplete: () => {
+                  window.resizeGame()
+                },
               })
             }, 700)
           },
@@ -262,6 +269,7 @@ export class TimeLine {
           ease: 'power2.in',
           onComplete: () => {
             blueTree.visible = false
+            window.resizeGame()
           },
         })
 
@@ -303,6 +311,8 @@ export class TimeLine {
             this.scene.uiLayer.hand.renderable = true
             this.scene.area.visible = true
             this.scene.redArea.visible = true
+
+            window.resizeGame()
           },
         })
 
@@ -381,7 +391,7 @@ export class TimeLine {
       case 'enemyMove9':
         const tl1 = gsap.timeline({
           onComplete: () => {
-            console.log('Все анимации завершены')
+          //  console.log('Все анимации завершены')
           },
         })
 
