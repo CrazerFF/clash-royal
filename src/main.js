@@ -1,4 +1,4 @@
-import { Application, Assets } from 'pixi.js'
+import { Application, Assets, Sprite } from 'pixi.js'
 import { manifest } from './objects/Manifest.js'
 import { Game } from './Scene/Game.js'
 import { UiLayer } from './Hud/UiLayer.js'
@@ -83,6 +83,12 @@ document.body.appendChild(loadingScreen);
   let game
   let uiLayer
 
+  //  const bg = new Sprite(Assets.get('bg'))
+  //     app.stage.addChild(bg)
+  //     bg.scale.set(1.6)
+  //     bg.anchor.set(0.5)
+
+
   function startGame() {
     const w = window.innerWidth
     const h = window.innerHeight
@@ -157,5 +163,5 @@ document.body.appendChild(loadingScreen);
     uiLayer?.update?.(ticker.deltaTime)
   })
 })().catch((error) => {
-  console.error('Фатальная ошибка при запуске:', error)
+  console.error('Фатальная ошибка при запуске:',  error)
 })

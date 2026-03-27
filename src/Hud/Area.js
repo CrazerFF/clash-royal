@@ -157,4 +157,4 @@ export class Area extends Container {
   easeInOut(t) {
     return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
   }
-}
+}//node scripts/generateManifestBase64.js

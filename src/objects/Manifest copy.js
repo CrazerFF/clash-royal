@@ -81,7 +81,7 @@ export const manifest = {
           alias: 'pit',
           src: 'assets/sprites/pit.png',
         },
-        //ниже spine
+
         { alias: 'tower_smoke_json', src: 'assets/sprites/tower_smoke.json' },
         { alias: 'tower_smoke_atlas', src: 'assets/sprites/tower_smoke.atlas' },
 
