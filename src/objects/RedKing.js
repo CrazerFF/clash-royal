@@ -61,7 +61,7 @@ export class RedKing extends Container {
     this.scene.archer2.stop()
     
     const deathFx = Spine.from({
-      skeleton: 'tower_smoke_json',
+      skeleton: 'tower_smoke',
       atlas: 'tower_smoke_atlas',
     })
     deathFx.state.setAnimation(0, 'animation', false)

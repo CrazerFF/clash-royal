@@ -138,6 +138,7 @@ export class Enemy extends Container {
 
   playDeath() {
     sound.play('knight_death')
+    
     const deathFx = Spine.from({
       skeleton: 'death_fx',
       atlas: 'death_fx_atlas',

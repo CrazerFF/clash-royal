@@ -1,6 +1,7 @@
 import { Container, Text, TextStyle } from 'pixi.js'
 import { gsap } from 'gsap'
-import { Assets } from 'pixi.js'
+import { loadBundle } from '../objects/loader.js'
+
 
 export class Timer extends Container {
   constructor(scene) {
@@ -44,7 +45,7 @@ export class Timer extends Container {
 
   // 📦 просто грузим
   async loadBundle() {
-    await Assets.loadBundle('gameContinue')
+    await loadBundle('gameContinue')
     this.isLoaded = true
   }
 

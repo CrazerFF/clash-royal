@@ -1,93 +1,126 @@
-// scripts/convertManifestAndJsonToBase64.js
-import fs from 'fs';
-import path from 'path';
-import { manifest } from '../src/objects/Manifest.js';
+// scripts/convertManifestToInline.js
+import fs from 'fs'
+import path from 'path'
+import { manifest } from '../src/objects/manifest.js'
 
-const PUBLIC_DIR = path.resolve('./public');
+// 👉 корень проекта
+const ROOT_DIR = path.resolve('./')
 
-// Конвертация файла изображения в Base64
+// ===== MIME =====
+function getMime(ext) {
+  switch (ext) {
+    case '.webp': return 'image/webp'
+    case '.png': return 'image/png'
+    case '.jpg':
+    case '.jpeg': return 'image/jpeg'
+    case '.json': return 'application/json'
+    case '.atlas': return 'text/plain'
+    default: return 'application/octet-stream'
+  }
+}
+
+// ===== base64 =====
 function fileToBase64(filePath) {
-  if (!fs.existsSync(filePath)) throw new Error(`Файл не найден: ${filePath}`);
-  const ext = path.extname(filePath).toLowerCase();
-  if (!['.webp', '.png', '.jpg', '.jpeg'].includes(ext)) {
-    throw new Error(`Поддерживаются только изображения: ${filePath}`);
-  }
-  const mimeType = ext === '.webp' ? 'image/webp' :
-                   ext === '.png'  ? 'image/png' :
-                   'image/jpeg';
-  const data = fs.readFileSync(filePath);
-  return `data:${mimeType};base64,${data.toString('base64')}`;
+  const ext = path.extname(filePath).toLowerCase()
+  const mime = getMime(ext)
+
+  const data = fs.readFileSync(filePath)
+  return `data:${mime};base64,${data.toString('base64')}`
 }
 
-// Обрабатываем JSON: заменяем meta.image и skeleton.images на Base64
-function processJson(asset) {
-  const jsonPath = path.join(PUBLIC_DIR, asset.src);
-  if (!fs.existsSync(jsonPath)) {
-    console.warn(`⚠️ JSON не найден: ${jsonPath}`);
-    return;
-  }
+// ===== check base64 =====
+function isBase64(str) {
+  return typeof str === 'string' && str.startsWith('data:')
+}
 
-  const raw = fs.readFileSync(jsonPath, 'utf-8');
-  const jsonData = JSON.parse(raw);
+// ===== JSON (spritesheet / spine json safe) =====
+function processJson(fullPath) {
+  const raw = fs.readFileSync(fullPath, 'utf-8')
+  const json = JSON.parse(raw)
 
-  // TexturePacker: meta.image
-  if (jsonData.meta && jsonData.meta.image) {
-    const imagePath = path.join(path.dirname(jsonPath), jsonData.meta.image);
-    if (fs.existsSync(imagePath)) {
-      jsonData.meta.image = fileToBase64(imagePath);
-      console.log(`✅ ${asset.alias} meta.image → Base64`);
+  // 👉 atlas image embedding (TexturePacker)
+  if (json.meta && json.meta.image) {
+    if (!isBase64(json.meta.image)) {
+      const imgPath = path.join(path.dirname(fullPath), json.meta.image)
+
+      if (fs.existsSync(imgPath)) {
+        json.meta.image = fileToBase64(imgPath)
+        console.log(`🟢 atlas image → base64: ${path.basename(fullPath)}`)
+      } else {
+        console.warn(`⚠️ atlas image not found: ${imgPath}`)
+      }
     }
   }
 
-  // Spine: skeleton.images
-  if (jsonData.skeleton && jsonData.skeleton.images) {
-    const imagesPath = path.join(path.dirname(jsonPath), jsonData.skeleton.images);
-    if (fs.existsSync(imagesPath) && fs.statSync(imagesPath).isDirectory()) {
-      const files = fs.readdirSync(imagesPath).filter(f => /\.(webp|png|jpg|jpeg)$/.test(f));
-      const imagesObj = {};
-      files.forEach(f => {
-        imagesObj[f] = fileToBase64(path.join(imagesPath, f));
-      });
-      jsonData.skeleton.images = imagesObj;
-      console.log(`✅ ${asset.alias} skeleton.images → Base64`);
-    } else if (fs.existsSync(imagesPath)) {
-      jsonData.skeleton.images = fileToBase64(imagesPath);
-      console.log(`✅ ${asset.alias} skeleton.images → Base64`);
-    }
-  }
-
-  fs.writeFileSync(jsonPath, JSON.stringify(jsonData, null, 2), 'utf-8');
+  return json
 }
 
-// Проходим по манифесту
+// ===== MAIN =====
 manifest.bundles.forEach(bundle => {
   bundle.assets.forEach(asset => {
-    const assetPath = path.join(PUBLIC_DIR, asset.src);
+    const src = asset.src
 
-    if (!fs.existsSync(assetPath)) {
-      console.warn(`⚠️ Файл не найден: ${asset.src}`);
-      return;
+    // уже обработано или не строка
+    if (typeof src !== 'string') return
+
+    const fullPath = path.join(ROOT_DIR, src)
+    const ext = path.extname(src).toLowerCase()
+
+    if (!fs.existsSync(fullPath)) {
+      console.warn(`⚠️ file not found: ${src}`)
+      return
     }
 
-    // Если это картинка — меняем src на Base64
-    if (/\.(webp|png|jpg|jpeg)$/.test(asset.src)) {
-      asset.src = fileToBase64(assetPath);
-      console.log(`📦 ${asset.alias} src → Base64`);
+    // =========================
+    // 🟢 IMAGE → base64
+    // =========================
+    if (['.webp', '.png', '.jpg', '.jpeg'].includes(ext)) {
+      asset.src = fileToBase64(fullPath)
+      console.log(`🟢 image → base64: ${asset.alias}`)
     }
 
-    // Если JSON — обрабатываем изображения внутри
-    else if (asset.src.endsWith('.json')) {
-      processJson(asset);
-    }
-  });
-});
+    // =========================
+    // 🔵 JSON → base64
+    // =========================
+    else if (ext === '.json') {
+      const json = processJson(fullPath)
 
-// Перезаписываем исходный манифест
-const manifestPath = path.resolve('./src/objects/Manifest.js');
+      const base64 = Buffer.from(JSON.stringify(json)).toString('base64')
+
+      asset.src = `data:application/json;base64,${base64}`
+
+      console.log(`🔵 json → base64: ${asset.alias}`)
+    }
+
+    // =========================
+    // 🟣 ATLAS → INLINE TEXT
+    // =========================
+    else if (ext === '.atlas') {
+      const atlasText = fs.readFileSync(fullPath, 'utf-8')
+
+      asset.src = atlasText
+
+      console.log(`🟣 atlas → inline: ${asset.alias}`)
+    }
+
+    // =========================
+    // ❓ unknown
+    // =========================
+    else {
+      console.warn(`⚠️ unknown type: ${src}`)
+    }
+  })
+})
+
+// ===== WRITE OUTPUT =====
+const manifestPath = path.resolve('./src/objects/Manifest.js')
+
 fs.writeFileSync(
   manifestPath,
-  `// Auto-updated manifest with Base64 images\nexport const manifest = ${JSON.stringify(manifest, null, 2)};\n`,
+  `// AUTO-GENERATED (INLINE PLAYABLE)
+export const manifest = ${JSON.stringify(manifest, null, 2)};
+`,
   'utf-8'
-);
+)
 
-console.log('\n✅ Все вебп и JSON обработаны. Манифест перезаписан.');
+console.log('\n✅ INLINE MANIFEST READY (base64 + atlas inline)')

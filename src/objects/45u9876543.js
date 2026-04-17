@@ -1,4 +1,3 @@
-import { Spine } from '@esotericsoftware/spine-pixi-v8'
 
 export const manifest = {
   bundles: [

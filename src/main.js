@@ -1,5 +1,5 @@
-import { Application, Assets, Sprite } from 'pixi.js'
-import { manifest } from './objects/Manifest.js'
+import { Application, Assets, Sprite, Spritesheet } from 'pixi.js'
+import { loadBundle } from './objects/loader.js'
 import { Game } from './Scene/Game.js'
 import { UiLayer } from './Hud/UiLayer.js'
 import { gsap } from 'gsap'
@@ -16,9 +16,8 @@ loadingScreen.style.height = '100%'
 loadingScreen.style.background = '#000'
 loadingScreen.style.zIndex = '9999'
 
-document.body.appendChild(loadingScreen);
-
-(async () => {
+document.body.appendChild(loadingScreen)
+;(async () => {
   const DESIGN_W = 660
   const DESIGN_H = 1220
 
@@ -37,7 +36,7 @@ document.body.appendChild(loadingScreen);
   globalThis.__PIXI_APP__ = app
 
   document.body.appendChild(app.canvas)
-  
+
   app.canvas.addEventListener('contextmenu', (e) => e.preventDefault())
   app.canvas.style.touchAction = 'none'
 
@@ -56,38 +55,24 @@ document.body.appendChild(loadingScreen);
   // ===== РЕСУРСЫ =====
 
   try {
-    await Assets.init({ 
-      manifest,
-      texturePreference: {
-        resolution: 1,
-        format: 'webp',
-      }
-     })
-    await Assets.loadBundle('gameStart')
+    await Assets.init()
+    await loadBundle('gameStart')
   } catch (error) {
     // console.error('Ошибка загрузки ресурсов:', error)
-
-    const bundle = manifest.bundles.find((b) => b.name === 'game')
-
-    if (bundle) {
-      for (const asset of bundle.assets) {
-        try {
-          await Assets.load(asset.alias)
-        } catch {
-          //   console.warn(`Не удалось загрузить ${asset.alias}`)
-        }
-      }
-    }
+    // const bundle = manifest.bundles.find((b) => b.name === 'game')
+    // if (bundle) {
+    //   for (const asset of bundle.assets) {
+    //     try {
+    //       await Assets.load(asset.alias)
+    //     } catch {
+    //       //   console.warn(`Не удалось загрузить ${asset.alias}`)
+    //     }
+    //   }
+    // }
   }
 
   let game
   let uiLayer
-
-  //  const bg = new Sprite(Assets.get('bg'))
-  //     app.stage.addChild(bg)
-  //     bg.scale.set(1.6)
-  //     bg.anchor.set(0.5)
-
 
   function startGame() {
     const w = window.innerWidth
@@ -163,5 +148,5 @@ document.body.appendChild(loadingScreen);
     uiLayer?.update?.(ticker.deltaTime)
   })
 })().catch((error) => {
-  console.error('Фатальная ошибка при запуске:',  error)
+  console.error('Фатальная ошибка при запуске:', error)
 })

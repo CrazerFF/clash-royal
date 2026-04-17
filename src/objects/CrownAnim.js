@@ -1,5 +1,5 @@
 this.crownAnim = Spine.from({
-      skeleton: 'crown_anim_json',
+      skeleton: 'crown_anim',
       atlas: 'crown_anim_atlas',
     })
     this.crownAnim.state.timeScale = 0.5;
