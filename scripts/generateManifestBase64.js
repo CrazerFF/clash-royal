@@ -1,10 +1,12 @@
-// scripts/convertManifestToInline.js
 import fs from 'fs'
 import path from 'path'
 import { manifest } from '../src/objects/manifest.js'
 
 // 👉 корень проекта
 const ROOT_DIR = path.resolve('./')
+
+// 👉 папка со spine
+const SPINE_DIR = path.join(ROOT_DIR, 'assets/sprites/spine')
 
 // ===== MIME =====
 function getMime(ext) {
@@ -33,12 +35,11 @@ function isBase64(str) {
   return typeof str === 'string' && str.startsWith('data:')
 }
 
-// ===== JSON (spritesheet / spine json safe) =====
+// ===== JSON =====
 function processJson(fullPath) {
   const raw = fs.readFileSync(fullPath, 'utf-8')
   const json = JSON.parse(raw)
 
-  // 👉 atlas image embedding (TexturePacker)
   if (json.meta && json.meta.image) {
     if (!isBase64(json.meta.image)) {
       const imgPath = path.join(path.dirname(fullPath), json.meta.image)
@@ -46,8 +47,6 @@ function processJson(fullPath) {
       if (fs.existsSync(imgPath)) {
         json.meta.image = fileToBase64(imgPath)
         console.log(`🟢 atlas image → base64: ${path.basename(fullPath)}`)
-      } else {
-        console.warn(`⚠️ atlas image not found: ${imgPath}`)
       }
     }
   }
@@ -55,20 +54,26 @@ function processJson(fullPath) {
   return json
 }
 
+// ===== EXTRACT IMAGE NAME FROM ATLAS =====
+function extractImageFromAtlas(atlasPath) {
+  const content = fs.readFileSync(atlasPath, 'utf-8')
+  return content.split('\n')[0].trim()
+}
+
 // ===== MAIN =====
 manifest.bundles.forEach(bundle => {
-  bundle.assets.forEach(asset => {
+  for (let i = 0; i < bundle.assets.length; i++) {
+    const asset = bundle.assets[i]
     const src = asset.src
 
-    // уже обработано или не строка
-    if (typeof src !== 'string') return
+    if (typeof src !== 'string') continue
 
     const fullPath = path.join(ROOT_DIR, src)
     const ext = path.extname(src).toLowerCase()
 
     if (!fs.existsSync(fullPath)) {
       console.warn(`⚠️ file not found: ${src}`)
-      return
+      continue
     }
 
     // =========================
@@ -84,36 +89,55 @@ manifest.bundles.forEach(bundle => {
     // =========================
     else if (ext === '.json') {
       const json = processJson(fullPath)
-
       const base64 = Buffer.from(JSON.stringify(json)).toString('base64')
-
       asset.src = `data:application/json;base64,${base64}`
-
       console.log(`🔵 json → base64: ${asset.alias}`)
     }
 
     // =========================
-    // 🟣 ATLAS → INLINE TEXT
+    // 🟣 ATLAS → INLINE + IMAGE
     // =========================
     else if (ext === '.atlas') {
       const atlasText = fs.readFileSync(fullPath, 'utf-8')
 
-      asset.src = atlasText
+      // 👉 имя картинки из atlas
+      const imageFile = extractImageFromAtlas(fullPath)
 
-      console.log(`🟣 atlas → inline: ${asset.alias}`)
+      // 👉 ищем ТОЛЬКО в spine папке
+      const imagePath = path.join(SPINE_DIR, imageFile)
+
+      if (fs.existsSync(imagePath)) {
+        const imageBase64 = fileToBase64(imagePath)
+
+        const imageAlias = asset.alias.replace('_atlas', '_image')
+
+        bundle.assets.splice(i + 1, 0, {
+          alias: imageAlias,
+          src: imageBase64
+        })
+
+        i++
+
+        console.log(`🟢 spine image added: ${imageFile} → ${imageAlias}`)
+      } else {
+        console.warn(`❌ spine image not found: ${imageFile}`)
+      }
+
+      // 👉 atlas → base64
+      const base64 = Buffer.from(atlasText).toString('base64')
+      asset.src = `data:text/plain;base64,${base64}`
+
+      console.log(`🟣 atlas → base64: ${asset.alias}`)
     }
 
-    // =========================
-    // ❓ unknown
-    // =========================
     else {
       console.warn(`⚠️ unknown type: ${src}`)
     }
-  })
+  }
 })
 
 // ===== WRITE OUTPUT =====
-const manifestPath = path.resolve('./src/objects/Manifest.js')
+const manifestPath = path.resolve('./src/objects/manifest.js')
 
 fs.writeFileSync(
   manifestPath,
@@ -123,4 +147,4 @@ export const manifest = ${JSON.stringify(manifest, null, 2)};
   'utf-8'
 )
 
-console.log('\n✅ INLINE MANIFEST READY (base64 + atlas inline)')
+console.log('\n✅ INLINE MANIFEST READY')

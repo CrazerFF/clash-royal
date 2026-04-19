@@ -54,23 +54,9 @@ document.body.appendChild(loadingScreen)
 
   // ===== РЕСУРСЫ =====
 
-  try {
-    await Assets.init()
-    await loadBundle('gameStart')
-  } catch (error) {
-    // console.error('Ошибка загрузки ресурсов:', error)
-    // const bundle = manifest.bundles.find((b) => b.name === 'game')
-    // if (bundle) {
-    //   for (const asset of bundle.assets) {
-    //     try {
-    //       await Assets.load(asset.alias)
-    //     } catch {
-    //       //   console.warn(`Не удалось загрузить ${asset.alias}`)
-    //     }
-    //   }
-    // }
-  }
-
+  await Assets.init()
+  await loadBundle('gameStart')
+ 
   let game
   let uiLayer
 
