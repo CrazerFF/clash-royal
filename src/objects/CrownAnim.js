@@ -1,6 +1,6 @@
 this.crownAnim = Spine.from({
-      skeleton: 'crown_anim',
-      atlas: 'crown_anim_atlas',
+      skeleton: 'death_fx',
+      atlas: 'death_fx_atlas',
     })
     this.crownAnim.state.timeScale = 0.5;
     this.crownAnim.state.setAnimation(0, 'animation', false)

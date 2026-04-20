@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { manifest } from '../src/objects/manifest.js'
+import { manifest } from '../src/objects/Manifest.js'
 
 // 👉 корень проекта
 const ROOT_DIR = path.resolve('./')
@@ -11,13 +11,19 @@ const SPINE_DIR = path.join(ROOT_DIR, 'assets/sprites/spine')
 // ===== MIME =====
 function getMime(ext) {
   switch (ext) {
-    case '.webp': return 'image/webp'
-    case '.png': return 'image/png'
+    case '.webp':
+      return 'image/webp'
+    case '.png':
+      return 'image/png'
     case '.jpg':
-    case '.jpeg': return 'image/jpeg'
-    case '.json': return 'application/json'
-    case '.atlas': return 'text/plain'
-    default: return 'application/octet-stream'
+    case '.jpeg':
+      return 'image/jpeg'
+    case '.json':
+      return 'application/json'
+    case '.atlas':
+      return 'text/plain'
+    default:
+      return 'application/octet-stream'
   }
 }
 
@@ -61,7 +67,7 @@ function extractImageFromAtlas(atlasPath) {
 }
 
 // ===== MAIN =====
-manifest.bundles.forEach(bundle => {
+manifest.bundles.forEach((bundle) => {
   for (let i = 0; i < bundle.assets.length; i++) {
     const asset = bundle.assets[i]
     const src = asset.src
@@ -113,7 +119,7 @@ manifest.bundles.forEach(bundle => {
 
         bundle.assets.splice(i + 1, 0, {
           alias: imageAlias,
-          src: imageBase64
+          src: imageBase64,
         })
 
         i++
@@ -128,9 +134,7 @@ manifest.bundles.forEach(bundle => {
       asset.src = `data:text/plain;base64,${base64}`
 
       console.log(`🟣 atlas → base64: ${asset.alias}`)
-    }
-
-    else {
+    } else {
       console.warn(`⚠️ unknown type: ${src}`)
     }
   }
@@ -148,3 +152,71 @@ export const manifest = ${JSON.stringify(manifest, null, 2)};
 )
 
 console.log('\n✅ INLINE MANIFEST READY')
+
+function fileToBase64Audio(filePath) {
+  const ext = path.extname(filePath).toLowerCase()
+
+  let mime = 'audio/mpeg'
+
+  switch (ext) {
+    case '.m4a':
+      mime = 'audio/mp4'
+      break
+    case '.mp3':
+      mime = 'audio/mpeg'
+      break
+    case '.ogg':
+      mime = 'audio/ogg'
+      break
+  }
+
+  const data = fs.readFileSync(filePath)
+  return `data:${mime};base64,${data.toString('base64')}`
+}
+
+function patchSoundManager() {
+  const filePath = path.resolve('./src/objects/SoundManager.js')
+
+  let code = fs.readFileSync(filePath, 'utf-8')
+
+  const regex = /src:\s*\[\s*['"`](assets\/audio\/[^'"`]+)['"`]\s*\]/g
+
+  code = code.replace(regex, (match, audioPath) => {
+    const fullPath = path.join(ROOT_DIR, audioPath)
+
+    if (!fs.existsSync(fullPath)) {
+      console.warn(`❌ audio not found: ${audioPath}`)
+      return match
+    }
+
+    const base64 = fileToBase64Audio(fullPath)
+
+    console.log(`🎵 audio → base64: ${audioPath}`)
+
+    return `src: ['${base64}']`
+  })
+
+  fs.writeFileSync(filePath, code, 'utf-8')
+
+  console.log('🎧 SoundManager patched')
+}
+patchSoundManager()
+
+function fileToBase64Font(filePath) {
+  const ext = path.extname(filePath).toLowerCase()
+
+  let mime = 'font/woff2'
+  if (ext === '.woff') mime = 'font/woff'
+  if (ext === '.ttf') mime = 'font/ttf'
+  if (ext === '.otf') mime = 'font/otf'
+
+  const data = fs.readFileSync(filePath)
+  return `data:${mime};base64,${data.toString('base64')}`
+}
+
+if (['.woff2', '.woff', '.ttf', '.otf'].includes(ext)) {
+  asset.src = fileToBase64Font(fullPath)
+  console.log(`🔤 font → base64: ${asset.alias}`)
+}
+
+//node scripts/generateManifestBase64.js

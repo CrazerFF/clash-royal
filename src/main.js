@@ -3,6 +3,7 @@ import { loadBundle } from './objects/loader.js'
 import { Game } from './Scene/Game.js'
 import { UiLayer } from './Hud/UiLayer.js'
 import { gsap } from 'gsap'
+import { Spine } from '@esotericsoftware/spine-pixi-v8'
 
 // ===== ЧЕРНЫЙ ЭКРАН =====
 
@@ -42,13 +43,13 @@ document.body.appendChild(loadingScreen)
 
   // ===== ШРИФТ =====
 
-  try {
-    const font = new FontFace('font', 'url(assets/fonts/font4.woff2)')
-    const loadedFont = await font.load()
-    document.fonts.add(loadedFont)
-  } catch (e) {
-    //  console.warn('Шрифт не загрузился')
-  }
+  // try {
+  //   const font = new FontFace('font', 'url(assets/fonts/font4.woff2)')
+  //   const loadedFont = await font.load()
+  //   document.fonts.add(loadedFont)
+  // } catch (e) {
+  //   //  console.warn('Шрифт не загрузился')
+  // }
 
   await document.fonts.ready
 
@@ -56,7 +57,7 @@ document.body.appendChild(loadingScreen)
 
   await Assets.init()
   await loadBundle('gameStart')
- 
+
   let game
   let uiLayer
 

@@ -1,7 +1,10 @@
 import { Assets, Texture, Spritesheet } from 'pixi.js'
-import { manifest } from './manifest.js'
+import { manifest } from './Manifest.js'
 import { TextureAtlas, SpineTexture } from '@esotericsoftware/spine-pixi-v8'
-import { SkeletonJson, AtlasAttachmentLoader } from '@esotericsoftware/spine-core'
+import {
+  SkeletonJson,
+  AtlasAttachmentLoader,
+} from '@esotericsoftware/spine-core'
 
 // ===== helpers =====
 
@@ -23,33 +26,43 @@ function decode(dataUrl) {
   return atob(dataUrl.split(',')[1])
 }
 
-const spineCache = {}
-//Assets
-
 
 export async function loadBundle(name) {
-  const bundle = manifest.bundles.find(b => b.name === name)
+  const bundle = manifest.bundles.find((b) => b.name === name)
   if (!bundle) throw new Error(`Bundle not found: ${name}`)
+
+  // 1. находим все spine базы
+  const spineBases = bundle.assets
+    .filter((a) => a.alias.endsWith('_atlas'))
+    .map((a) => a.alias.replace('_atlas', ''))
 
   const spineAssets = []
   const spriteAssets = []
 
-  for (const a of bundle.assets) {
-    // Spine определяем только по atlas (это главный маркер spine)
-    if (a.alias.endsWith('_atlas')) {
-      spineAssets.push(a)
+  // 2. делим ассеты
+  for (const asset of bundle.assets) {
+    const isSpine = spineBases.some(
+      (base) =>
+        asset.alias === base ||
+        asset.alias === base + '_atlas' ||
+        asset.alias === base + '_image'
+    )
+
+    if (isSpine) {
+      spineAssets.push(asset)
     } else {
-      spriteAssets.push(a)
+      spriteAssets.push(asset)
     }
   }
 
+  // 3. грузим
   const tasks = []
 
-  if (spineAssets.length > 0) {
+  if (spineAssets.length) {
     tasks.push(loadSpineBundle(spineAssets))
   }
 
-  if (spriteAssets.length > 0) {
+  if (spriteAssets.length) {
     tasks.push(loadSpritesBundle(spriteAssets))
   }
 
@@ -58,11 +71,8 @@ export async function loadBundle(name) {
   return true
 }
 
-
-
 export async function loadSpritesBundle(assets) {
   const tasks = assets.map(async ({ alias, src }) => {
-
     // ===== BASE64 JSON (spritesheet) =====
     if (isBase64Json(src)) {
       const atlas = decodeBase64Json(src)
@@ -97,36 +107,45 @@ export async function loadSpritesBundle(assets) {
 }
 
 export async function loadSpineBundle(assets) {
-
   const map = Object.fromEntries(
     assets.map(a => [a.alias, a.src])
   )
 
-  const atlasKey = assets.find(a => a.alias.endsWith('_atlas')).alias
-  const base = atlasKey.replace('_atlas', '')
+  const bases = assets
+    .filter(a => a.alias.endsWith('_atlas'))
+    .map(a => a.alias.replace('_atlas', ''))
 
-  const texture = Texture.from(
-    (await Assets.load(map[base + '_image'])).source
-  )
+  const tasks = bases.map(async (base) => {
 
-  const atlasText = decode(map[base + '_atlas'])
+    const atlasSrc = map[base + '_atlas']
+    const jsonSrc = map[base]
+    const imageSrc = map[base + '_image']
 
-  const atlas = new TextureAtlas(atlasText, (path, cb) => {
-    cb(texture)
+    if (!atlasSrc || !jsonSrc || !imageSrc) {
+      console.warn(`⚠️ Skip spine ${base}`)
+      return
+    }
+
+    const texture = await Assets.load(imageSrc)
+
+    const atlas = new TextureAtlas(decode(atlasSrc), (path, cb) => {
+      cb(texture)
+    })
+
+    for (const page of atlas.pages) {
+      page.setTexture(
+        SpineTexture.from(texture.source)
+      )
+    }
+
+    const json = JSON.parse(decode(jsonSrc))
+
+    Assets.cache.set(base, json)
+    Assets.cache.set(base + '_atlas', atlas)
+    Assets.cache.set(base + '_image', texture)
   })
 
-  for (const page of atlas.pages) {
-    page.setTexture(
-      SpineTexture.from(texture.source)
-    )
-  }
-
-  const json = JSON.parse(decode(map[base]))
-
-  Assets.cache.set(base, json)
-  Assets.cache.set(base + '_atlas', atlas)
-  Assets.cache.set(base + '_image', texture)
-
+  await Promise.all(tasks)
   return true
 }
 
