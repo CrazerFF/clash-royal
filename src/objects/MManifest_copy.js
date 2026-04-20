@@ -5,6 +5,10 @@ export const manifest = {
       name: 'gameStart',
       assets: [
         {
+          "alias": "font_main",
+          "src": "assets/fonts/font4.woff2"
+        },
+        {
           alias: 'bg',
           src: 'assets/sprites/bg.webp',
         },
@@ -81,14 +85,14 @@ export const manifest = {
           src: 'assets/sprites/pit.png',
         },
 
-        { alias: 'tower_smoke_json', src: 'assets/sprites/tower_smoke.json' },
-        { alias: 'tower_smoke_atlas', src: 'assets/sprites/tower_smoke.atlas' },
+        { alias: 'tower_smoke_json', src: 'assets/sprites/spine/tower_smoke.json' },
+        { alias: 'tower_smoke_atlas', src: 'assets/sprites/spine/tower_smoke.atlas' },
 
-        { alias: 'death_fx', src: 'assets/sprites/death_fx.json' },
-        { alias: 'death_fx_atlas', src: 'assets/sprites/death_fx.atlas' },
+        { alias: 'death_fx', src: 'assets/sprites/spine/death_fx.json' },
+        { alias: 'death_fx_atlas', src: 'assets/sprites/spine/death_fx.atlas' },
 
-        { alias: 'crown_anim_json', src: 'assets/sprites/crown_anim.json' },
-        { alias: 'crown_anim_atlas', src: 'assets/sprites/crown_anim.atlas' },
+        { alias: 'crown_anim_json', src: 'assets/sprites/spine/crown_anim.json' },
+        { alias: 'crown_anim_atlas', src: 'assets/sprites/spine/crown_anim.atlas' },
       ],
     },
   ],
