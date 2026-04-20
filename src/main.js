@@ -58,6 +58,18 @@ document.body.appendChild(loadingScreen)
   await Assets.init()
   await loadBundle('gameStart')
 
+  const fontSrc = Assets.get('font_main')
+
+if (fontSrc) {
+  const font = new FontFace(
+    'font',
+    `url(${fontSrc}) format('woff2')`
+  )
+
+  await font.load()
+  document.fonts.add(font)
+}
+
   let game
   let uiLayer
 

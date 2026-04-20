@@ -207,3 +207,5 @@ function patchSoundManager() {
 }
 
 patchSoundManager()
+
+//node scripts/generateManifestBase64.js

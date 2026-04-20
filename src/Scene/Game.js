@@ -108,11 +108,11 @@ export class Game extends Container {
     this.objects.push(this.blueking)
     this.blueking.playIdle()
 
-    const music = new Howl({
-      src: ['music.mp3'],
-      loop: true,
-      volume: 0.3,
-    })
+    // const music = new Howl({
+    //   src: ['music.mp3'],
+    //   loop: true,
+    //   volume: 0.3,
+    // })
   }
   createContinue() {
     // Игрок

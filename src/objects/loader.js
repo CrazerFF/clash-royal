@@ -73,6 +73,19 @@ export async function loadBundle(name) {
 
 export async function loadSpritesBundle(assets) {
   const tasks = assets.map(async ({ alias, src }) => {
+
+    // =========================
+    // 🔤 FONT (FIXED)
+    // =========================
+    if (alias.startsWith('font') && isBase64(src)) {
+      const font = new FontFace('font', `url(${src})`)
+      await font.load()
+      document.fonts.add(font)
+
+      Assets.cache.set(alias, src)
+      return
+    }
+
     // ===== BASE64 JSON (spritesheet) =====
     if (isBase64Json(src)) {
       const atlas = decodeBase64Json(src)
@@ -148,4 +161,3 @@ export async function loadSpineBundle(assets) {
   await Promise.all(tasks)
   return true
 }
-
