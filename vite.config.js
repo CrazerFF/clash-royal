@@ -1,12 +1,8 @@
 import { defineConfig } from 'vite'
-import { viteSingleFile } from 'vite-plugin-singlefile'
+
 
 export default defineConfig({
   base: './',
-
-  plugins: [
-    viteSingleFile()
-  ],
 
   build: {
     outDir: 'dist',
@@ -16,33 +12,17 @@ export default defineConfig({
     minify: 'esbuild',
     sourcemap: false,
 
-    cssCodeSplit: false,
-
-    // 🔥 ВСЁ В HTML
-    assetsInlineLimit: 100000000,
+    lib: {
+      entry: 'src/main.js',
+      formats: ['iife'],
+      name: 'GameBundle'
+    },
 
     rollupOptions: {
       output: {
-        // ❌ никаких файлов кроме html
-        inlineDynamicImports: true,
-
-        // один JS бандл
-        entryFileNames: 'game.js',
-        chunkFileNames: 'game.js',
-
-        // важно: убираем внешние ассеты полностью
-        assetFileNames: '[name][extname]'
+        entryFileNames: 'bundle.js'
       }
     }
-  },
-
-  server: {
-    port: 3000,
-    host: true,
-    open: true
-  },
-
-  optimizeDeps: {
-    include: ['pixi.js']
   }
 })
+
