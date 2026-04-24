@@ -13,6 +13,8 @@
     "@esotericsoftware/spine-pixi-v8": "~4.2.0",
     "@pixi/core": "^7.4.3",
     "@pixi/filter-color-matrix": "^7.4.3",
+    "brotli-js": "^1.0.2",
+    "brotli-wasm": "^3.0.1",
     "canvas-confetti": "^1.9.4",
     "gsap": "^3.14.2",
     "howler": "^2.2.4",
@@ -24,6 +26,7 @@
     "prettier": "^3.8.1",
     "prettier-eslint": "^16.4.2",
     "rollup-plugin-visualizer": "^7.0.1",
+    "terser": "^5.46.2",
     "vite": "^5.4.0",
     "vite-plugin-singlefile": "^2.3.3"
   }

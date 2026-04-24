@@ -1,48 +1,34 @@
+// vite.config.js
 import { defineConfig } from 'vite'
-import { viteSingleFile } from 'vite-plugin-singlefile'
 
 export default defineConfig({
   base: './',
 
-  plugins: [
-    viteSingleFile()
-  ],
-
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-
-    target: 'esnext',
-    minify: 'esbuild',
+    target: 'es2017',
+    minify: 'terser',
     sourcemap: false,
-
     cssCodeSplit: false,
 
-    // 🔥 ВСЁ В HTML
     assetsInlineLimit: 100000000,
+
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        passes: 3,
+      },
+      mangle: true,
+    },
 
     rollupOptions: {
       output: {
-        // ❌ никаких файлов кроме html
+        format: 'iife',              // ВАЖНО: сразу исполняемый код
         inlineDynamicImports: true,
-
-        // один JS бандл
         entryFileNames: 'game.js',
-        chunkFileNames: 'game.js',
-
-        // важно: убираем внешние ассеты полностью
-        assetFileNames: '[name][extname]'
+        manualChunks: undefined,
       }
     }
-  },
-
-  server: {
-    port: 3000,
-    host: true,
-    open: true
-  },
-
-  optimizeDeps: {
-    include: ['pixi.js']
   }
 })
