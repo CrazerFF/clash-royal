@@ -31,6 +31,7 @@ export async function loadBundle(name) {
   const bundle = manifest.bundles.find((b) => b.name === name)
   if (!bundle) throw new Error(`Bundle not found: ${name}`)
 
+
   // 1. находим все spine базы
   const spineBases = bundle.assets
     .filter((a) => a.alias.endsWith('_atlas'))
@@ -85,6 +86,7 @@ export async function loadSpritesBundle(assets) {
       Assets.cache.set(alias, src)
       return
     }
+    
 
     // ===== BASE64 JSON (spritesheet) =====
     if (isBase64Json(src)) {
@@ -102,6 +104,10 @@ export async function loadSpritesBundle(assets) {
 
       return
     }
+      if (src.startsWith('data:audio')) {
+    Assets.cache.set(alias, src)
+    return
+  }
 
     // ===== BASE64 IMAGE =====
     if (isBase64(src)) {
