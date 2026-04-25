@@ -8,7 +8,7 @@ export class Enemy extends Container {
   constructor(scene) {
     super()
     this.scene = scene
-    this.zIndex = 20
+    this.zIndex = 20;
     this.sortableChildren = true
 
     const runSheet = Assets.get('megaknight_run_json')
